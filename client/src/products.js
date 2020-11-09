@@ -8,7 +8,7 @@ const products = [
 		size: 'medium',
 		category: 'Tropicals',
 		price: 19.99,
-		countInStock: 10,
+		countInStock: 0,
 		rating: 4.5,
 		numReviews: 8,
 	},

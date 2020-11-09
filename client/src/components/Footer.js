@@ -9,7 +9,6 @@ const Footer = () => {
 					<Col className='text-center py3'>Copyright &copy;Ecommerce</Col>
 				</Row>
 			</Container>
-			I am a footer.
 		</footer>
 	);
 };
