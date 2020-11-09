@@ -5,3 +5,13 @@ main {
 i {
 	margin-right: 5px;
 }
+
+
+
+h3 {
+	padding-top: 1rem;
+}
+
+.rating span {
+	margin: 0.1rem;
+}
