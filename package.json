@@ -1,0 +1,30 @@
+{
+	"name": "ecommerce",
+	"version": "1.0.0",
+	"description": "ecommerce app buit in react",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server/server.js",
+		"server": "nodemon server/server.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/adgoldmintz/ecommerce.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/adgoldmintz/ecommerce/issues"
+	},
+	"homepage": "https://github.com/adgoldmintz/ecommerce#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"devDependencies": {
+		"concurrently": "^5.3.0",
+		"nodemon": "^2.0.6"
+	}
+}
