@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Product from '../components/Product';
-import axios from 'axios';
-
 import { Row, Col } from 'react-bootstrap';
 
 const HomePage = () => {
-	const [products, setProducts] = useState([]);
-
-	useEffect(() => {
-		const getProducts = async () => {
-			const { data } = await axios.get('/api/products');
-			setProducts(data);
-		};
-		getProducts();
-		// eslint-disable-next-line
-	}, []);
+	useEffect(() => {}, []);
 
 	return (
 		<>
