@@ -1,6 +1,5 @@
 const products = [
 	{
-		_id: '1',
 		name: 'Monstera',
 		image: '/images/monstera.jpg',
 		description:
@@ -13,8 +12,7 @@ const products = [
 		numReviews: 8,
 	},
 	{
-		_id: '2',
-		name: 'Monstera',
+		name: 'Plant 2',
 		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
@@ -26,8 +24,7 @@ const products = [
 		numReviews: 8,
 	},
 	{
-		_id: '3',
-		name: 'Monstera',
+		name: 'Plant 3',
 		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
@@ -39,7 +36,6 @@ const products = [
 		numReviews: 12,
 	},
 	{
-		_id: '4',
 		name: 'Monstera',
 		image: '/images/monstera.jpg',
 		description:
@@ -52,8 +48,7 @@ const products = [
 		numReviews: 1,
 	},
 	{
-		_id: '5',
-		name: 'Monstera',
+		name: 'Other Plant',
 		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
@@ -65,8 +60,7 @@ const products = [
 		numReviews: 10,
 	},
 	{
-		_id: '6',
-		name: 'Monstera',
+		name: 'Placeholder',
 		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
