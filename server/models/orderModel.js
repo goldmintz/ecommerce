@@ -1,108 +1,109 @@
 import mongoose from 'mongoose';
 
-const orderSchema = mongoose.Schema({
-	user: {
-		type: mongoose.Schema.Types.ObjectId,
-		required: true,
-		ref: 'User',
-	},
-	orderItems: [
-		{
-			name: {
+const orderSchema = mongoose.Schema(
+	{
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: 'User',
+		},
+		orderItems: [
+			{
+				name: {
+					type: String,
+					required: true,
+				},
+				quantity: {
+					type: Number,
+					required: true,
+				},
+				image: {
+					type: String,
+					required: true,
+				},
+				price: {
+					type: Number,
+					required: true,
+				},
+				product: {
+					type: mongoose.Schema.Types.ObjectId,
+					required: true,
+					ref: 'Product',
+				},
+			},
+		],
+		shippingAddress: {
+			address: {
 				type: String,
 				required: true,
 			},
-			quantity: {
-				type: Number,
-				required: true,
-			},
-			image: {
+			city: {
 				type: String,
 				required: true,
 			},
-			price: {
-				type: Number,
+			state: {
+				type: String,
 				required: true,
 			},
-			product: {
-				type: mongoose.Schema.Types.ObjectId,
+			zip: {
+				type: String,
 				required: true,
-				ref: 'Product',
 			},
 		},
-	],
-	shippingAddress: {
-		address: {
+		paymentMethod: {
 			type: String,
 			required: true,
 		},
-		city: {
-			type: String,
+		//Returned from PayPal processing
+		paymentResult: {
+			id: {
+				type: String,
+			},
+			status: {
+				type: String,
+			},
+			update_time: {
+				type: String,
+			},
+			email_address: {
+				type: String,
+			},
+		},
+		taxPrice: {
+			type: Number,
 			required: true,
+			default: 0.0,
 		},
-		state: {
-			type: String,
+		shippingPrice: {
+			type: Number,
 			required: true,
+			default: 0.0,
 		},
-		zip: {
-			type: String,
+		totalPrice: {
+			type: Number,
 			required: true,
+			default: 0.0,
+		},
+		isPaid: {
+			type: Boolean,
+			required: true,
+			default: false,
+		},
+		paidTimeStamp: {
+			type: Date,
+		},
+		isDelivered: {
+			type: Boolean,
+			required: true,
+			default: false,
+		},
+		deliveredTimeStamp: {
+			type: Date,
 		},
 	},
-	paymentMethod: {
-		type: String,
-		required: true,
-	},
-	//Returned from PayPal processing
-	paymentResult: {
-		id: {
-			type: String,
-		},
-		status: {
-			type: String,
-		},
-		update_time: {
-			type: String,
-		},
-		email_address: {
-			type: String,
-		},
-	},
-	taxPrice: {
-		type: Number,
-		required: true,
-		default: 0.0,
-	},
-	shippingPrice: {
-		type: Number,
-		required: true,
-		default: 0.0,
-	},
-	totalPrice: {
-		type: Number,
-		required: true,
-		default: 0.0,
-	},
-	isPaid: {
-		type: Boolean,
-		required: true,
-		default: false,
-	},
-	paidTimeStamp: {
-		type: Date,
-	},
-	isDelivered: {
-		type: Boolean,
-		required: true,
-		default: false,
-	},
-	deliveredTimeStamp: {
-		type: Date,
-	},
+	{ timestamps: true },
+);
 
-	timestamps: true,
-});
+const Order = mongoose.model('Order', orderSchema);
 
-const User = mongoose.model('User', userSchema);
-
-export default User;
+export default Order;
