@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Product from '../components/Product';
 import { Row, Col } from 'react-bootstrap';
-import { listProducts } from '../actions/productActions';
-import Loader from '../components/Loader';
-import Message from '../components/Message';
+import { listProducts } from '../../actions/productActions.js';
+
+import Product from '../features/Product';
+import Message from '../layout/Message';
+import Loader from '../layout/Loader';
 
 const HomePage = () => {
 	// using hooks instead of connect!

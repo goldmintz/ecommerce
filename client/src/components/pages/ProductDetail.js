@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProductDetails } from '../actions/productActions';
-
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
-import Rating from '../components/Rating';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
+import { listProductDetails } from '../../actions/productActions.js';
+
+import Rating from '../features/Rating';
+import Message from '../layout/Message';
+import Loader from '../layout/Loader';
 
 const ProductDetail = (props) => {
 	const dispatch = useDispatch();

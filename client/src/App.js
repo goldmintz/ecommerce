@@ -4,12 +4,12 @@ import { Container } from 'react-bootstrap';
 import './App.css';
 
 //import components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
 // import pages
-import Home from './pages/Home';
-import ProductDetail from './pages/ProductDetail';
+import Home from './components/pages/Home';
+import ProductDetail from './components/pages/ProductDetail';
 
 const App = () => {
 	return (
