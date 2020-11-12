@@ -10,6 +10,7 @@ import Footer from './components/layout/Footer';
 // import pages
 import Home from './components/pages/Home';
 import ProductDetail from './components/pages/ProductDetail';
+import Cart from './components/pages/Cart';
 
 const App = () => {
 	return (
@@ -19,6 +20,7 @@ const App = () => {
 				<Container>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/product/:id' component={ProductDetail} />
+					<Route path='/cart/:id?' component={Cart} />
 				</Container>
 			</main>
 			<Footer />
