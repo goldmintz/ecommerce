@@ -8,7 +8,7 @@ import {
 	ListGroup,
 	Card,
 	Button,
-	FormControl,
+	Form,
 } from 'react-bootstrap';
 import { listProductDetails } from '../../actions/productActions.js';
 
@@ -37,6 +37,7 @@ const ProductDetail = ({ match, history }) => {
 		history.push(`/cart/${match.params.id}?quantity=${quantity}`);
 	};
 
+	console.log(quantity);
 	//Begin render
 	return (
 		<>
@@ -101,14 +102,14 @@ const ProductDetail = ({ match, history }) => {
 										<Row>
 											<Col>Quantity</Col>
 											<Col>
-												<FormControl
+												<Form.Control
 													as='select'
 													value={quantity}
 													onChange={handleQuantChange}>
 													{[...Array(product.countInStock).keys()].map((n) => (
 														<option key={n + 1}>{n + 1}</option>
 													))}
-												</FormControl>
+												</Form.Control>
 											</Col>
 										</Row>
 									</ListGroup.Item>
