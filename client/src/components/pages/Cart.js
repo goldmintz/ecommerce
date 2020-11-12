@@ -12,7 +12,7 @@ import {
 } from 'react-bootstrap';
 import Message from '../layout/Message';
 
-import { addToCart } from '../../actions/cartActions';
+import { addToCart, removeFromCart } from '../../actions/cartActions';
 
 const Cart = ({ match, location, history }) => {
 	//isolate id and quantity from passed url
@@ -30,7 +30,7 @@ const Cart = ({ match, location, history }) => {
 	}, [dispatch, productId, quantity]);
 
 	const handleRemoveFromCart = (id) => {
-		console.log(`remove: ${id}`);
+		dispatch(removeFromCart(id));
 	};
 
 	const handleCheckOut = () => {
