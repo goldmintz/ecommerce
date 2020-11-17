@@ -11,6 +11,7 @@ import Footer from './components/layout/Footer';
 import Home from './components/pages/Home';
 import ProductDetail from './components/pages/ProductDetail';
 import Cart from './components/pages/Cart';
+import Login from './components/pages/Login';
 
 const App = () => {
 	return (
@@ -18,9 +19,10 @@ const App = () => {
 			<Header />
 			<main className='py-3'>
 				<Container>
-					<Route exact path='/' component={Home} />
 					<Route exact path='/product/:id' component={ProductDetail} />
+					<Route path='/login' component={Login} />
 					<Route path='/cart/:id?' component={Cart} />
+					<Route exact path='/' component={Home} />
 				</Container>
 			</main>
 			<Footer />
