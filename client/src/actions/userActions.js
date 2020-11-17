@@ -4,6 +4,7 @@ import {
 	USER_LOGIN_FAIL,
 	USER_LOGIN_REQ,
 	USER_LOGIN_SUCCESS,
+	USER_LOGOUT,
 } from '../constants/types.js';
 
 export const login = (email, password) => async (dispatch) => {
@@ -30,11 +31,17 @@ export const login = (email, password) => async (dispatch) => {
 		});
 
 		localStorage.setItem('userDetails', JSON.stringify(data));
-
 	} catch (err) {
 		dispatch({
 			type: USER_LOGIN_FAIL,
 			payload: err.response,
 		});
 	}
+};
+
+export const logout = () => (dispatch) => {
+	localStorage.removeItem('userDetails');
+	dispatch({
+		type: USER_LOGOUT,
+	});
 };
