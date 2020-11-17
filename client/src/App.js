@@ -12,6 +12,7 @@ import Home from './components/pages/Home';
 import ProductDetail from './components/pages/ProductDetail';
 import Cart from './components/pages/Cart';
 import Login from './components/pages/Login';
+import Register from './components/pages/Register';
 
 const App = () => {
 	return (
@@ -21,6 +22,7 @@ const App = () => {
 				<Container>
 					<Route exact path='/product/:id' component={ProductDetail} />
 					<Route path='/login' component={Login} />
+					<Route path='/register' component={Register} />
 					<Route path='/cart/:id?' component={Cart} />
 					<Route exact path='/' component={Home} />
 				</Container>
