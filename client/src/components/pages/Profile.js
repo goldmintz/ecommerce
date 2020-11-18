@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUserProfile } from '../../actions/userActions';
+import { getUserProfile, updateUserProfile } from '../../actions/userActions';
+import { USER_UPDATE_RESET } from '../../constants/types.js';
 
 //components
 import Message from '../layout/Message';
@@ -18,9 +19,11 @@ const Profile = ({ location, history }) => {
 
 	const userProfile = useSelector((state) => state.userProfile);
 	const userLogin = useSelector((state) => state.userLogin);
+	const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
 
 	const { loading, error, user } = userProfile;
 	const { userDetails } = userLogin;
+	const { success } = userUpdateProfile;
 
 	//If user is logged in, redirect
 	useEffect(() => {
@@ -28,6 +31,7 @@ const Profile = ({ location, history }) => {
 			history.push('/login');
 		} else {
 			if (!user.name) {
+				dispatch({ type: USER_UPDATE_RESET });
 				dispatch(getUserProfile('profile'));
 			} else {
 				setName(user.name);
@@ -41,7 +45,7 @@ const Profile = ({ location, history }) => {
 		if (password !== confirmPassword) {
 			setMessage('Passwords must match');
 		} else {
-			//dispatch changes
+			dispatch(updateUserProfile({ id_: user._id, name, email, password }));
 		}
 	};
 
@@ -50,6 +54,7 @@ const Profile = ({ location, history }) => {
 			<Col md={3}>
 				<h2>Profile</h2>
 				{error && <Message variant='danger'>{message}</Message>}
+				{success && <Message variant='success'>'Profile updated!'</Message>}
 				{loading && <Loader />}
 				<Form onSubmit={handleSubmit}>
 					<Form.Group controlId='name'>
@@ -87,8 +92,7 @@ const Profile = ({ location, history }) => {
 								setConfirmPassword(e.target.value)
 							}></Form.Control>
 					</Form.Group>
-
-					<Button type='submit' variant='primary'>
+					<Button type='submit' variant='primary' className='mt-4'>
 						Save Changes
 					</Button>
 				</Form>
