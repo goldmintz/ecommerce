@@ -16,6 +16,7 @@ import Register from './components/pages/Register';
 import Profile from './components/pages/Profile';
 import Shipping from './components/pages/CheckoutProcess/Shipping';
 import PaymentMethod from './components/pages/CheckoutProcess/PaymentMethod';
+import Order from './components/pages/CheckoutProcess/Order';
 
 const App = () => {
 	return (
@@ -27,6 +28,7 @@ const App = () => {
 					<Route path='/login' component={Login} />
 					<Route path='/shipping' component={Shipping} />
 					<Route path='/payment' component={PaymentMethod} />
+					<Route path='/order' component={Order} />
 					<Route path='/register' component={Register} />
 					<Route path='/profile' component={Profile} />
 					<Route path='/cart/:id?' component={Cart} />
