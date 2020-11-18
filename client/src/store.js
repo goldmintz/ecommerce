@@ -33,8 +33,15 @@ const userDetailsfromLcStorage = localStorage.getItem('userDetails')
 	? JSON.parse(localStorage.getItem('userDetails'))
 	: null;
 
+const shippingAddfromLcStorage = localStorage.getItem('shippingAdd')
+	? JSON.parse(localStorage.getItem('shippingAdd'))
+	: {};
+
 const initialState = {
-	cart: { cartItems: cartItemsFromLcStorage },
+	cart: {
+		cartItems: cartItemsFromLcStorage,
+		shippingAdd: shippingAddfromLcStorage,
+	},
 	userLogin: { userDetails: userDetailsfromLcStorage },
 };
 const middleware = [thunk];

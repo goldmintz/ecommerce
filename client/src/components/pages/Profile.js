@@ -25,7 +25,6 @@ const Profile = ({ location, history }) => {
 	const { userDetails } = userLogin;
 	const { success } = userUpdateProfile;
 
-	//If user is logged in, redirect
 	useEffect(() => {
 		if (!userDetails) {
 			history.push('/login');
