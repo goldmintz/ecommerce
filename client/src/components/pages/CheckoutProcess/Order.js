@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { createOrder } from '../../../actions/orderActions';
 
 import Message from '../../layout/Message';
 import CheckoutSteps from '../CheckoutProcess/CheckoutSteps';
 
-const Order = () => {
+const Order = ({ history }) => {
 	const dispatch = useDispatch();
 	const cart = useSelector((state) => state.cart);
 
@@ -26,9 +27,30 @@ const Order = () => {
 		Number(cart.shippingPrice) +
 		Number(cart.taxPrice);
 
+	const orderCreate = useSelector((state) => state.orderCreate);
+	const { order, success, error } = orderCreate;
+
+	useEffect(() => {
+		if (success) {
+			history.push('/order/order_.id');
+		}
+		// eslint-disable-next-line
+	}, [history, success]);
+
 	const handlePlaceOrder = (e) => {
 		e.preventDefault();
 		console.log('placed order');
+		dispatch(
+			createOrder({
+				orderItems: cart.orderItems,
+				shippingAddress: cart.shippingAdd,
+				paymentMethod: cart.paymentMethod,
+				itemsPrice: cart.itemsPrice,
+				taxPrice: cart.taxPrice,
+				shippingPrice: cart.shippingPrice,
+				totalPrice: cart.totalPrice,
+			}),
+		);
 	};
 	return (
 		<>
@@ -40,8 +62,9 @@ const Order = () => {
 							<h2>Shipping</h2>
 							<p>
 								<strong>Address: </strong>
-								{cart.shippingAdd.address}
-								{cart.shippingAdd.city},{''}
+								{cart.shippingAdd.address} {'  '}
+								{cart.shippingAdd.city}
+								{', '}
 								{cart.shippingAdd.state} {''}
 								{cart.shippingAdd.zip}
 							</p>
