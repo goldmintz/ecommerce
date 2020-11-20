@@ -35,4 +35,15 @@ const createOrder = asyncHandler(async (req, res) => {
 	}
 });
 
-export { createOrder };
+const getOrder = asyncHandler(async (req, res) => {
+	const order = await findbyId(req.params.id).populate('user', 'name email');
+
+	if (order) {
+		res.json(order);
+	} else {
+		res.status(401);
+		throw new Error('Order not found');
+	}
+});
+
+export { createOrder, getOrder };
