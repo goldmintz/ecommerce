@@ -21,7 +21,6 @@ const PaymentMethod = ({ history }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(savePaymentMthd(paymentMthd));
-		console.log('payment submitted');
 
 		//send to next step: order screen
 		history.push('/order');

@@ -12,9 +12,7 @@ const createOrder = asyncHandler(async (req, res) => {
 		totalPrice,
 	} = req.body;
 
-	console.log(req.body);
-
-	if (orderItems && orderItems.lenth === 0) {
+	if (orderItems && orderItems.length === 0) {
 		res.status(400);
 		throw new Error('No Order Items');
 	} else {
@@ -36,12 +34,16 @@ const createOrder = asyncHandler(async (req, res) => {
 });
 
 const getOrder = asyncHandler(async (req, res) => {
-	const order = await findbyId(req.params.id).populate('user', 'name email');
+	console.log(req.params.id);
+	const order = await Order.findById(req.params.id).populate(
+		'user',
+		'name email',
+	);
 
 	if (order) {
 		res.json(order);
 	} else {
-		res.status(401);
+		res.status(404);
 		throw new Error('Order not found');
 	}
 });

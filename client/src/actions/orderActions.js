@@ -52,7 +52,6 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 
 		const config = {
 			headers: {
-				'Content-Type': 'application/json',
 				Authorization: `Bearer ${userDetails.token}`,
 			},
 		};
@@ -66,7 +65,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 	} catch (err) {
 		dispatch({
 			type: ORDER_DETAILS_FAIL,
-			payload: err.response,
+			payload: err.message,
 		});
 	}
 };

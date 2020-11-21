@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createOrder } from '../../../actions/orderActions';
 
 import Message from '../../layout/Message';
-import CheckoutSteps from '../CheckoutProcess/CheckoutSteps';
+import CheckoutSteps from './CheckoutSteps';
 
 const Order = ({ history }) => {
 	const dispatch = useDispatch();
@@ -32,17 +32,16 @@ const Order = ({ history }) => {
 
 	useEffect(() => {
 		if (success) {
-			history.push('/order/order_.id');
+			history.push(`/order/${order._id}`);
 		}
 		// eslint-disable-next-line
 	}, [history, success]);
 
 	const handlePlaceOrder = (e) => {
 		e.preventDefault();
-		console.log('placed order');
 		dispatch(
 			createOrder({
-				orderItems: cart.orderItems,
+				orderItems: cart.cartItems,
 				shippingAddress: cart.shippingAdd,
 				paymentMethod: cart.paymentMethod,
 				itemsPrice: cart.itemsPrice,
@@ -52,6 +51,7 @@ const Order = ({ history }) => {
 			}),
 		);
 	};
+
 	return (
 		<>
 			<CheckoutSteps step1 step2 step3 step4 />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
@@ -16,7 +16,8 @@ import Register from './components/pages/Register';
 import Profile from './components/pages/Profile';
 import Shipping from './components/pages/CheckoutProcess/Shipping';
 import PaymentMethod from './components/pages/CheckoutProcess/PaymentMethod';
-import Order from './components/pages/CheckoutProcess/Order';
+import CreateOrder from './components/pages/CheckoutProcess/CreateOrder';
+import ViewOrder from './components/pages/CheckoutProcess/ViewOrder';
 
 const App = () => {
 	return (
@@ -24,17 +25,22 @@ const App = () => {
 			<Header />
 			<main className='py-3'>
 				<Container>
-					<Route path='/product/:id' component={ProductDetail} />
-					<Route path='/login' component={Login} />
+					<Switch>
+						<Route path='/order/:id' component={ViewOrder} />
+						<Route path='/order' component={CreateOrder} />
+					</Switch>
+
 					<Route path='/shipping' component={Shipping} />
 					<Route path='/payment' component={PaymentMethod} />
-					<Route path='/order' component={Order} />
+					<Route path='/product/:id' component={ProductDetail} />
+					<Route path='/login' component={Login} />
 					<Route path='/register' component={Register} />
 					<Route path='/profile' component={Profile} />
 					<Route path='/cart/:id?' component={Cart} />
 					<Route exact path='/' component={Home} />
 				</Container>
 			</main>
+
 			<Footer />
 		</Router>
 	);

@@ -37,7 +37,6 @@ const ProductDetail = ({ match, history }) => {
 		history.push(`/cart/${match.params.id}?quantity=${quantity}`);
 	};
 
-	console.log(quantity);
 	//Begin render
 	return (
 		<>
