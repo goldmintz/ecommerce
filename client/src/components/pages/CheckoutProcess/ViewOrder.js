@@ -16,7 +16,9 @@ const ViewOrder = ({ match }) => {
 	const { order, error, loading } = orderDetails;
 
 	useEffect(() => {
-		dispatch(getOrderDetails(orderId));
+		if (!order || order._id !== orderId) {
+			dispatch(getOrderDetails(orderId));
+		}
 	}, [dispatch, orderId]);
 
 	return loading ? (
@@ -31,6 +33,15 @@ const ViewOrder = ({ match }) => {
 					<ListGroup variant='flush'>
 						<ListGroup.Item>
 							<h2>Shipping</h2>
+							<p>
+								<strong>Name: </strong> {order.user.name}
+							</p>
+							<p>
+								<strong>
+									Email:{' '}
+									<a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+								</strong>
+							</p>
 							<p>
 								<strong>Address: </strong>
 								{order.shippingAddress.address} {'  '}
@@ -127,7 +138,6 @@ const ViewOrder = ({ match }) => {
 									</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item></ListGroup.Item>
 						</ListGroup>
 					</Card>
 				</Col>
