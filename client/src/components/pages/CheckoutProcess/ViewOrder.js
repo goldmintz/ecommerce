@@ -40,13 +40,7 @@ const ViewOrder = ({ match }) => {
 								{order.shippingAddress.zip}
 							</p>
 						</ListGroup.Item>
-						<ListGroup.Item>
-							<h2>Payment Method</h2>
-							<p>
-								<strong>Method: </strong>
-								{order.paymentMethod}
-							</p>
-						</ListGroup.Item>
+
 						<ListGroup.Item>
 							<h2>
 								{order.orderItems.length > 1 ? 'Order Items' : 'Order Item'}
@@ -114,6 +108,12 @@ const ViewOrder = ({ match }) => {
 								<Row>
 									<Col>Tax</Col>
 									<Col>${order.taxPrice}</Col>
+								</Row>
+							</ListGroup.Item>
+							<ListGroup.Item>
+								<Row>
+									<Col>Payment Method</Col>
+									<Col>{order.paymentMethod}</Col>
 								</Row>
 							</ListGroup.Item>
 							<ListGroup.Item
