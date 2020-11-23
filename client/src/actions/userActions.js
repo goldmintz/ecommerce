@@ -14,7 +14,10 @@ import {
 	USER_UPDATE_DETAILS_FAIL,
 	USER_UPDATE_DETAILS_SUCCESS,
 	USER_UPDATE_DETAILS_REQ,
-} from '../constants/types.js';
+	USER_DETAILS_RESET,
+} from '../constants/types';
+
+import { ORDER_USERLIST_RESET } from '../constants/types';
 
 export const login = (email, password) => async (dispatch) => {
 	try {
@@ -52,6 +55,12 @@ export const logout = () => (dispatch) => {
 	localStorage.removeItem('userDetails');
 	dispatch({
 		type: USER_LOGOUT,
+	});
+	dispatch({
+		type: USER_DETAILS_RESET,
+	});
+	dispatch({
+		type: ORDER_USERLIST_RESET,
 	});
 };
 

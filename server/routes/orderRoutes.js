@@ -4,10 +4,13 @@ import {
 	createOrder,
 	getOrder,
 	updateOrderPaid,
+	getUserOrders,
 } from '../controllers/orderController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
 router.route('/').post(protect, createOrder);
+router.route('/myorders').get(protect, getUserOrders);
 router.route('/:id').get(protect, getOrder);
 router.route('/:id/pay').put(protect, updateOrderPaid);
+
 export default router;

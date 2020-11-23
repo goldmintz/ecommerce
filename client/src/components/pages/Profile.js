@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col, Table } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserProfile, updateUserProfile } from '../../actions/userActions';
+import { listUserOrders } from '../../actions/orderActions';
 import { USER_UPDATE_RESET } from '../../constants/types.js';
 
 //components
@@ -21,9 +23,16 @@ const Profile = ({ location, history }) => {
 	const userLogin = useSelector((state) => state.userLogin);
 	const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
 
+	const userOrderList = useSelector((state) => state.orderUserList);
+
 	const { loading, error, user } = userProfile;
 	const { userDetails } = userLogin;
 	const { success } = userUpdateProfile;
+	const {
+		orders,
+		loading: userListLoading,
+		error: userListError,
+	} = userOrderList;
 
 	useEffect(() => {
 		if (!userDetails) {
@@ -32,12 +41,15 @@ const Profile = ({ location, history }) => {
 			if (!user.name) {
 				dispatch({ type: USER_UPDATE_RESET });
 				dispatch(getUserProfile('profile'));
+				dispatch(listUserOrders());
 			} else {
 				setName(user.name);
 				setEmail(user.email);
 			}
 		}
 	}, [history, userDetails, user, dispatch]);
+
+	console.log(orders);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -96,8 +108,53 @@ const Profile = ({ location, history }) => {
 					</Button>
 				</Form>
 			</Col>
+
 			<Col md={9}>
 				<h2>My Orders</h2>
+				{userListLoading ? (
+					<Loader />
+				) : userListError ? (
+					<Message variant='danger'>{userListError}</Message>
+				) : (
+					<Table striped bordered responsive className='table-sm'>
+						<thead>
+							<tr>
+								<th>Order ID:</th>
+								<th>Date</th>
+								<th>Total</th>
+								<th>Paid</th>
+								<th>Delivered</th>
+								<th>Details</th>
+							</tr>
+						</thead>
+						<tbody>
+							{orders.map((order) => (
+								<tr key={order._id}>
+									<td>{order._id}</td>
+									<td>{order.createdAt.substring(0, 10)}</td>
+									<td>{order.totalPrice}</td>
+									<td>
+										{order.isPaid
+											? order.paidTimeStamp.substring(0, 10)
+											: 'Order Not Paid'}{' '}
+									</td>
+									<td>
+										{order.isDelivered
+											? order.deliveredTimeStamp.substring(0, 10)
+											: 'Order Not Delivered'}{' '}
+									</td>
+									<td>
+										<LinkContainer to={`/order/${order._id}`}>
+											<Button variant='light' className='btn-sm'>
+												Details
+											</Button>
+										</LinkContainer>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</Table>
+				)}
 			</Col>
 		</Row>
 	);
