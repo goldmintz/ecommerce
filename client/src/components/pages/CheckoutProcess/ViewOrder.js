@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap';
+import { PayPalButton } from 'react-paypal-button-v2';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getOrderDetails } from '../../../actions/orderActions';
+import { getOrderDetails, payOrder } from '../../../actions/orderActions';
+import { ORDER_PAY_RESET } from '../../../constants/types';
+import axios from 'axios';
 
 import Message from '../../layout/Message';
 import Loader from '../../layout/Loader';
@@ -10,16 +13,48 @@ import Loader from '../../layout/Loader';
 const ViewOrder = ({ match }) => {
 	const orderId = match.params.id;
 
+	const [sdkReady, setSdkReady] = useState(false);
+	// const [paypalLoaded, setPaypalLoaded] = useState(false);
+
 	const dispatch = useDispatch();
 
 	const orderDetails = useSelector((state) => state.orderDetails);
 	const { order, error, loading } = orderDetails;
 
+	const orderPayment = useSelector((state) => state.orderPayment);
+	//rename properties because names are already declared above
+	const { loading: loadingPayment, success: successPayment } = orderPayment;
+
 	useEffect(() => {
-		if (!order || order._id !== orderId) {
+		//Dynamically update the body with the PayPal script on load
+		const addPayPalScript = async () => {
+			const { data: clientId } = await axios.get('/api/config/paypal');
+			const script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.async = true;
+			script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+			script.onload = () => setSdkReady(true);
+			document.body.appendChild(script);
+		};
+
+		if (!order || order._id !== orderId || successPayment) {
+			//reset so that once payment is processed, page doesn't refresh infinitely
+			dispatch({ type: ORDER_PAY_RESET });
 			dispatch(getOrderDetails(orderId));
+		} else if (!order.isPaid) {
+			//if order is unpaid, add the PayPal script
+			if (!window.paypal) {
+				addPayPalScript();
+			} else {
+				setSdkReady(true);
+			}
 		}
-	}, [dispatch, orderId]);
+	}, [dispatch, orderId, order, successPayment]);
+
+	const handlePaymentSuccess = (paymentResult) => {
+		console.log(paymentResult);
+		dispatch(payOrder(orderId, paymentResult));
+	};
 
 	return loading ? (
 		<Loader />
@@ -31,6 +66,11 @@ const ViewOrder = ({ match }) => {
 			<Row>
 				<Col md={8}>
 					<ListGroup variant='flush'>
+						{order.isPaid && (
+							<Message variant='success'>
+								{`Order paid and processed ${order.paymentResult.update_time}`}
+							</Message>
+						)}
 						<ListGroup.Item>
 							<h2>Shipping</h2>
 							<p>
@@ -76,8 +116,10 @@ const ViewOrder = ({ match }) => {
 														{item.name}
 													</Link>
 												</Col>
+												{/*TODO: Fix formatting of numbers => trailing decimals
+												and add comma separator */}
 												<Col md={4}>
-													{item.quantity} X {item.price} = $
+													{item.quantity} x {item.price} = $
 													{item.quantity * item.price}
 												</Col>
 											</Row>
@@ -138,6 +180,19 @@ const ViewOrder = ({ match }) => {
 									</Col>
 								</Row>
 							</ListGroup.Item>
+							{!order.isPaid && (
+								<ListGroup.Item>
+									{loadingPayment && <Loader />}
+									{!sdkReady ? (
+										<Loader />
+									) : (
+										<PayPalButton
+											amount={order.totalPrice}
+											onSuccess={handlePaymentSuccess}
+										/>
+									)}
+								</ListGroup.Item>
+							)}
 						</ListGroup>
 					</Card>
 				</Col>
