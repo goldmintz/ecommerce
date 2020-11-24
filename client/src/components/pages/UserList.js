@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { listUsers } from '../../actions/userActions';
+import { listUsers, deleteUser } from '../../actions/userActions';
 
 //components
 import Message from '../layout/Message';
@@ -17,16 +17,23 @@ const UserList = ({ history }) => {
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userDetails } = userLogin;
 
+	const userDelete = useSelector((state) => state.userDelete);
+	const {
+		loading: deleteLoading,
+		error: deleteError,
+		success: deleteSuccess,
+	} = userLogin;
+
 	useEffect(() => {
 		if (userDetails && userDetails.isAdmin) {
 			dispatch(listUsers());
 		} else {
 			history.push('/');
 		}
-	}, [dispatch, userDetails, history]);
+	}, [dispatch, userDetails, history, deleteSuccess]);
 
 	const handleUserDelete = (id) => {
-		console.log('delete user');
+		dispatch(deleteUser(id));
 	};
 
 	return (
@@ -65,7 +72,7 @@ const UserList = ({ history }) => {
 									<Button
 										variant='danger'
 										className='btn-sm'
-										onClick={handleUserDelete(_id)}>
+										onClick={() => handleUserDelete(_id)}>
 										Delete
 									</Button>
 								</td>

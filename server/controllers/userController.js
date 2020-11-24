@@ -90,7 +90,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
 //get all users
 //get request to /users
-//private: admin onlu
+//private: admin only
 const getUsers = asyncHandler(async (req, res) => {
 	const users = await User.find({});
 
@@ -102,4 +102,26 @@ const getUsers = asyncHandler(async (req, res) => {
 	}
 });
 
-export { authUser, getUserProfile, registerUser, updateUserProfile, getUsers };
+//delete user
+//delete request
+//private: admin only
+const deleteUser = asyncHandler(async (req, res) => {
+	const user = await User.findById(req.params.id);
+
+	if (user) {
+		await user.remove();
+		res.json({ message: 'User deleted' });
+	} else {
+		res.status(404);
+		throw new Error('User not found');
+	}
+});
+
+export {
+	authUser,
+	getUserProfile,
+	registerUser,
+	updateUserProfile,
+	getUsers,
+	deleteUser,
+};
