@@ -88,4 +88,18 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 	}
 });
 
-export { authUser, getUserProfile, registerUser, updateUserProfile };
+//get all users
+//get request to /users
+//private: admin onlu
+const getUsers = asyncHandler(async (req, res) => {
+	const users = await User.find({});
+
+	if (users) {
+		res.json(users);
+	} else {
+		res.status(404);
+		throw new Error('No users found');
+	}
+});
+
+export { authUser, getUserProfile, registerUser, updateUserProfile, getUsers };
