@@ -15,6 +15,9 @@ import {
 	USER_UPDATE_DETAILS_SUCCESS,
 	USER_UPDATE_DETAILS_REQ,
 	USER_DETAILS_RESET,
+	USER_LIST_REQ,
+	USER_LIST_SUCCESS,
+	USER_LIST_FAIL,
 } from '../constants/types';
 
 import { ORDER_USERLIST_RESET } from '../constants/types';
@@ -167,6 +170,39 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
 	} catch (err) {
 		dispatch({
 			type: USER_UPDATE_DETAILS_FAIL,
+			payload: err.response,
+		});
+	}
+};
+
+export const listUsers = () => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: USER_LIST_REQ,
+		});
+
+		const {
+			userLogin: { userDetails },
+		} = getState();
+
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${userDetails.token}`,
+			},
+		};
+
+		const { data } = await axios.get(`/api/users`, config);
+
+		dispatch({
+			type: USER_LIST_SUCCESS,
+			payload: data,
+		});
+
+		// localStorage.setItem('userDetails', JSON.stringify(data));
+	} catch (err) {
+		dispatch({
+			type: USER_LIST_FAIL,
 			payload: err.response,
 		});
 	}

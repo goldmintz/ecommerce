@@ -18,6 +18,7 @@ import Shipping from './components/pages/CheckoutProcess/Shipping';
 import PaymentMethod from './components/pages/CheckoutProcess/PaymentMethod';
 import CreateOrder from './components/pages/CheckoutProcess/CreateOrder';
 import ViewOrder from './components/pages/CheckoutProcess/ViewOrder';
+import UserList from './components/pages/UserList';
 
 const App = () => {
 	return (
@@ -37,6 +38,7 @@ const App = () => {
 					<Route path='/register' component={Register} />
 					<Route path='/profile' component={Profile} />
 					<Route path='/cart/:id?' component={Cart} />
+					<Route path='/admin/users' component={UserList} />
 					<Route exact path='/' component={Home} />
 				</Container>
 			</main>
