@@ -22,7 +22,9 @@ const UserList = ({ history }) => {
 		loading: deleteLoading,
 		error: deleteError,
 		success: deleteSuccess,
-	} = userLogin;
+	} = userDelete;
+
+	console.log(deleteSuccess);
 
 	useEffect(() => {
 		if (userDetails && userDetails.isAdmin) {
@@ -34,6 +36,7 @@ const UserList = ({ history }) => {
 
 	const handleUserDelete = (id) => {
 		dispatch(deleteUser(id));
+		console.log(id);
 	};
 
 	return (
@@ -72,7 +75,7 @@ const UserList = ({ history }) => {
 									<Button
 										variant='danger'
 										className='btn-sm'
-										onClick={() => handleUserDelete(_id)}>
+										onClick={(e) => handleUserDelete(_id)}>
 										Delete
 									</Button>
 								</td>

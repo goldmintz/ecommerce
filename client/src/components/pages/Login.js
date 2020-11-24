@@ -25,7 +25,6 @@ const Login = ({ location, history }) => {
 	//If user is logged in, redirect
 	useEffect(() => {
 		if (userDetails) {
-			console.log(userDetails);
 			history.push(redirect);
 		}
 	}, [history, userDetails, redirect]);
