@@ -24,8 +24,6 @@ const UserList = ({ history }) => {
 		success: deleteSuccess,
 	} = userDelete;
 
-	console.log(deleteSuccess);
-
 	useEffect(() => {
 		if (userDetails && userDetails.isAdmin) {
 			dispatch(listUsers());
@@ -35,7 +33,9 @@ const UserList = ({ history }) => {
 	}, [dispatch, userDetails, history, deleteSuccess]);
 
 	const handleUserDelete = (id) => {
-		dispatch(deleteUser(id));
+		if (window.confirm(`Are you sure you want to delete user ${id}?`)) {
+			dispatch(deleteUser(id));
+		}
 		console.log(id);
 	};
 
@@ -67,7 +67,7 @@ const UserList = ({ history }) => {
 								</td>
 								<td>{isAdmin ? 'Yes' : 'No'}</td>
 								<td>
-									<LinkContainer to={`/user/user._id/edit`}>
+									<LinkContainer to={`/admin/user/${_id}/edit`}>
 										<Button variant='light' className='btn-sm'>
 											Edit
 										</Button>

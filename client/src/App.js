@@ -19,6 +19,7 @@ import PaymentMethod from './components/pages/CheckoutProcess/PaymentMethod';
 import CreateOrder from './components/pages/CheckoutProcess/CreateOrder';
 import ViewOrder from './components/pages/CheckoutProcess/ViewOrder';
 import UserList from './components/pages/UserList';
+import AdminEditUser from './components/pages/AdminEditUser';
 
 const App = () => {
 	return (
@@ -39,6 +40,7 @@ const App = () => {
 					<Route path='/profile' component={Profile} />
 					<Route path='/cart/:id?' component={Cart} />
 					<Route path='/admin/users' component={UserList} />
+					<Route path='/admin/user/:id/edit' component={AdminEditUser} />
 					<Route exact path='/' component={Home} />
 				</Container>
 			</main>
