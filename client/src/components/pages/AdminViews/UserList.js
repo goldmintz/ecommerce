@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { listUsers, deleteUser } from '../../actions/userActions';
+import { listUsers, deleteUser } from '../../../actions/userActions';
 
 //components
-import Message from '../layout/Message';
-import Loader from '../layout/Loader';
+import Message from '../../layout/Message';
+import Loader from '../../layout/Loader';
 
 const UserList = ({ history }) => {
 	const dispatch = useDispatch();
