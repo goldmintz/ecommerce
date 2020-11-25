@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUserProfile } from '../../actions/userActions';
+import { getUserProfile, updateUserByAdmin } from '../../actions/userActions';
 
 //components
 import Message from '../layout/Message';
@@ -22,8 +22,6 @@ const AdminEditUser = ({ match, history }) => {
 
 	const { loading, error, user } = userProfile;
 
-	console.log(user.name);
-
 	useEffect(() => {
 		if (!user.name || user._id !== userId) {
 			dispatch(getUserProfile(userId));
@@ -32,14 +30,21 @@ const AdminEditUser = ({ match, history }) => {
 			setEmail(user.email);
 			setIsAdmin(user.isAdmin);
 		}
-	}, [dispatch, user]);
-
-	console.log(userId);
+	}, [dispatch, user, userId]);
 
 	const handleSubmit = (e) => {
+		let updatedUser = {
+			_id: user._id,
+			name,
+			email,
+			isAdmin,
+		};
 		e.preventDefault();
+		dispatch(updateUserByAdmin(updatedUser));
+		history.push('/admin/users');
 	};
 
+	console.log(name, email, isAdmin);
 	return (
 		<>
 			<Link to='admin/users' className='btn btn-light my-3'>
@@ -78,7 +83,10 @@ const AdminEditUser = ({ match, history }) => {
 							onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
 					</Form.Group>
 
-					<Button type='submit' variant='primary'>
+					<Button
+						type='submit'
+						variant='primary'
+						onClick={(e) => handleSubmit(e)}>
 						Update
 					</Button>
 				</Form>

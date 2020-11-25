@@ -22,6 +22,9 @@ import {
 	USER_DELETE_SUCCESS,
 	USER_DELETE_FAIL,
 	ORDER_USERLIST_RESET,
+	USER_UPDATE_ADMIN_REQ,
+	USER_UPDATE_ADMIN_SUCCESS,
+	USER_UPDATE_ADMIN_FAIL,
 } from '../constants/types';
 
 export const login = (email, password) => async (dispatch) => {
@@ -233,6 +236,42 @@ export const deleteUser = (id) => async (dispatch, getState) => {
 	} catch (err) {
 		dispatch({
 			type: USER_DELETE_FAIL,
+			payload: err.response,
+		});
+	}
+};
+
+export const updateUserByAdmin = (user) => async (dispatch, getState) => {
+	console.log(user);
+	try {
+		dispatch({
+			type: USER_UPDATE_ADMIN_REQ,
+		});
+
+		const {
+			userLogin: { userDetails },
+		} = getState();
+
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${userDetails.token}`,
+			},
+		};
+
+		const { data } = await axios.put(`/api/users/${user._id}`, user, config);
+
+		console.log(data);
+		dispatch({
+			type: USER_UPDATE_ADMIN_SUCCESS,
+		});
+		dispatch({
+			type: USER_DETAILS_SUCCESS,
+			payload: data,
+		});
+	} catch (err) {
+		dispatch({
+			type: USER_UPDATE_ADMIN_FAIL,
 			payload: err.response,
 		});
 	}
