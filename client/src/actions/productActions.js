@@ -7,6 +7,9 @@ import {
 	PRODUCT_DETAILS_REQ,
 	PRODUCT_DETAILS_SUCCESS,
 	PRODUCT_DETAILS_FAIL,
+	PRODUCT_DELETE_REQ,
+	PRODUCT_DELETE_SUCCESS,
+	PRODUCT_DELETE_FAIL,
 } from '../constants/types.js';
 
 export const listProducts = () => async (dispatch) => {
@@ -41,6 +44,35 @@ export const listProductDetails = (id) => async (dispatch) => {
 		dispatch({
 			type: PRODUCT_DETAILS_FAIL,
 			payload: err.response,
+		});
+	}
+};
+
+export const deleteProduct = (id) => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: PRODUCT_DELETE_REQ,
+		});
+
+		const {
+			userLogin: { userDetails },
+		} = getState();
+
+		const config = {
+			headers: {
+				Authorization: `Bearer ${userDetails.token}`,
+			},
+		};
+
+		await axios.delete(`/api/products/${id}`, config);
+
+		dispatch({
+			type: PRODUCT_DELETE_SUCCESS,
+		});
+	} catch (err) {
+		dispatch({
+			type: PRODUCT_DELETE_FAIL,
+			payload: err.message,
 		});
 	}
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { listProducts } from '../../../actions/productActions';
+import { listProducts, deleteProduct } from '../../../actions/productActions';
 
 //components
 import Message from '../../layout/Message';
@@ -17,17 +17,20 @@ const ProductList = ({ history, match }) => {
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userDetails } = userLogin;
 
+	const deleteState = useSelector((state) => state.productDelete);
+	const { success: deleteSuccess } = deleteState;
+
 	useEffect(() => {
 		if (userDetails && userDetails.isAdmin) {
 			dispatch(listProducts());
 		} else {
 			history.push('/login');
 		}
-	}, [dispatch, userDetails, history]);
+	}, [dispatch, userDetails, history, deleteSuccess]);
 
-	const handleProductDelete = (id) => {
-		if (window.confirm(`Are you sure you want to delete user ${id}?`)) {
-			// DELETE PRODUCTS: dispatch(deleteUser(id));
+	const handleProductDelete = (id, name) => {
+		if (window.confirm(`Are you sure you want to delete ${name}?`)) {
+			dispatch(deleteProduct(id));
 		}
 	};
 
@@ -82,7 +85,7 @@ const ProductList = ({ history, match }) => {
 										<Button
 											variant='danger'
 											className='btn-sm'
-											onClick={(e) => handleProductDelete(_id)}>
+											onClick={(e) => handleProductDelete(_id, name)}>
 											Delete
 										</Button>
 									</td>

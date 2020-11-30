@@ -24,13 +24,16 @@ const UserList = ({ history }) => {
 		success: deleteSuccess,
 	} = userDelete;
 
+	const userUpdate = useSelector((state) => state.userUpdatebyAdmin);
+	const { success: updateSuccess } = userUpdate;
+
 	useEffect(() => {
 		if (userDetails && userDetails.isAdmin) {
 			dispatch(listUsers());
 		} else {
 			history.push('/');
 		}
-	}, [dispatch, userDetails, history, deleteSuccess]);
+	}, [dispatch, userDetails, history, deleteSuccess, updateSuccess]);
 
 	const handleUserDelete = (id) => {
 		if (window.confirm(`Are you sure you want to delete user ${id}?`)) {
