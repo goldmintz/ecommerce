@@ -10,6 +10,10 @@ import {
 	PRODUCT_DELETE_REQ,
 	PRODUCT_DELETE_SUCCESS,
 	PRODUCT_DELETE_FAIL,
+	PRODUCT_CREATE_REQ,
+	PRODUCT_CREATE_SUCCESS,
+	PRODUCT_CREATE_FAIL,
+	PRODUCT_CREATE_RESET,
 } from '../constants/types.js';
 
 export const listProducts = () => async (dispatch) => {
@@ -72,6 +76,36 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
 	} catch (err) {
 		dispatch({
 			type: PRODUCT_DELETE_FAIL,
+			payload: err.message,
+		});
+	}
+};
+
+export const createProduct = () => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: PRODUCT_CREATE_REQ,
+		});
+
+		const {
+			userLogin: { userDetails },
+		} = getState();
+
+		const config = {
+			headers: {
+				Authorization: `Bearer ${userDetails.token}`,
+			},
+		};
+
+		const { data } = await axios.post(`/api/products`, {}, config);
+
+		dispatch({
+			type: PRODUCT_CREATE_SUCCESS,
+			payload: data,
+		});
+	} catch (err) {
+		dispatch({
+			type: PRODUCT_CREATE_FAIL,
 			payload: err.message,
 		});
 	}

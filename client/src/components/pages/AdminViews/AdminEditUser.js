@@ -50,7 +50,7 @@ const AdminEditUser = ({ match, history }) => {
 	console.log(name, email, isAdmin);
 	return (
 		<>
-			<Link to='admin/users' className='btn btn-light my-3'>
+			<Link to='/admin/users' className='btn btn-light my-3'>
 				Go Back
 			</Link>
 			<FormContainer>

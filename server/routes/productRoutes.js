@@ -6,15 +6,18 @@ import {
 	getProducts,
 	getProductById,
 	deleteProduct,
+	updateProduct,
+	createProduct,
 } from '../controllers/productController.js';
 
-//Fetch all products
-router.route('/').get(getProducts);
+//Fetch all products and create new
+router.route('/').get(getProducts).post(protect, isAdmin, createProduct);
 
 //Fetch product by id (and delete, create)
 router
 	.route('/:id')
 	.get(getProductById)
-	.delete(protect, isAdmin, deleteProduct);
+	.delete(protect, isAdmin, deleteProduct)
+	.put(protect, isAdmin, updateProduct);
 
 export default router;

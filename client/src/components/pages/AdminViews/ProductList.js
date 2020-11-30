@@ -2,7 +2,16 @@ import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { listProducts, deleteProduct } from '../../../actions/productActions';
+import {
+	listProducts,
+	deleteProduct,
+	createProduct,
+} from '../../../actions/productActions';
+
+import {
+	PRODUCT_CREATE_RESET,
+	PRODUCT_CREATE_SUCCESS,
+} from '../../../constants/types';
 
 //components
 import Message from '../../layout/Message';
@@ -20,13 +29,29 @@ const ProductList = ({ history, match }) => {
 	const deleteState = useSelector((state) => state.productDelete);
 	const { success: deleteSuccess } = deleteState;
 
+	const createState = useSelector((state) => state.productCreate);
+	const { success: createSuccess, product: createdProduct } = createState;
+
 	useEffect(() => {
-		if (userDetails && userDetails.isAdmin) {
-			dispatch(listProducts());
-		} else {
+		dispatch({
+			type: PRODUCT_CREATE_RESET,
+		});
+		if (!userDetails.isAdmin) {
 			history.push('/login');
 		}
-	}, [dispatch, userDetails, history, deleteSuccess]);
+		if (createSuccess) {
+			history.push(`/admin/product/${createdProduct._id}/edit`);
+		} else {
+			dispatch(listProducts());
+		}
+	}, [
+		dispatch,
+		userDetails,
+		history,
+		deleteSuccess,
+		createdProduct,
+		createSuccess,
+	]);
 
 	const handleProductDelete = (id, name) => {
 		if (window.confirm(`Are you sure you want to delete ${name}?`)) {
@@ -35,7 +60,7 @@ const ProductList = ({ history, match }) => {
 	};
 
 	const handleCreateProduct = () => {
-		console.log('nothing');
+		dispatch(createProduct());
 	};
 
 	return (
@@ -65,26 +90,43 @@ const ProductList = ({ history, match }) => {
 							<th>Size</th>
 							<th>Category</th>
 							<th>Description</th>
+							<th>Count In Stock</th>
 						</tr>
 					</thead>
 					<tbody>
 						{products.map(
-							({ _id, name, price, size, category, description }) => (
+							({
+								_id,
+								name,
+								price,
+								size,
+								category,
+								description,
+								countInStock,
+							}) => (
 								<tr key={_id}>
 									<td>{_id}</td>
 									<td>{name}</td>
 									<td>${price}</td>
 									<td>{category}</td>
 									<td>{description}</td>
+									<td>{countInStock}</td>
 									<td>
 										<LinkContainer to={`/admin/product/${_id}/edit`}>
-											<Button variant='light' className='btn-sm'>
+											<Button
+												variant='light'
+												className='btn-sm'
+												style={{
+													boxSizing: 'content-box',
+													display: 'inline=-block',
+													minWidth: '36.5px',
+												}}>
 												Edit
 											</Button>
 										</LinkContainer>
 										<Button
 											variant='danger'
-											className='btn-sm'
+											className='btn-sm py-3'
 											onClick={(e) => handleProductDelete(_id, name)}>
 											Delete
 										</Button>
