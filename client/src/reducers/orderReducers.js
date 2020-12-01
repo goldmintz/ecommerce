@@ -13,6 +13,10 @@ import {
 	ORDER_USERLIST_SUCCESS,
 	ORDER_USERLIST_FAIL,
 	ORDER_USERLIST_RESET,
+	ORDER_ADMINLIST_REQ,
+	ORDER_ADMINLIST_SUCCESS,
+	ORDER_ADMINLIST_FAIL,
+	ORDER_ADMINLIST_RESET,
 } from '../constants/types';
 
 export const orderCreateReducer = (state = {}, action) => {
@@ -106,6 +110,30 @@ export const orderUserListReducer = (state = { orders: [] }, action) => {
 			return {
 				orders: [],
 			};
+		default:
+			return state;
+	}
+};
+
+export const orderAdminListReducer = (state = { orders: [] }, action) => {
+	switch (action.type) {
+		case ORDER_ADMINLIST_REQ:
+			return {
+				loading: true,
+			};
+		case ORDER_ADMINLIST_SUCCESS:
+			return {
+				loading: false,
+				success: true,
+				orders: action.payload,
+			};
+		case ORDER_ADMINLIST_FAIL:
+			return {
+				loading: false,
+				error: action.payload,
+			};
+		case ORDER_ADMINLIST_RESET:
+			return {};
 		default:
 			return state;
 	}

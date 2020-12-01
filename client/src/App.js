@@ -24,6 +24,7 @@ import UserList from './components/pages//AdminViews/UserList';
 import AdminEditUser from './components/pages/AdminViews/AdminEditUser';
 import ProductList from './components/pages/AdminViews/ProductList';
 import EditProduct from './components/pages/AdminViews/EditProduct';
+import OrderList from './components/pages/AdminViews/OrderList';
 
 const App = () => {
 	return (
@@ -46,6 +47,7 @@ const App = () => {
 					<Route path='/admin/users' component={UserList} />
 					<Route path='/admin/product/:id/edit' component={EditProduct} />
 					<Route path='/admin/products' component={ProductList} />
+					<Route path='/admin/orders' component={OrderList} />
 					<Route path='/admin/user/:id/edit' component={AdminEditUser} />
 					<Route exact path='/' component={Home} />
 				</Container>
