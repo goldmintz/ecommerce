@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { listProductDetails } from '../../../actions/productActions';
+import {
+	listProductDetails,
+	updateProduct,
+} from '../../../actions/productActions';
+import { PRODUCT_UPDATE_RESET } from '../../../constants/types';
 
 //components
 
@@ -22,25 +26,40 @@ const EditProduct = ({ match, history }) => {
 	const dispatch = useDispatch();
 
 	const productDetails = useSelector((state) => state.productDetail);
+	const productUpdate = useSelector((state) => state.productUpdate);
 
 	const { loading, error, product } = productDetails;
+	const {
+		loading: updateLoading,
+		error: updateError,
+		success: updateSuccess,
+	} = productDetails;
 
 	useEffect(() => {
-		if (!product.name || product._id !== productId) {
-			dispatch(listProductDetails(productId));
+		if (updateSuccess) {
+			dispatch({
+				type: PRODUCT_UPDATE_RESET,
+			});
+
+			history.push('/admin/products');
 		} else {
-			setName(product.name);
-			setPrice(product.price);
-			setImage(product.image);
-			setSize(product.size);
-			setCategory(product.category);
-			setDescription(product.description);
-			setCountInStock(product.countInStock);
+			if (!product.name || product._id !== productId) {
+				dispatch(listProductDetails(productId));
+			} else {
+				setName(product.name);
+				setPrice(product.price);
+				setImage(product.image);
+				setSize(product.size);
+				setCategory(product.category);
+				setDescription(product.description);
+				setCountInStock(product.countInStock);
+			}
 		}
-	}, [dispatch, product, productId]);
+	}, [dispatch, product, productId, updateSuccess, history]);
 
 	const handleSubmit = (e) => {
 		let updatedProduct = {
+			_id: productId,
 			name,
 			price,
 			image,
@@ -51,8 +70,11 @@ const EditProduct = ({ match, history }) => {
 		};
 		e.preventDefault();
 		console.log(updatedProduct);
+		dispatch(updateProduct(updatedProduct));
+		history.push('/admin/products');
 	};
 
+	console.log(product.name);
 	return (
 		// TODO: Add dropdowns for presets, like size and category
 		// TODO: Add dollar sign for price input
@@ -61,7 +83,7 @@ const EditProduct = ({ match, history }) => {
 				Go Back
 			</Link>
 			<FormContainer>
-				<h1>Edit Product</h1>
+				<h1>Update Product</h1>
 				<Form onSubmit={handleSubmit}>
 					<Form.Group controlId='name'>
 						<Form.Label>Name</Form.Label>

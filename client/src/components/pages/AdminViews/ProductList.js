@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	listProducts,
 	deleteProduct,
 	createProduct,
+	updateProduct,
 } from '../../../actions/productActions';
 
 import {
@@ -32,6 +34,9 @@ const ProductList = ({ history, match }) => {
 	const createState = useSelector((state) => state.productCreate);
 	const { success: createSuccess, product: createdProduct } = createState;
 
+	const updateState = useSelector((state) => state.productUpdate);
+	const { success: updateSuccess } = updateState;
+
 	useEffect(() => {
 		dispatch({
 			type: PRODUCT_CREATE_RESET,
@@ -51,6 +56,7 @@ const ProductList = ({ history, match }) => {
 		deleteSuccess,
 		createdProduct,
 		createSuccess,
+		updateSuccess,
 	]);
 
 	const handleProductDelete = (id, name) => {
@@ -84,49 +90,36 @@ const ProductList = ({ history, match }) => {
 				<Table bordered striped responsive className='table-sm'>
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th>ID (Last 5)</th>
 							<th>Name</th>
-							<th>Price</th>
-							<th>Size</th>
 							<th>Category</th>
 							<th>Description</th>
-							<th>Count In Stock</th>
+							<th>Price</th>
+							<th># In Stock</th>
+							<th>Edit/Delete</th>
 						</tr>
 					</thead>
 					<tbody>
 						{products.map(
-							({
-								_id,
-								name,
-								price,
-								size,
-								category,
-								description,
-								countInStock,
-							}) => (
+							({ _id, name, price, category, description, countInStock }) => (
 								<tr key={_id}>
-									<td>{_id}</td>
-									<td>{name}</td>
-									<td>${price}</td>
+									<td>{_id.slice(0, 5)}</td>
+									<td>
+										<Link to={`/product/${_id}`}>{name}</Link>
+									</td>
 									<td>{category}</td>
-									<td>{description}</td>
+									<td>{`${description.substring(0, 15)}...`}</td>
+									<td>${price}</td>
 									<td>{countInStock}</td>
 									<td>
 										<LinkContainer to={`/admin/product/${_id}/edit`}>
-											<Button
-												variant='light'
-												className='btn-sm'
-												style={{
-													boxSizing: 'content-box',
-													display: 'inline=-block',
-													minWidth: '36.5px',
-												}}>
+											<Button variant='light' className='btn-sm'>
 												Edit
 											</Button>
 										</LinkContainer>
 										<Button
 											variant='danger'
-											className='btn-sm py-3'
+											className='btn-sm'
 											onClick={(e) => handleProductDelete(_id, name)}>
 											Delete
 										</Button>
