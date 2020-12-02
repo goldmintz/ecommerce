@@ -7,16 +7,18 @@ import Product from '../features/Product';
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
 
-const HomePage = () => {
+const HomePage = ({ match }) => {
 	// using hooks instead of connect!
 	const dispatch = useDispatch();
 	const productList = useSelector((state) => state.productList);
 
 	const { products, loading, error } = productList;
 
+	const searchTerm = match.params.searchTerm;
+
 	useEffect(() => {
-		dispatch(listProducts());
-	}, [dispatch]);
+		dispatch(listProducts(searchTerm));
+	}, [dispatch, searchTerm]);
 
 	return (
 		<>
