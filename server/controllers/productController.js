@@ -18,12 +18,13 @@ const getProductById = asyncHandler(async (req, res) => {
 
 const createReview = asyncHandler(async (req, res) => {
 	const { rating, comment } = req.body;
+	console.log(req.user._id);
 
 	const product = await Product.findById(req.params.id);
 
 	if (product) {
 		const existingReviews = product.reviews.find(
-			(r) => r.user.toString() === req.user._id.toString(),
+			(review) => review.user.toString() === req.user._id.toString(),
 		);
 
 		if (existingReviews) {
