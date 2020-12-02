@@ -16,6 +16,9 @@ import {
 	PRODUCT_UPDATE_REQ,
 	PRODUCT_UPDATE_SUCCESS,
 	PRODUCT_UPDATE_FAIL,
+	PRODUCT_CREATEREVIEW_REQ,
+	PRODUCT_CREATEREVIEW_SUCCESS,
+	PRODUCT_CREATEREVIEW_FAIL,
 } from '../constants/types.js';
 
 export const listProducts = () => async (dispatch) => {
@@ -143,6 +146,40 @@ export const updateProduct = (product) => async (dispatch, getState) => {
 	} catch (err) {
 		dispatch({
 			type: PRODUCT_UPDATE_FAIL,
+			payload: err.message,
+		});
+	}
+};
+
+export const createReview = (id, review) => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: PRODUCT_CREATEREVIEW_REQ,
+		});
+
+		const {
+			userLogin: { userDetails },
+		} = getState();
+
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${userDetails.token}`,
+			},
+		};
+
+		const { data } = await axios.post(
+			`/api/products/${id}/reviews`,
+			review,
+			config,
+		);
+
+		dispatch({
+			type: PRODUCT_CREATEREVIEW_SUCCESS,
+		});
+	} catch (err) {
+		dispatch({
+			type: PRODUCT_CREATEREVIEW_FAIL,
 			payload: err.message,
 		});
 	}
