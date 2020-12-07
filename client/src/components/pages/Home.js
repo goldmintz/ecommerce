@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Carousel } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
+import ProductCarousel from '../layout/ProductCarousel';
 import Product from '../features/Product';
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
@@ -22,6 +23,7 @@ const HomePage = ({ match }) => {
 
 	return (
 		<>
+			{!searchTerm && <ProductCarousel />}
 			<h1>Latest Products</h1>
 			{loading ? (
 				<Loader />
