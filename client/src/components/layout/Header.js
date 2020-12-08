@@ -18,29 +18,30 @@ const Header = () => {
 	return (
 		<header>
 			<Navbar
-				bg='dark'
-				variant='dark'
+				bg='light'
+				variant='light'
 				expand='lg'
 				collapseOnSelect
-				sticky='top'>
+				fixed='top'>
 				<Container>
 					<LinkContainer to='/'>
-						<Navbar.Brand>eCommerce</Navbar.Brand>
+						<Navbar.Brand>Sprouts</Navbar.Brand>
 					</LinkContainer>
-
+					{/*Navbar.Toggle adds hamburger on smaller viewports */}
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Route render={({ history }) => <SearchBox history={history} />} />
 						<Nav className='ml-auto'>
-							<LinkContainer to='/cart'>
-								<Nav.Link>
-									<i className='fas fa-shopping-cart'></i>Cart
-								</Nav.Link>
-							</LinkContainer>
 							{userDetails ? (
-								<NavDropdown title={userDetails.name} id='username'>
+								<NavDropdown
+									title={
+										<span>
+											<i class='far fa-user'></i>
+										</span>
+									}
+									id='username'>
 									<LinkContainer to='/profile'>
-										<NavDropdown.Item>Profile</NavDropdown.Item>
+										<NavDropdown.Item>Account</NavDropdown.Item>
 									</LinkContainer>
 									<NavDropdown.Item onClick={handleLogout}>
 										Logout
@@ -66,6 +67,12 @@ const Header = () => {
 									</LinkContainer>
 								</NavDropdown>
 							)}
+
+							<LinkContainer to='/cart'>
+								<Nav.Link>
+									<i className='fas fa-shopping-cart'></i>
+								</Nav.Link>
+							</LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

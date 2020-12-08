@@ -1,4 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+}
+
 h1 {
 	margin-top: 0.5rem;
 }
 
+/* Header & Nav  */
+
+.navbar {
+	max-height: 60px;
+	z-index: 1;
+	-webkit-box-shadow: 0px -1px 21px -7px #000000;
+	box-shadow: 0px -1px 21px -7px #000000;
+	color: black;
+}
+
+.searchInput {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 2px solid black;
+}

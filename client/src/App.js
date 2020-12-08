@@ -30,7 +30,7 @@ const App = () => {
 	return (
 		<Router>
 			<Header />
-			<main className='py-3'>
+			<main>
 				<Container>
 					<Switch>
 						<Route path='/order/:id' component={ViewOrder} />

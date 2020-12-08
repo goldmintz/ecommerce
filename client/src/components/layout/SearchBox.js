@@ -18,11 +18,12 @@ const SearchBox = ({ history }) => {
 				type='text'
 				name='term'
 				placeholder='Search products'
-				className='mr-sm-2 ml-sm-5'
+				className='mr-sm-2 ml-sm-5 searchInput'
+				
 				onChange={(e) => setSearchTerm(e.target.value)}></Form.Control>
-			<Button type='submit' variant='outline-success' className='p-3'>
+			{/*<Button type='submit' variant='outline-success' className='p-3'> 
 				Search
-			</Button>
+			</Button> */}
 		</Form>
 	);
 };
