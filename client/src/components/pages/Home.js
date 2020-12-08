@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
 import ProductCarousel from '../layout/ProductCarousel';
@@ -24,19 +24,40 @@ const HomePage = ({ match }) => {
 	return (
 		<>
 			{!searchTerm && <ProductCarousel />}
-			<h1>Latest Products</h1>
+			<Container fluid>
+				<Row
+					className='justify-content-md-center'
+					style={{ marginBottom: '20px' }}>
+					<Col className='home-filterCol'>
+						<div
+							className='home-productFilter'
+							onClick={(e) => console.log(e.currentTarget)}>
+							Fresh Picks
+						</div>
+					</Col>
+					<Col className='home-filterCol'>
+						<div className='home-productFilter'>Best Sellers</div>
+					</Col>
+					<Col className='home-filterCol'>
+						<div className='home-productFilter'>On Sale</div>
+					</Col>
+				</Row>
+			</Container>
+			<hr />
 			{loading ? (
 				<Loader />
 			) : error ? (
 				<Message variant='danger' />
 			) : (
-				<Row>
-					{products.map((product) => (
-						<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-							<Product product={product} />
-						</Col>
-					))}
-				</Row>
+				<Container>
+					<Row>
+						{products.map((product) => (
+							<Col key={product._id} xs={12} md={6} lg={4} xl={4}>
+								<Product product={product} />
+							</Col>
+						))}
+					</Row>
+				</Container>
 			)}
 		</>
 	);

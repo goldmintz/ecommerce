@@ -36,7 +36,7 @@ const Header = () => {
 								<NavDropdown
 									title={
 										<span>
-											<i class='far fa-user'></i>
+											<i className='far fa-user'></i>
 										</span>
 									}
 									id='username'>

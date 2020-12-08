@@ -9,8 +9,18 @@ h1 {
 	margin-top: 0.5rem;
 }
 
-/* Header & Nav  */
+h1,
+h2,
+h3 {
+	text-transform: capitalize;
+	letter-spacing: normal;
+}
 
+hr {
+	border-color: green;
+}
+
+/* Header & Nav  */
 .navbar {
 	max-height: 60px;
 	z-index: 1;
@@ -24,4 +34,61 @@ h1 {
 	outline: 0;
 	background: transparent;
 	border-bottom: 2px solid black;
+}
+
+/* HOMEPAGE */
+
+.home-filterCol {
+	text-align: center;
+	padding: 0px;
+}
+
+.home-productFilter {
+	font-weight: 400;
+	font-size: 24px;
+	letter-spacing: 0;
+	color: black;
+}
+.home-productfilter:hover {
+	transition: animate;
+}
+
+.carousel-indicators,
+.carousel-indicators li {
+	cursor: default;
+	pointer-events: none;
+}
+
+/* HOMEPAGE : PRODUCT CARDS */
+
+.card-body a:hover {
+	text-decoration: none;
+}
+.card-title {
+	font-size: 18px;
+	color: grey;
+	letter-spacing: 0;
+	font-weight: 400;
+}
+
+.card-title:hover {
+	color: green;
+}
+h3.card-text {
+	font-size: 16px;
+	padding-top: 2px;
+	/* font-style: italic; */
+}
+
+.card-text.description {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.card-text.price {
+	font-weight: bold;
+	margin-top: 5px;
+}
+.card-body .button {
+	color: pink;
 }
