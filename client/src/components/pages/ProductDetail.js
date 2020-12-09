@@ -47,6 +47,8 @@ const ProductDetail = ({ match, history }) => {
 			});
 		}
 		dispatch(listProductDetails(match.params.id));
+		//add in case user scrolls down and navigates away, then returns
+		window.scrollTo(0, 0);
 	}, [dispatch, match, reviewSuccess]);
 
 	const [quantity, setQuantity] = useState(1);

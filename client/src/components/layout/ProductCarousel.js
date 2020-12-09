@@ -5,9 +5,9 @@ const ProductCarousel = () => {
 	return (
 		<Container
 			style={{
-				maxHeight: '100vh',
+				height: '100vh',
+				width: '100vw',
 				margin: '70px 0px 60px 0px',
-				padding: '0px',
 			}}>
 			<Carousel indicators={false}>
 				<Carousel.Item interval={7000}>

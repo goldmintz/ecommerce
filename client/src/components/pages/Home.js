@@ -5,6 +5,7 @@ import { listProducts } from '../../actions/productActions.js';
 
 import ProductCarousel from '../layout/ProductCarousel';
 import Product from '../features/Product';
+import BlogTeaser from '../layout/BlogTeaser';
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
 
@@ -49,15 +50,18 @@ const HomePage = ({ match }) => {
 			) : error ? (
 				<Message variant='danger' />
 			) : (
-				<Container>
-					<Row>
-						{products.map((product) => (
-							<Col key={product._id} xs={12} md={6} lg={4} xl={4}>
-								<Product product={product} />
-							</Col>
-						))}
-					</Row>
-				</Container>
+				<>
+					<Container fluid>
+						<Row>
+							{products.map((product) => (
+								<Col key={product._id} xs={12} md={6} lg={4} xl={4}>
+									<Product product={product} />
+								</Col>
+							))}
+						</Row>
+					</Container>
+					<BlogTeaser />
+				</>
 			)}
 		</>
 	);

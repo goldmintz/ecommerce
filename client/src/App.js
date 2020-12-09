@@ -31,7 +31,7 @@ const App = () => {
 		<Router>
 			<Header />
 			<main>
-				<Container>
+				<Container fluid>
 					<Switch>
 						<Route path='/order/:id' component={ViewOrder} />
 						<Route path='/order' component={CreateOrder} />

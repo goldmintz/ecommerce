@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 
 * {
 	font-family: 'Open Sans', sans-serif;
 	box-sizing: border-box;
+	color: #2d2923;
 }
 
-h1 {
-	margin-top: 0.5rem;
+main {
+	margin: 50px 20px;
+	letter-spacing: 0;
 }
 
 h1,
@@ -14,10 +17,27 @@ h2,
 h3 {
 	text-transform: capitalize;
 	letter-spacing: normal;
+	font-family: 'Playfair Display', serif;
+}
+h3 {
+	font-size: 28px;
 }
 
 hr {
 	border-color: green;
+	/* width: 75%; */
+}
+
+.subheading {
+	font-style: italic;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+footer {
+	height: 50px;
+	padding: 20px;
+	margin: 20px;
 }
 
 /* Header & Nav  */
@@ -44,10 +64,11 @@ hr {
 }
 
 .home-productFilter {
-	font-weight: 400;
-	font-size: 24px;
-	letter-spacing: 0;
+	font-weight: 600;
+	font-size: 26px;
 	color: black;
+	font-family: 'Playfair Display', serif;
+	-webkit-font-smoothing: antialiased;
 }
 .home-productfilter:hover {
 	transition: animate;
@@ -67,7 +88,6 @@ hr {
 .card-title {
 	font-size: 18px;
 	color: grey;
-	letter-spacing: 0;
 	font-weight: 400;
 }
 
@@ -91,4 +111,32 @@ h3.card-text {
 }
 .card-body .button {
 	color: pink;
+}
+
+.blog-teaser {
+	margin: 20px auto;
+}
+
+.blog-teaser img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.teaser-content {
+	margin-top: 20px;
+}
+
+.teaser-content > div {
+	margin-bottom: 10px;
+}
+
+.teaser-content a {
+	margin-top: 10px;
+	text-decoration: none;
+	font-size: 16px;
+}
+.teaser-content-heading {
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 10px;
 }
