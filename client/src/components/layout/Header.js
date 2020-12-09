@@ -23,7 +23,7 @@ const Header = () => {
 				expand='lg'
 				collapseOnSelect
 				fixed='top'>
-				<Container>
+				<Container className='nav-link-container'>
 					<LinkContainer to='/'>
 						<Navbar.Brand>Sprouts</Navbar.Brand>
 					</LinkContainer>
