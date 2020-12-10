@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Container } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
-import ProductCarousel from '../layout/ProductCarousel';
+import SeasonalProds from '../layout/SeasonalProds';
+import HomepageJumbo from '../layout/JumboTron';
 import Product from '../features/Product';
 import BlogTeaser from '../layout/BlogTeaser';
 import Message from '../layout/Message';
@@ -24,7 +25,7 @@ const HomePage = ({ match }) => {
 
 	return (
 		<>
-			{!searchTerm && <ProductCarousel />}
+			{!searchTerm && <HomepageJumbo />}
 			<Container fluid>
 				<Row
 					className='justify-content-md-center'
@@ -54,12 +55,13 @@ const HomePage = ({ match }) => {
 					<Container fluid>
 						<Row>
 							{products.map((product) => (
-								<Col key={product._id} xs={12} md={6} lg={4} xl={4}>
+								<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
 									<Product product={product} />
 								</Col>
 							))}
 						</Row>
 					</Container>
+					<SeasonalProds />
 					<BlogTeaser />
 				</>
 			)}

@@ -9,8 +9,6 @@
 
 main {
 	margin: 50px 20px;
-	letter-spacing: 0;
-	background-color: #fefffe;
 }
 
 h1,
@@ -19,7 +17,9 @@ h3 {
 	text-transform: capitalize;
 	letter-spacing: normal;
 	font-family: 'Playfair Display', serif;
+	padding-left: 15px;
 }
+
 h3 {
 	font-size: 28px;
 }
@@ -27,6 +27,10 @@ h3 {
 hr {
 	border-color: green;
 	/* width: 75%; */
+}
+
+.btn .btn-primary {
+	color: purple;
 }
 
 .subheading {
@@ -40,6 +44,9 @@ footer {
 	padding: 20px;
 	margin: 20px;
 }
+a:hover {
+	text-decoration: none;
+}
 
 /* Header & Nav  */
 
@@ -50,6 +57,7 @@ footer {
 
 .navbar-brand {
 	font-family: 'Playfair Display', serif;
+	letter-spacing: 0;
 	text-transform: capitalize;
 	font-size: 30px;
 	color: green;
@@ -75,6 +83,22 @@ footer {
 
 /* HOMEPAGE */
 
+.jumbotron.jumbotron-fluid {
+	background: #c2e2c3;
+	position: relative;
+	height: 80vh;
+}
+
+.jumbo-content.container {
+	margin: 20px;
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 100px;
+}
+
+.jumbo-content.container h1 {
+	padding-left: 0px;
+}
 .home-filterCol {
 	text-align: center;
 	padding: 0px;
@@ -85,49 +109,47 @@ footer {
 	font-size: 26px;
 	color: black;
 	font-family: 'Playfair Display', serif;
+	letter-spacing: 0;
 	-webkit-font-smoothing: antialiased;
 }
 .home-productfilter:hover {
 	transition: animate;
 }
 
-.carousel-indicators,
-.carousel-indicators li {
-	cursor: default;
-	pointer-events: none;
-}
-
 /* HOMEPAGE : PRODUCT CARDS */
 
+.card-body {
+	padding-left: 0px;
+	padding-right: 0px;
+}
 .card-body a:hover {
 	text-decoration: none;
 }
-.card-title {
-	font-size: 18px;
-	color: grey;
-	font-weight: 400;
+
+.name.card-text {
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	font-size: 1rem;
+	letter-spacing: 2;
 }
 
-.card-title:hover {
+.name.card-text:hover {
 	color: green;
 }
-h3.card-text {
-	font-size: 16px;
-	padding-top: 2px;
-	/* font-style: italic; */
-}
 
-.card-text.description {
-	font-weight: bold;
-	margin-bottom: 5px;
-}
-
-.card-text.price {
-	font-weight: bold;
-	margin-top: 5px;
-}
 .card-body .button {
 	color: pink;
+}
+
+.home-section.container-fluid {
+	margin-top: 20px;
+}
+
+.home-section.container-fluid h2 {
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 14px;
 }
 
 .blog-teaser {
@@ -152,8 +174,15 @@ h3.card-text {
 	text-decoration: none;
 	font-size: 16px;
 }
+
+.teaser-content a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .teaser-content-heading {
 	font-weight: bold;
 	font-size: 18px;
 	margin-bottom: 10px;
+	font-family: 'Playfair Display', serif;
 }

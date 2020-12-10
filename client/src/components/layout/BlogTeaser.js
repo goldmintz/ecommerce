@@ -5,23 +5,25 @@ import { Link } from 'react-router-dom';
 const BlogTeaser = () => {
 	const TeaserContent = ({ src, heading }) => (
 		<Col xs={6} md={4}>
-			<Image src={src} fluid />
-			<div className='teaser-content'>
-				<div className='teaser-content-heading'>{heading}</div>
-				<div>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
-					ipsum non metus semper placerat. Aenean mattis commodo sapien euismod
-					mattis.
+			<Link to={'/'}>
+				<Image src={src} fluid />
+				<div className='teaser-content'>
+					<div className='teaser-content-heading'>{heading}</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+						ipsum non metus semper placerat. Aenean mattis commodo sapien
+						euismod mattis.
+					</div>
+					<Link className='teaser-content-link' to='/'>
+						Read More
+					</Link>
 				</div>
-				<Link className='teaser-content-link' to='/'>
-					Read More
-				</Link>
-			</div>
+			</Link>
 		</Col>
 	);
 
 	return (
-		<Container fluid>
+		<Container fluid className='home-section'>
 			<Row className='justify-content-md-center'>
 				<Col style={{ textAlign: 'center' }}>
 					<h3>Our Blog</h3>
