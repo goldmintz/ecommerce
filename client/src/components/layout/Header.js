@@ -8,8 +8,11 @@ import SearchBox from './SearchBox';
 
 const Header = () => {
 	const dispatch = useDispatch();
+
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userDetails } = userLogin;
+	const cart = useSelector((state) => state.cart);
+	const { cartItems } = cart;
 
 	const handleLogout = () => {
 		dispatch(logout());
@@ -17,65 +20,68 @@ const Header = () => {
 
 	return (
 		<header>
-			<Navbar
-				bg='light'
-				variant='light'
-				expand='lg'
-				collapseOnSelect
-				fixed='top'>
-				<Container className='nav-link-container'>
-					<LinkContainer to='/'>
-						<Navbar.Brand>Sprouts</Navbar.Brand>
-					</LinkContainer>
-					{/*Navbar.Toggle adds hamburger on smaller viewports */}
-					<Navbar.Toggle aria-controls='basic-navbar-nav' />
-					<Navbar.Collapse id='basic-navbar-nav'>
-						<Route render={({ history }) => <SearchBox history={history} />} />
-						<Nav className='ml-auto'>
-							{userDetails ? (
-								<NavDropdown
-									title={
-										<span>
-											<i className='far fa-user'></i>
-										</span>
-									}
-									id='username'>
-									<LinkContainer to='/profile'>
-										<NavDropdown.Item>Account</NavDropdown.Item>
-									</LinkContainer>
-									<NavDropdown.Item onClick={handleLogout}>
-										Logout
-									</NavDropdown.Item>
-								</NavDropdown>
-							) : (
-								<LinkContainer to='/login'>
-									<Nav.Link>
-										<i className='fas fa-user'></i>Sign In
-									</Nav.Link>
-								</LinkContainer>
-							)}
-							{userDetails && userDetails.isAdmin && (
-								<NavDropdown title='Admin Links' id='admin-menu'>
-									<LinkContainer to='/admin/users'>
-										<NavDropdown.Item>Users</NavDropdown.Item>
-									</LinkContainer>
-									<LinkContainer to='/admin/products'>
-										<NavDropdown.Item>Products</NavDropdown.Item>
-									</LinkContainer>
-									<LinkContainer to='/admin/orders'>
-										<NavDropdown.Item>Orders</NavDropdown.Item>
-									</LinkContainer>
-								</NavDropdown>
-							)}
+			<Navbar collapseOnSelect fixed='top'>
+				<LinkContainer to='/'>
+					<Navbar.Brand>Sprouts</Navbar.Brand>
+				</LinkContainer>
 
-							<LinkContainer to='/cart'>
-								<Nav.Link>
-									<i className='fas fa-shopping-cart'></i>
-								</Nav.Link>
+				{/*Navbar.Toggle adds hamburger on smaller viewports */}
+				<Navbar.Toggle aria-controls='basic-navbar-nav' />
+				<Navbar.Collapse id='basic-navbar-nav'>
+					<LinkContainer to='/bestsellers'>
+						<Nav.Link>Best Sellers</Nav.Link>
+					</LinkContainer>
+					<LinkContainer to='/gifts'>
+						<Nav.Link>Gift Ideas</Nav.Link>
+					</LinkContainer>
+					<LinkContainer to='/'>
+						<Nav.Link>Other Link</Nav.Link>
+					</LinkContainer>
+					<Nav className='ml-auto'>
+						<Route render={({ history }) => <SearchBox history={history} />} />
+
+						{userDetails ? (
+							<NavDropdown
+								title={
+									<span>
+										<i className='far fa-user'></i>
+									</span>
+								}
+								id='username'>
+								<LinkContainer to='/profile'>
+									<NavDropdown.Item>Account</NavDropdown.Item>
+								</LinkContainer>
+								<NavDropdown.Item onClick={handleLogout}>
+									Logout
+								</NavDropdown.Item>
+							</NavDropdown>
+						) : (
+							<LinkContainer to='/login'>
+								<Nav.Link>Log In</Nav.Link>
 							</LinkContainer>
-						</Nav>
-					</Navbar.Collapse>
-				</Container>
+						)}
+						{userDetails && userDetails.isAdmin && (
+							<NavDropdown title='Admin Links' id='admin-menu'>
+								<LinkContainer to='/admin/users'>
+									<NavDropdown.Item>Users</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/products'>
+									<NavDropdown.Item>Products</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/orders'>
+									<NavDropdown.Item>Orders</NavDropdown.Item>
+								</LinkContainer>
+							</NavDropdown>
+						)}
+
+						<LinkContainer to='/cart'>
+							<Nav.Link>
+								<i className='fas fa-shopping-cart'></i>
+								{cartItems.length > 0 && <span> ({cartItems.length})</span>}
+							</Nav.Link>
+						</LinkContainer>
+					</Nav>
+				</Navbar.Collapse>
 			</Navbar>
 		</header>
 	);

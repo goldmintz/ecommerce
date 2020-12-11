@@ -50,9 +50,22 @@ a:hover {
 
 /* Header & Nav  */
 
-.nav-link-container {
-	margin: 0px 50px 0px 50px;
-	padding: 0px;
+.nav.navbar {
+	align-items: baseline;
+}
+.navbar {
+	background: white;
+	max-height: 55px;
+	z-index: 1;
+	-webkit-box-shadow: 0px -1px 21px -7px #000000;
+	box-shadow: 0px -1px 21px -7px #000000;
+}
+
+.nav-link {
+	text-transform: capitalize;
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
+	font-size: 16px;
 }
 
 .navbar-brand {
@@ -60,18 +73,8 @@ a:hover {
 	letter-spacing: 0;
 	text-transform: capitalize;
 	font-size: 30px;
-	color: green;
-}
-
-.navbar-light .navbar-brand {
-	color: #011e13;
-}
-.navbar {
-	max-height: 60px;
-	z-index: 1;
-	-webkit-box-shadow: 0px -1px 21px -7px #000000;
-	box-shadow: 0px -1px 21px -7px #000000;
-	color: black;
+	color: pink;
+	padding: 0.5rem 1rem;
 }
 
 .searchInput {
