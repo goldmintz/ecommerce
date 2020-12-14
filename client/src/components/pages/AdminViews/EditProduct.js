@@ -22,6 +22,7 @@ const EditProduct = ({ match, history }) => {
 	const [category, setCategory] = useState('');
 	const [description, setDescription] = useState('');
 	const [countInStock, setCountInStock] = useState(0);
+	const [tags, setTags] = useState([]);
 
 	const dispatch = useDispatch();
 
@@ -53,6 +54,7 @@ const EditProduct = ({ match, history }) => {
 				setCategory(product.category);
 				setDescription(product.description);
 				setCountInStock(product.countInStock);
+				setTags(product.tags);
 			}
 		}
 	}, [dispatch, product, productId, updateSuccess, history]);
@@ -67,6 +69,7 @@ const EditProduct = ({ match, history }) => {
 			category,
 			description,
 			countInStock,
+			tags,
 		};
 		e.preventDefault();
 		console.log(updatedProduct);
@@ -74,7 +77,8 @@ const EditProduct = ({ match, history }) => {
 		history.push('/admin/products');
 	};
 
-	console.log(product.name);
+	console.log(tags);
+
 	return (
 		// TODO: Add dropdowns for presets, like size and category
 		// TODO: Add dollar sign for price input
@@ -137,6 +141,22 @@ const EditProduct = ({ match, history }) => {
 							placeholder='Enter description'
 							value={description}
 							onChange={(e) => setDescription(e.target.value)}></Form.Control>
+					</Form.Group>
+
+					<Form.Group controlId='tags'>
+						<Form.Label>Tags</Form.Label>
+						<Form.Control
+							as='select'
+							multiple
+							onChange={(e) => {
+								setTags(
+									[...e.target.selectedOptions].map((option) => option.value),
+								);
+							}}>
+							<option>gift</option>
+							<option>holiday</option>
+							<option>beginner</option>
+						</Form.Control>
 					</Form.Group>
 
 					<Form.Group controlId='countInStock'>

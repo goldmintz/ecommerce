@@ -103,7 +103,7 @@ const ProductList = ({ history, match }) => {
 						{products.map(
 							({ _id, name, price, category, description, countInStock }) => (
 								<tr key={_id}>
-									<td>{_id.slice(0, 5)}</td>
+									<td>{_id.slice(-5)}</td>
 									<td>
 										<Link to={`/product/${_id}`}>{name}</Link>
 									</td>
