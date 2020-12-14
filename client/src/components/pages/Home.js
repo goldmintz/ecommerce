@@ -20,6 +20,7 @@ const HomePage = ({ match }) => {
 	const searchTerm = match.params.searchTerm;
 
 	useEffect(() => {
+		//TODO: If searchTerm, run listProducts, else run listSubset
 		dispatch(listProducts(searchTerm));
 	}, [dispatch, searchTerm]);
 

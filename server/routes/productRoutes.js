@@ -16,7 +16,7 @@ router.route('/').get(getProducts).post(protect, isAdmin, createProduct);
 
 //Fetch product by id (and delete, create)
 router
-	.route('/:id')
+	.route('/:id', '/:subset')
 	.get(getProductById)
 	.delete(protect, isAdmin, deleteProduct)
 	.put(protect, isAdmin, updateProduct);

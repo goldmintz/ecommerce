@@ -28,13 +28,13 @@ const Header = () => {
 				{/*Navbar.Toggle adds hamburger on smaller viewports */}
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
-					<LinkContainer to='/bestsellers'>
+					<LinkContainer to='/products/bestsellers'>
 						<Nav.Link>Best Sellers</Nav.Link>
 					</LinkContainer>
-					<LinkContainer to='/gifts'>
+					<LinkContainer to='/products/gifts'>
 						<Nav.Link>Gift Ideas</Nav.Link>
 					</LinkContainer>
-					<LinkContainer to='/'>
+					<LinkContainer to='/products/tbd'>
 						<Nav.Link>Other Link</Nav.Link>
 					</LinkContainer>
 					<Nav className='ml-auto'>
@@ -73,7 +73,6 @@ const Header = () => {
 								</LinkContainer>
 							</NavDropdown>
 						)}
-
 						<LinkContainer to='/cart'>
 							<Nav.Link>
 								<i className='fas fa-shopping-cart'></i>

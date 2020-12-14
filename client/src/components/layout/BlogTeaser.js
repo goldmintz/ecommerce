@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Container, Row, Col, Button, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const BlogTeaser = () => {
@@ -14,9 +14,9 @@ const BlogTeaser = () => {
 						ipsum non metus semper placerat. Aenean mattis commodo sapien
 						euismod mattis.
 					</div>
-					<Link className='teaser-content-link' to='/'>
+					<div className='teaser-content-link' to='/'>
 						Read More
-					</Link>
+					</div>
 				</div>
 			</Link>
 		</Col>

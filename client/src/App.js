@@ -9,6 +9,7 @@ import Footer from './components/layout/Footer';
 
 // import pages
 import Home from './components/pages/Home';
+import ProductSubsets from './components/pages/ProductSubsets';
 import ProductDetail from './components/pages/ProductDetail';
 import Cart from './components/pages/Cart';
 import Login from './components/pages/Login';
@@ -36,7 +37,6 @@ const App = () => {
 						<Route path='/order/:id' component={ViewOrder} />
 						<Route path='/order' component={CreateOrder} />
 					</Switch>
-
 					<Route path='/shipping' component={Shipping} />
 					<Route path='/payment' component={PaymentMethod} />
 					<Route path='/product/:id' component={ProductDetail} />
@@ -50,6 +50,7 @@ const App = () => {
 					<Route path='/admin/orders' component={OrderList} />
 					<Route path='/admin/user/:id/edit' component={AdminEditUser} />
 					<Route path='/search/:searchTerm' component={Home} />
+					<Route path='/products/:subset' component={ProductSubsets} />
 					<Route exact path='/' component={Home} />
 				</Container>
 			</main>

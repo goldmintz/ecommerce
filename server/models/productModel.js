@@ -16,6 +16,10 @@ const reviewSchema = mongoose.Schema(
 	},
 );
 
+const tagsSchema = mongoose.Schema({
+	tag: { type: String },
+});
+
 const productSchema = mongoose.Schema(
 	{
 		// user: {
@@ -44,6 +48,7 @@ const productSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		tags: [tagsSchema],
 		reviews: [reviewSchema],
 		rating: {
 			type: Number,

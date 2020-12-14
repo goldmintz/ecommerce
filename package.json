@@ -1,7 +1,7 @@
 {
 	"name": "ecommerce",
 	"version": "1.0.0",
-	"description": "ecommerce app buit in react",
+	"description": "ecommerce app built in react",
 	"main": "server.js",
 	"type": "module",
 	"scripts": {
