@@ -156,7 +156,9 @@ const EditProduct = ({ match, history }) => {
 							<option>gift</option>
 							<option>holiday</option>
 							<option>beginner</option>
+							<option>popular</option>
 							<option>best sellers</option>
+							<option>sale</option>
 						</Form.Control>
 					</Form.Group>
 

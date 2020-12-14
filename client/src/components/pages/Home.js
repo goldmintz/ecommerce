@@ -32,13 +32,31 @@ const HomePage = ({ match }) => {
 					className='justify-content-md-center'
 					style={{ marginBottom: '20px' }}>
 					<Col className='home-filterCol'>
-						<div className='home-productFilter'>Fresh Picks</div>
+						<div
+							className='home-productFilter'
+							onClick={(e) => {
+								e.preventDefault();
+								dispatch(listProducts());
+							}}>
+							Fresh Picks
+						</div>
 					</Col>
 					<Col className='home-filterCol'>
-						<div className='home-productFilter'>Best Sellers</div>
+						<div
+							className='home-productFilter'
+							onClick={(e) => {
+								e.preventDefault();
+								dispatch(listProducts('popular'));
+							}}>
+							Best Sellers
+						</div>
 					</Col>
 					<Col className='home-filterCol'>
-						<div className='home-productFilter'>On Sale</div>
+						<div
+							className='home-productFilter'
+							onClick={() => dispatch(listProducts('sale'))}>
+							On Sale
+						</div>
 					</Col>
 				</Row>
 			</Container>
@@ -46,7 +64,7 @@ const HomePage = ({ match }) => {
 			{loading ? (
 				<Loader />
 			) : error ? (
-				<Message variant='danger' />
+				<Message variant='danger'>No Products Found</Message>
 			) : (
 				<>
 					<Container fluid>

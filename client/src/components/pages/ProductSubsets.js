@@ -8,7 +8,6 @@ const ProductSubsets = ({ match }) => {
 	const dispatch = useDispatch();
 	const productList = useSelector((state) => state.productList);
 
-	console.log(productList);
 
 	useEffect(() => {
 		dispatch(listProducts(subset));

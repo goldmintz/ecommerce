@@ -115,7 +115,7 @@ a:hover {
 	letter-spacing: 0;
 	-webkit-font-smoothing: antialiased;
 }
-.home-productfilter:hover {
+.home-productfilter a:hover {
 	cursor: pointer;
 	color: green;
 }
