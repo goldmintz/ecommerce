@@ -49,8 +49,8 @@ const App = () => {
 					<Route path='/admin/products' component={ProductList} />
 					<Route path='/admin/orders' component={OrderList} />
 					<Route path='/admin/user/:id/edit' component={AdminEditUser} />
-					<Route path='/search/:searchTerm' component={Home} />
-					<Route path='/products/:subset' component={ProductSubsets} />
+					<Route path='/search/:term' component={Home} />
+					<Route path='/products/:term' component={ProductSubsets} />
 					<Route exact path='/' component={Home} />
 				</Container>
 			</main>

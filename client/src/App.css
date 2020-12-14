@@ -8,7 +8,7 @@
 }
 
 main {
-	margin: 50px 20px;
+	margin: 55px 20px;
 }
 
 h1,
@@ -116,7 +116,8 @@ a:hover {
 	-webkit-font-smoothing: antialiased;
 }
 .home-productfilter:hover {
-	transition: animate;
+	cursor: pointer;
+	color: green;
 }
 
 /* HOMEPAGE : PRODUCT CARDS */

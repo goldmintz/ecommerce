@@ -11,12 +11,12 @@ import {
 	createReview,
 } from '../controllers/productController.js';
 
-//Fetch all products and create new
+//Fetch products (all, by search term, or by tag) and create new
 router.route('/').get(getProducts).post(protect, isAdmin, createProduct);
 
 //Fetch product by id (and delete, create)
 router
-	.route('/:id', '/:subset')
+	.route('/:id')
 	.get(getProductById)
 	.delete(protect, isAdmin, deleteProduct)
 	.put(protect, isAdmin, updateProduct);

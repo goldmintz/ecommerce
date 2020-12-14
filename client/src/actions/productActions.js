@@ -21,12 +21,12 @@ import {
 	PRODUCT_CREATEREVIEW_FAIL,
 } from '../constants/types.js';
 
-export const listProducts = (searchTerm = '') => async (dispatch) => {
+export const listProducts = (term = '') => async (dispatch) => {
 	try {
 		dispatch({
 			type: PRODUCT_LIST_REQ,
 		});
-		const { data } = await axios.get(`/api/products?searchTerm=${searchTerm}`);
+		const { data } = await axios.get(`/api/products?term=${term}`);
 		dispatch({
 			type: PRODUCT_LIST_SUCCESS,
 			payload: data,

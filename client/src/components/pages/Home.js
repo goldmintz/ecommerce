@@ -17,26 +17,22 @@ const HomePage = ({ match }) => {
 
 	const { products, loading, error } = productList;
 
-	const searchTerm = match.params.searchTerm;
+	const term = match.params.term;
 
 	useEffect(() => {
-		//TODO: If searchTerm, run listProducts, else run listSubset
-		dispatch(listProducts(searchTerm));
-	}, [dispatch, searchTerm]);
+		//TODO: If term from search or filter, run listProducts, else run listSubset
+		dispatch(listProducts(term));
+	}, [dispatch, term]);
 
 	return (
 		<>
-			{!searchTerm && <HomepageJumbo />}
+			{!term && <HomepageJumbo />}
 			<Container fluid>
 				<Row
 					className='justify-content-md-center'
 					style={{ marginBottom: '20px' }}>
 					<Col className='home-filterCol'>
-						<div
-							className='home-productFilter'
-							onClick={(e) => console.log(e.currentTarget)}>
-							Fresh Picks
-						</div>
+						<div className='home-productFilter'>Fresh Picks</div>
 					</Col>
 					<Col className='home-filterCol'>
 						<div className='home-productFilter'>Best Sellers</div>

@@ -2,16 +2,13 @@ import asyncHandler from 'express-async-handler';
 import Product from '../models/productModel.js';
 
 const getProducts = asyncHandler(async (req, res) => {
-	const searchTerm = req.query.searchTerm
-		? {
-				name: {
-					$regex: req.query.searchTerm,
-					$options: 'i',
-				},
-		  }
-		: {};
+	const term = req.query.term;
 
-	const products = await Product.find({ ...searchTerm });
+	const products = await Product.find().or([
+		{ name: { $regex: term, $options: 'i' } },
+		{ tags: { $regex: term, $options: 'i' } },
+	]);
+
 	res.json(products);
 });
 

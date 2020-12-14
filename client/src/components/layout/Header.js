@@ -28,7 +28,7 @@ const Header = () => {
 				{/*Navbar.Toggle adds hamburger on smaller viewports */}
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
-					<LinkContainer to='/products/bestsellers'>
+					<LinkContainer to='/products/best-sellers'>
 						<Nav.Link>Best Sellers</Nav.Link>
 					</LinkContainer>
 					<LinkContainer to='/products/gifts'>
