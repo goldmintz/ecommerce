@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
@@ -76,7 +76,12 @@ const Header = () => {
 						<LinkContainer to='/cart'>
 							<Nav.Link>
 								<i className='fas fa-shopping-cart'></i>
-								{cartItems.length > 0 && <span> ({cartItems.length})</span>}
+								{cartItems.length > 0 && (
+									<span>
+										{' '}
+										({cartItems.reduce((acc, item) => acc + item.quantity, 0)})
+									</span>
+								)}
 							</Nav.Link>
 						</LinkContainer>
 					</Nav>
