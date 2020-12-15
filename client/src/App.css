@@ -77,11 +77,22 @@ a:hover {
 	padding: 0.5rem 1rem;
 }
 
-.searchInput {
+.modal-header {
+	border: none;
+}
+
+.modal-body {
+	position: sticky;
+	top: 0;
+	height: 100vh;
+}
+
+.search-input {
 	border: 0;
 	outline: 0;
 	background: transparent;
 	border-bottom: 2px solid black;
+	width: auto;
 }
 
 /* HOMEPAGE */

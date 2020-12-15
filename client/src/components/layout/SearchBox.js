@@ -12,6 +12,7 @@ const SearchBox = ({ history }) => {
 			history.push('/');
 		}
 	};
+	
 	return (
 		<Form onSubmit={handleSearchSubmit} inline>
 			<Form.Control

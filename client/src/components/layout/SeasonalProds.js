@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Container, Image, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Product from '../features/Product';
 
 const SeasonalProds = () => {
