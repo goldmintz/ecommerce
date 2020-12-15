@@ -17,15 +17,19 @@ const SearchModal = ({ history, show, handleClose }) => {
 
 	return (
 		<>
-			<Modal show={show} onHide={handleClose} className='search-modal'>
-				<Modal.Header closeButton />
+			<Modal
+				show={show}
+				onHide={handleClose}
+				backdrop={true}
+				contentClassName='search-modal'>
+				<Modal.Header closeButton>Search</Modal.Header>
 
 				<Modal.Body>
 					<Form onSubmit={handleSearchSubmit} className='search-input'>
 						<Form.Control
 							type='text'
 							name='term'
-							placeholder='Search products'
+							placeholder='Search our products'
 							// className='mr-sm-2 ml-sm-5'
 							onChange={(e) => setTerm(e.target.value)}></Form.Control>
 					</Form>
