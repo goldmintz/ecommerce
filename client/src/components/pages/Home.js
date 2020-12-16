@@ -19,6 +19,8 @@ const HomePage = ({ match }) => {
 
 	const term = match.params.term;
 
+	console.log(term);
+
 	useEffect(() => {
 		//TODO: If term from search or filter, run listProducts, else run listSubset
 		dispatch(listProducts(term));
@@ -26,47 +28,13 @@ const HomePage = ({ match }) => {
 
 	return (
 		<>
-			{!term && <HomepageJumbo />}
-			<Container fluid>
-				<Row
-					className='justify-content-md-center'
-					style={{ marginBottom: '20px' }}>
-					<Col className='home-filterCol'>
-						<div
-							className='home-productFilter'
-							onClick={(e) => {
-								e.preventDefault();
-								dispatch(listProducts());
-							}}>
-							Fresh Picks
-						</div>
-					</Col>
-					<Col className='home-filterCol'>
-						<div
-							className='home-productFilter'
-							onClick={(e) => {
-								e.preventDefault();
-								dispatch(listProducts('popular'));
-							}}>
-							Best Sellers
-						</div>
-					</Col>
-					<Col className='home-filterCol'>
-						<div
-							className='home-productFilter'
-							onClick={() => dispatch(listProducts('sale'))}>
-							On Sale
-						</div>
-					</Col>
-				</Row>
-			</Container>
-			<hr />
-			{loading ? (
-				<Loader />
-			) : error ? (
-				<Message variant='danger'>No Products Found</Message>
-			) : (
+			{/* no term, show everything, otherwise, show just search header (with term) and search results
+			 */}
+			{term !== undefined ? (
 				<>
+					<h2>
+						Search results for <strong>{term}</strong>
+					</h2>
 					<Container fluid>
 						<Row>
 							{products.map((product) => (
@@ -76,12 +44,67 @@ const HomePage = ({ match }) => {
 							))}
 						</Row>
 					</Container>
-					<SeasonalProds />
-					<BlogTeaser />
+				</>
+			) : (
+				<>
+					<HomepageJumbo />
+					<Container fluid>
+						<Row
+							className='justify-content-md-center'
+							style={{ marginBottom: '20px' }}>
+							<Col className='home-filterCol'>
+								<div
+									className='home-productFilter'
+									onClick={(e) => {
+										e.preventDefault();
+										dispatch(listProducts());
+									}}>
+									Fresh Picks
+								</div>
+							</Col>
+							<Col className='home-filterCol'>
+								<div
+									className='home-productFilter'
+									onClick={(e) => {
+										e.preventDefault();
+										dispatch(listProducts('popular'));
+									}}>
+									Best Sellers
+								</div>
+							</Col>
+							<Col className='home-filterCol'>
+								<div
+									className='home-productFilter'
+									onClick={() => dispatch(listProducts('sale'))}>
+									On Sale
+								</div>
+							</Col>
+						</Row>
+					</Container>
+					<hr />
+					{loading ? (
+						<Loader />
+					) : error ? (
+						<Message variant='danger'>No Products Found</Message>
+					) : (
+						<>
+							<Container fluid>
+								<Row>
+									{products.map((product) => (
+										<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
+											<Product product={product} />
+										</Col>
+									))}
+								</Row>
+							</Container>
+							<SeasonalProds />
+							<BlogTeaser />
+						</>
+					)}
 				</>
 			)}
 		</>
 	);
-};	
+};
 
 export default HomePage;
