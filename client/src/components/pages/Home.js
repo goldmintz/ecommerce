@@ -82,6 +82,6 @@ const HomePage = ({ match }) => {
 			)}
 		</>
 	);
-};
+};	
 
 export default HomePage;

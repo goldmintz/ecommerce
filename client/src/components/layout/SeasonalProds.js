@@ -4,21 +4,21 @@ import Product from '../features/Product';
 
 const SeasonalProds = () => {
 	return (
-		<Container fluid className='home-section'>
+		<Container className='home-section'>
+			<h2>Seasonal Specials</h2>
+			<hr></hr>
+
 			<Row className='justify-content-md-center'>
-				<Col>
-					<h2>Seasonal Specials</h2>
-				</Col>
-			</Row>
-			<Row className='mx-0 px-0'>
-				<Col lg={'6'}>
+				<Col sm={6}>
 					<Image src={'/images/placeholder_plant.jpg'} fluid />
 				</Col>
-				<Col lg={'3'}>
+
+				<Col sm={3}>
 					<Image src={'/images/placeholder_plant.jpg'} fluid />
 					<Image src={'/images/placeholder_plant.jpg'} fluid />
 				</Col>
-				<Col lg={'3'}>
+
+				<Col sm={3}>
 					<Image src={'/images/placeholder_plant.jpg'} fluid />
 					<Image src={'/images/placeholder_plant.jpg'} fluid />
 				</Col>
