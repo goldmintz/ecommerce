@@ -8,7 +8,7 @@
 }
 
 main {
-	margin: 55px 20px;
+	margin: 60px 20px 40px 20px;
 }
 
 h1,
@@ -214,4 +214,13 @@ a:hover {
 	font-size: 18px;
 	margin-bottom: 10px;
 	font-family: 'Playfair Display', serif;
+}
+
+/* PRODUCT DETAIL PAGE */
+
+#product-name {
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	font-size: 30px;
+	padding-left: 0px;
 }
