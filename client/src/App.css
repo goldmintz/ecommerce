@@ -54,12 +54,14 @@ a:hover {
 
 /* Header & Nav  */
 
-.nav.navbar {
-	align-items: baseline;
+.navbar{
+
 }
+
 .navbar {
+	padding: 1rem 1rem;
 	background: white;
-	max-height: 55px;
+	/* max-height: 60px; */
 	z-index: 1;
 	-webkit-box-shadow: 0px -1px 21px -7px #000000;
 	box-shadow: 0px -1px 21px -7px #000000;
@@ -68,7 +70,6 @@ a:hover {
 .nav-link {
 	text-transform: capitalize;
 	font-family: 'Playfair Display', serif;
-	font-weight: 400;
 	font-size: 16px;
 }
 
@@ -78,8 +79,8 @@ a:hover {
 	text-transform: capitalize;
 	font-size: 30px;
 	color: pink;
-	padding: 0.5rem 1rem;
 }
+*/
 
 /* Search Modal */
 .search-modal {
