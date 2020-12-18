@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -30,6 +30,7 @@ const BlogTeaser = () => {
 					<div className='subheading'>
 						Learn more about plant parenthood and other stuff...
 					</div>
+					<hr></hr>
 				</Col>
 			</Row>
 			<Row className='blog-teaser mx-0 px-0'>

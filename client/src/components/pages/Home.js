@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, Container } from 'react-bootstrap';
+import {
+	Row,
+	Col,
+	Container,
+	Button,
+	ButtonGroup,
+	ButtonToolbar,
+} from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
 import SeasonalProds from '../layout/SeasonalProds';
@@ -19,8 +26,6 @@ const HomePage = ({ match }) => {
 
 	const term = match.params.term;
 
-	console.log(term);
-
 	useEffect(() => {
 		//TODO: If term from search or filter, run listProducts, else run listSubset
 		dispatch(listProducts(term));
@@ -32,10 +37,11 @@ const HomePage = ({ match }) => {
 			 */}
 			{term !== undefined ? (
 				<>
-					<h2>
-						Search results for <strong>{term}</strong>
-					</h2>
 					<Container fluid>
+						<h2>
+							Search results for <span id='search-heading-term'>{term}</span>
+						</h2>
+						<hr></hr>
 						<Row>
 							{products.map((product) => (
 								<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
@@ -49,37 +55,81 @@ const HomePage = ({ match }) => {
 				<>
 					<HomepageJumbo />
 					<Container fluid>
-						<Row
+						<ButtonToolbar aria-label='Toolbar with button groups'>
+							<Col className='home-filterCol'>
+								<ButtonGroup className='mr-2'>
+									<Button
+										variant='link'
+										className='home-productFilter'
+										onClick={(e) => {
+											e.preventDefault();
+											dispatch(listProducts());
+										}}>
+										Fresh Picks
+									</Button>
+								</ButtonGroup>
+							</Col>
+							<Col className='home-filterCol'>
+								<ButtonGroup className='mr-2' aria-label='First group'>
+									<Button
+										variant='link'
+										className='home-productFilter'
+										onClick={(e) => {
+											e.preventDefault();
+											dispatch(listProducts('best'));
+										}}>
+										Best Sellers
+									</Button>
+								</ButtonGroup>
+							</Col>
+							<Col className='home-filterCol'>
+								<ButtonGroup className='mr-2' aria-label='First group'>
+									<Button
+										variant='link'
+										className='home-productFilter'
+										onClick={(e) => {
+											e.preventDefault();
+											dispatch(listProducts('sale'));
+										}}>
+										On Sale
+									</Button>
+								</ButtonGroup>
+							</Col>
+						</ButtonToolbar>
+						{/*<Row
 							className='justify-content-md-center'
 							style={{ marginBottom: '20px' }}>
 							<Col className='home-filterCol'>
-								<div
+								<Button
+									variant='link'
 									className='home-productFilter'
 									onClick={(e) => {
 										e.preventDefault();
 										dispatch(listProducts());
 									}}>
 									Fresh Picks
-								</div>
+								</Button>
 							</Col>
 							<Col className='home-filterCol'>
-								<div
+								<Button
+									variant='link'
 									className='home-productFilter'
 									onClick={(e) => {
 										e.preventDefault();
 										dispatch(listProducts('popular'));
 									}}>
 									Best Sellers
-								</div>
+								</Button>
 							</Col>
 							<Col className='home-filterCol'>
-								<div
+								<Button
+									variant='link'
 									className='home-productFilter'
 									onClick={() => dispatch(listProducts('sale'))}>
 									On Sale
-								</div>
+								</Button>
 							</Col>
-						</Row>
+								</Row> */}
 					</Container>
 					<hr />
 					{loading ? (

@@ -53,9 +53,10 @@ const Header = () => {
 							<Nav.Link>Other Link</Nav.Link>
 						</LinkContainer>
 						<Nav className='ml-auto'>
-							<LinkContainer className='.nav-link' to='/'>
-								<Nav.Link>
-									<i className='fas fa-search' onClick={handleShow}></i>
+							<LinkContainer to='/'>
+								<Nav.Link onClick={handleShow}>
+									<i className='fas fa-search'></i>
+									Search
 								</Nav.Link>
 							</LinkContainer>
 
@@ -76,7 +77,7 @@ const Header = () => {
 								</NavDropdown>
 							) : (
 								<LinkContainer to='/login'>
-									<Nav.Link>Log In</Nav.Link>
+									<Nav.Link>Login</Nav.Link>
 								</LinkContainer>
 							)}
 							{userDetails && userDetails.isAdmin && (
