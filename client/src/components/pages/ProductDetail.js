@@ -166,6 +166,8 @@ const ProductDetail = ({ match, history }) => {
 											<p>{review.comment}</p>
 										</ListGroup.Item>
 									))}
+									<h2>Add a Review</h2>
+									<hr></hr>
 									<ListGroup.Item>
 										{userDetails ? (
 											<Form onSubmit={handleReviewSubmit}>
