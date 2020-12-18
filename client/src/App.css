@@ -149,6 +149,8 @@ a:hover {
 	padding: 0px;
 }
 
+/* Home | Product Filters */
+
 .btn.home-productFilter {
 	font-size: 26px;
 	color: black;
@@ -157,16 +159,6 @@ a:hover {
 	letter-spacing: 0;
 	text-transform: capitalize;
 	-webkit-font-smoothing: antialiased;
-}
-
-.btn.home-productFilter:focus {
-	outline: none !important;
-	outline-offset: none !important;
-}
-
-.btn:focus,
-.btn.active {
-	outline: none !important;
 }
 
 /* HOMEPAGE : PRODUCT CARDS */
@@ -247,4 +239,11 @@ a:hover {
 	font-weight: bold;
 	font-size: 30px;
 	padding-left: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+	[class*='seasonal-prods'] {
+		display: none;
+	}
 }
