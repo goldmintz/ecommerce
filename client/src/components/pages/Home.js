@@ -53,47 +53,41 @@ const HomePage = ({ match }) => {
 				<>
 					<HomepageJumbo />
 					<Container fluid>
-						<ButtonToolbar aria-label='Toolbar with button groups'>
-							<Col className='home-filterCol'>
-								<ButtonGroup className='mr-2'>
-									<Button
-										variant='link'
-										className='home-productFilter'
-										onClick={(e) => {
-											e.preventDefault();
-											dispatch(listProducts());
-										}}>
-										Fresh Picks
-									</Button>
-								</ButtonGroup>
+						<Row className='home-productFilter'>
+							<Col>
+								<Button
+									variant='link'
+									className='home-productFilter'
+									onClick={(e) => {
+										e.preventDefault();
+										dispatch(listProducts());
+									}}>
+									Fresh Picks
+								</Button>
 							</Col>
-							<Col className='home-filterCol'>
-								<ButtonGroup className='mr-2' aria-label='First group'>
-									<Button
-										variant='link'
-										className='home-productFilter'
-										onClick={(e) => {
-											e.preventDefault();
-											dispatch(listProducts('best'));
-										}}>
-										Best Sellers
-									</Button>
-								</ButtonGroup>
+							<Col>
+								<Button
+									variant='link'
+									className='home-productFilter'
+									onClick={(e) => {
+										e.preventDefault();
+										dispatch(listProducts('best'));
+									}}>
+									Best Sellers
+								</Button>
 							</Col>
-							<Col className='home-filterCol'>
-								<ButtonGroup className='mr-2' aria-label='First group'>
-									<Button
-										variant='link'
-										className='home-productFilter'
-										onClick={(e) => {
-											e.preventDefault();
-											dispatch(listProducts('sale'));
-										}}>
-										On Sale
-									</Button>
-								</ButtonGroup>
+							<Col>
+								<Button
+									variant='link'
+									className='home-productFilter'
+									onClick={(e) => {
+										e.preventDefault();
+										dispatch(listProducts('sale'));
+									}}>
+									On Sale
+								</Button>
 							</Col>
-						</ButtonToolbar>
+						</Row>
 						{/*<Row
 							className='justify-content-md-center'
 							style={{ marginBottom: '20px' }}>

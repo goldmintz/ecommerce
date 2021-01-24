@@ -10,7 +10,7 @@ const HomepageJumbo = () => {
 					This is a modified jumbotron that occupies the entire horizontal space
 					of its parent.
 				</p>
-				<Button variant='outline-dark'>Take Our Quiz</Button>
+				<Button>Take Our Quiz</Button>
 			</div>
 		</section>
 	);
