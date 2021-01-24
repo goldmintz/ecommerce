@@ -37,7 +37,7 @@ const Header = () => {
 			<header>
 				<Navbar collapseOnSelect fixed='top' expand='lg'>
 					<Link to='/'>
-						<Navbar.Brand>Sprouts</Navbar.Brand>
+						<Navbar.Brand> 🌿 Sprouts</Navbar.Brand>
 					</Link>
 
 					{/*Navbar.Toggle adds hamburger on smaller viewports */}

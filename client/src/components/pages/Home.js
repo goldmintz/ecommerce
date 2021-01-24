@@ -37,19 +37,17 @@ const HomePage = ({ match }) => {
 			 */}
 			{term !== undefined ? (
 				<>
-					<Container fluid>
-						<h2>
-							Search results for <span id='search-heading-term'>{term}</span>
-						</h2>
-						<hr></hr>
-						<Row>
-							{products.map((product) => (
-								<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
-									<Product product={product} />
-								</Col>
-							))}
-						</Row>
-					</Container>
+					<h2>
+						Search results for <span id='search-heading-term'>{term}</span>
+					</h2>
+					<hr></hr>
+					<Row>
+						{products.map((product) => (
+							<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
+								<Product product={product} />
+							</Col>
+						))}
+					</Row>
 				</>
 			) : (
 				<>
