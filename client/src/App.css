@@ -20,6 +20,7 @@ body {
 	letter-spacing: 0.5;
 	display: flex;
 	align-items: center;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Containers - Clear Out Bootstrap Settings  */
@@ -47,10 +48,15 @@ h5,
 h6 {
 	text-transform: capitalize;
 	letter-spacing: 1px;
+	padding: 0px;
 }
+
+.active {
+	color: pink;
+}
+
 hr {
-	border-color: grey;
-	/* margin-top: 10px 0px; */
+	outline: 1px solid grey;
 }
 
 .btn .btn-primary {
@@ -73,14 +79,20 @@ a:hover {
 }
 
 /* Header & Nav  */
+
 .navbar {
-	padding: 10px 30px;
-	z-index: 1;
-	-webkit-box-shadow: 0px -1px 21px -7px #000000;
+	align-content: center;
+	/* height: 60px; */
+	padding: 8px 30px;
 	box-shadow: 0px -1px 21px -7px #000000;
+	-webkit-box-shadow: 0px -1px 21px -7px #000000;
 	background-color: white;
 	font-weight: 400;
+	z-index: 1;
 }
+
+/* .navbar-expand-lg {
+} */
 
 .navbar-brand {
 	text-transform: capitalize;
@@ -90,19 +102,9 @@ a:hover {
 .navbar-light .navbar-nav .nav-link {
 	color: black;
 	text-transform: capitalize;
-	/* font-family: 'Playfair Display', serif; */
 	font-size: 16px;
 	font-weight: 400;
 	margin: 0px 10px;
-}
-
-.nav .navbar-collapse {
-	width: 100vw;
-	height: 100vh;
-}
-
-.navbar .navbar-expand-lg .navbar-light .fixed-top {
-	height: 100vh;
 }
 
 /* Search Modal */
@@ -167,18 +169,17 @@ a:hover {
 .home-productFilter {
 	margin: 1rem 0rem;
 }
+
 .home-productFilter > .col {
 	align-items: center;
 	justify-content: center;
 }
 
 .btn.home-productFilter {
-	width: 100%;
-	font-size: 1.5em;
-	color: black;
-	/* background-color: transparent; */
 	text-transform: capitalize;
-	-webkit-font-smoothing: antialiased;
+	width: 100%;
+	font-size: 2em;
+	color: black;
 }
 
 /* HOMEPAGE : PRODUCT CARDS */
@@ -200,12 +201,12 @@ a:hover {
 
 .name.card-text,
 #card-prod-price {
-	font-weight: 600;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
+	font-weight: 400;
 }
 
-.card-text p {
-	padding: 1rem 0rem;
+#card-description {
+	color: grey;
 }
 
 .name.card-text:hover {

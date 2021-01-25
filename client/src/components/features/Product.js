@@ -24,9 +24,7 @@ const Product = ({ product }) => {
 					<div id='card-prod-price'>${product.price}</div>
 				</div>
 				<Row>
-					<Card.Text style={{ padding: '15px' }}>
-						{product.description}
-					</Card.Text>
+					<Card.Text id='card-description'>{product.description}</Card.Text>
 				</Row>
 			</Card.Body>
 		</Card>

@@ -35,15 +35,15 @@ const Header = () => {
 				)}
 			/>
 			<header>
-				<Navbar collapseOnSelect fixed='top' expand='lg'>
-					<Navbar.Brand href='/'>🌿 Sprouts</Navbar.Brand>
+				<Navbar collapseOnSelect fixed='top' expand='lg' className='py-0'>
+					<Navbar.Brand href='/'>Sprouts</Navbar.Brand>
 
 					{/*Navbar.Toggle adds hamburger on smaller viewports */}
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav>
 							<LinkContainer to='/products/best-sellers'>
-								<Nav.Link>Best Sellers</Nav.Link>
+								<Nav.Link activeClassName='active'>Best Sellers</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/products/gifts'>
 								<Nav.Link>Gift Ideas</Nav.Link>
