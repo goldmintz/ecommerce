@@ -36,29 +36,27 @@ const Header = () => {
 			/>
 			<header>
 				<Navbar collapseOnSelect fixed='top' expand='lg'>
-					<Link to='/'>
-						<Navbar.Brand> 🌿 Sprouts</Navbar.Brand>
-					</Link>
+					<Navbar.Brand href='/'>🌿 Sprouts</Navbar.Brand>
 
 					{/*Navbar.Toggle adds hamburger on smaller viewports */}
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
-						<LinkContainer to='/products/best-sellers'>
-							<Nav.Link>Best Sellers</Nav.Link>
-						</LinkContainer>
-						<LinkContainer to='/products/gifts'>
-							<Nav.Link>Gift Ideas</Nav.Link>
-						</LinkContainer>
-						<LinkContainer to='/products/tbd'>
-							<Nav.Link>Other Link</Nav.Link>
-						</LinkContainer>
-						<Nav className='ml-auto'>
-							<LinkContainer to='/'>
-								<Nav.Link onClick={handleShow}>
-									<i className='fas fa-search'></i>
-									Search
-								</Nav.Link>
+						<Nav>
+							<LinkContainer to='/products/best-sellers'>
+								<Nav.Link>Best Sellers</Nav.Link>
 							</LinkContainer>
+							<LinkContainer to='/products/gifts'>
+								<Nav.Link>Gift Ideas</Nav.Link>
+							</LinkContainer>
+							<LinkContainer to='/products/tbd'>
+								<Nav.Link>Other Link</Nav.Link>
+							</LinkContainer>
+						</Nav>
+						<Nav className='ml-auto'>
+							<Nav.Link onClick={handleShow}>
+								<i className='fas fa-search'></i>
+								Search
+							</Nav.Link>
 
 							{userDetails ? (
 								<NavDropdown
