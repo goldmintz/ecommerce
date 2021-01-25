@@ -6,6 +6,8 @@ import { Route, Link } from 'react-router-dom';
 import { logout } from '../../actions/userActions';
 import SearchModal from './SearchModal';
 
+import '../../styles/header.css';
+
 const Header = () => {
 	const dispatch = useDispatch();
 

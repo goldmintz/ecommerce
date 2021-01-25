@@ -1,0 +1,22 @@
+/* HOMEPAGE */
+
+.jumbotron {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+	padding: 5rem 2rem;
+	margin-top: -75px;
+	margin-left: -30px;
+	margin-right: -30px;
+	background: url('../images/bobbi-gaukel-bzEOeSme_6Q-unsplash.jpg');
+	background-color: rgb(170, 24, 24);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.jumbo-content {
+	flex: 1;
+	align-self: flex-end;
+}
