@@ -74,13 +74,13 @@ const ProductDetail = ({ match, history }) => {
 						<div className='product-content-wrapper'>
 							<Row>
 								<Col md={6}>
-									<Image src={product.image} alt={product.name} />
+									<Image src={product.image} alt={product.name} fluid />
 								</Col>
 								<Col md={6}>
 									<ListGroup>
-										<ListGroup.Item>
+										<ListGroup.Item id='product-name-price-wrapper'>
 											<div id='product-name'>{product.name}</div>
-											<div> ${product.price}</div>
+											<div id='product-price'> ${product.price}</div>
 										</ListGroup.Item>
 
 										<ListGroup.Item>

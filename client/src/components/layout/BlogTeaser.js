@@ -27,12 +27,12 @@ const BlogTeaser = () => {
 
 	return (
 		<>
-			<div id='blog-teaser-header'>
+			<Container fluid id='blog-teaser-header'>
 				<h2>From Our Blog</h2>
 				<div className='subheading'>
 					Learn more about plant parenthood and other stuff...
 				</div>
-			</div>
+			</Container>
 			<hr></hr>
 			<Row className='blog-teaser'>
 				<TeaserContent src={greenPlaceholder} heading={'Blog Post A'} />
