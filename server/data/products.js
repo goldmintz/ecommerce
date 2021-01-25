@@ -1,7 +1,7 @@
 const products = [
 	{
 		name: 'Monstera',
-		image: '../../client/src/images/monstera.jpg',
+		image: '../../client/public/seedImg/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',
@@ -13,7 +13,7 @@ const products = [
 	},
 	{
 		name: 'Plant 2',
-		image: '../../client/src/images/monstera.jpg',
+		image: '../../client/public/seedImg/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Small',
@@ -25,7 +25,7 @@ const products = [
 	},
 	{
 		name: 'Plant 3',
-		image: '../../client/src/images/monstera.jpg',
+		image: '../../client/public/seedImg/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',
@@ -37,7 +37,7 @@ const products = [
 	},
 	{
 		name: 'Monstera',
-		image: '../../client/src/images/monstera.jpg',
+		image: '../../client/public/seedImg/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',

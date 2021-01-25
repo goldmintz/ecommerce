@@ -31,29 +31,28 @@ const App = () => {
 	return (
 		<Router>
 			<Header />
-			<main>
-				<Container fluid>
-					<Switch>
-						<Route path='/order/:id' component={ViewOrder} />
-						<Route path='/order' component={CreateOrder} />
-					</Switch>
-					<Route path='/shipping' component={Shipping} />
-					<Route path='/payment' component={PaymentMethod} />
-					<Route path='/product/:id' component={ProductDetail} />
-					<Route path='/login' component={Login} />
-					<Route path='/register' component={Register} />
-					<Route path='/profile' component={Profile} />
-					<Route path='/cart/:id?' component={Cart} />
-					<Route path='/admin/users' component={UserList} />
-					<Route path='/admin/product/:id/edit' component={EditProduct} />
-					<Route path='/admin/products' component={ProductList} />
-					<Route path='/admin/orders' component={OrderList} />
-					<Route path='/admin/user/:id/edit' component={AdminEditUser} />
-					<Route path='/search/:term' component={Home} />
-					<Route path='/products/:term' component={ProductSubsets} />
-					<Route exact path='/' component={Home} />
-				</Container>
-			</main>
+
+			<Container fluid className='master-container'>
+				<Switch>
+					<Route path='/order/:id' component={ViewOrder} />
+					<Route path='/order' component={CreateOrder} />
+				</Switch>
+				<Route path='/shipping' component={Shipping} />
+				<Route path='/payment' component={PaymentMethod} />
+				<Route path='/product/:id' component={ProductDetail} />
+				<Route path='/login' component={Login} />
+				<Route path='/register' component={Register} />
+				<Route path='/profile' component={Profile} />
+				<Route path='/cart/:id?' component={Cart} />
+				<Route path='/admin/users' component={UserList} />
+				<Route path='/admin/product/:id/edit' component={EditProduct} />
+				<Route path='/admin/products' component={ProductList} />
+				<Route path='/admin/orders' component={OrderList} />
+				<Route path='/admin/user/:id/edit' component={AdminEditUser} />
+				<Route path='/search/:term' component={Home} />
+				<Route path='/products/:term' component={ProductSubsets} />
+				<Route exact path='/' component={Home} />
+			</Container>
 
 			<Footer />
 		</Router>
