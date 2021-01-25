@@ -1,53 +1,45 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import greenPlaceholder from '../../images/green_bg.jpg';
+import blackPlaceholder from '../../images/black_bg.jpg';
+import imagePlaceholder from '../../images/blog_teaser.jpg';
 
 const BlogTeaser = () => {
 	const TeaserContent = ({ src, heading }) => (
-		<Col xs={6} md={4}>
+		<div id='teaser'>
 			<Link to={'/'}>
-				<Image src={src} fluid />
+				<Image src={src} style={{ alignSelf: 'center' }} />
 				<div className='teaser-content'>
 					<div className='teaser-content-heading'>{heading}</div>
-					<div>
+					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
 						ipsum non metus semper placerat. Aenean mattis commodo sapien
 						euismod mattis.
-					</div>
+					</p>
 					<div className='teaser-content-link' to='/'>
-						Read More
+						{`Read More ->`}
 					</div>
 				</div>
 			</Link>
-		</Col>
+		</div>
 	);
 
 	return (
-		<Container fluid className='home-section'>
-			<Row className='justify-content-md-center'>
-				<Col style={{ textAlign: 'center' }}>
-					<h3>Our Blog</h3>
-					<div className='subheading'>
-						Learn more about plant parenthood and other stuff...
-					</div>
-					<hr></hr>
-				</Col>
+		<>
+			<div id='blog-teaser-header'>
+				<h2>From Our Blog</h2>
+				<div className='subheading'>
+					Learn more about plant parenthood and other stuff...
+				</div>
+			</div>
+			<hr></hr>
+			<Row className='blog-teaser'>
+				<TeaserContent src={greenPlaceholder} heading={'Blog Post A'} />
+				<TeaserContent src={imagePlaceholder} heading={'Blog Post B'} />
+				<TeaserContent src={blackPlaceholder} heading={'Blog Post C'} />
 			</Row>
-			<Row className='blog-teaser mx-0 px-0'>
-				<TeaserContent src={'/images/green_bg.jpg'} heading={'Blog Post A'} />
-
-				<TeaserContent src={'/images/green_bg.jpg'} heading={'Blog Post B'} />
-
-				<TeaserContent src={'/images/green_bg.jpg'} heading={'Blog Post C'} />
-			</Row>
-			<Row className='blog-teaser justify-content-md-center'>
-				{/* 
-                    <Button variant='outline-dark' style={{ width: '30%' }}>
-					    View More
-                    </Button>
-             */}
-			</Row>
-		</Container>
+		</>
 	);
 };
 

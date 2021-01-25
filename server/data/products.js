@@ -47,30 +47,6 @@ const products = [
 		rating: 0,
 		numReviews: 0,
 	},
-	{
-		name: 'Other Plant',
-		image: '../../client/src/images/monstera.jpg',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
-		size: 'Small',
-		category: 'Tropicals',
-		price: 49.99,
-		countInStock: 7,
-		rating: 0,
-		numReviews: 0,
-	},
-	{
-		name: 'Placeholder',
-		image: '../../client/src/images/monstera.jpg',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
-		size: 'Medium',
-		category: 'Tropicals',
-		price: 29.99,
-		countInStock: 0,
-		rating: 0,
-		numReviews: 0,
-	},
 ];
 
 export default products;

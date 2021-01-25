@@ -52,7 +52,7 @@ const HomePage = ({ match }) => {
 			) : (
 				<>
 					<HomepageJumbo />
-					<Container fluid>
+					<Container fluid id='home-product-grid'	>
 						<Row className='home-productFilter'>
 							<Col>
 								<Button

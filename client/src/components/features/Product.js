@@ -5,7 +5,7 @@ import placeholderImg from '../../images/monstera.jpg';
 
 const Product = ({ product }) => {
 	return (
-		<Card className='my-3 p-3' style={{ border: 'none' }}>
+		<Card className='my-2 p-3'>
 			<Link to={`/product/${product._id}`}>
 				<Card.Img
 					src={placeholderImg}
