@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 	padding: 0px;
 	margin: 0px;
-	/* outline: 1px solid red; */
+	outline: 1px solid red;
 }
 
 /* Containers  */
@@ -18,11 +18,17 @@ body {
 	line-height: 1.6;
 	font-size: 1rem;
 	letter-spacing: 0.5;
+	min-height: 100vh;
 	-webkit-font-smoothing: antialiased;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 /* Containers - Clear Out Bootstrap Settings  */
-.col *,
+.col,
+.col-fluid,
 .row,
 .container,
 .container-fluid,
@@ -35,8 +41,11 @@ body {
 	margin-top: 5rem;
 	padding: 2rem;
 	width: 100%;
+	height: 100%;
 	flex-direction: column;
 	align-items: center;
+	flex-grow: 1;
+	flex-shrink: 0;
 }
 
 /* Fonts */
@@ -64,9 +73,8 @@ hr {
 footer {
 	margin: 20px;
 	align-self: flex-end;
+	flex-shrink: 0;
 }
-
-
 
 /* Home | Product Filters */
 
@@ -191,14 +199,35 @@ footer {
 
 .product-content-wrapper {
 	flex: 1;
-	background-color: pink;
+}
+
+.list-group-item {
+	border: none;
+	padding: none;
+}
+
+#product-quant {
+	padding: 0px;
+}
+
+#product-detail-btn {
+	color: white;
+	text-transform: capitalize;
+	background-color: green;
+	border: none;
+	font-size: 1.35rem;
+}
+
+#product-detail-btn:hover {
+	background-color: black;
 }
 
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
 	/* For mobile phones: */
-	[class*='seasonal-prods'] {
+	[class*='seasonal-prods'],
+	[class*='home-productFilter'] {
 		display: none;
 	}
 

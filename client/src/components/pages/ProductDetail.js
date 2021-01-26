@@ -91,10 +91,10 @@ const ProductDetail = ({ match, history }) => {
 										</ListGroup.Item>
 										<ListGroup.Item>
 											<Row>
-												<Col md={3}>
+												<Col>
 													<strong>Details</strong>
 												</Col>
-												<Col md={9}> {product.description}</Col>
+												<Col> {product.description}</Col>
 											</Row>
 										</ListGroup.Item>
 
@@ -102,10 +102,10 @@ const ProductDetail = ({ match, history }) => {
 											<>
 												<ListGroup.Item>
 													<Row>
-														<Col md={3}>
+														<Col sm={3} id='product-quant'>
 															<strong>Quantity</strong>
 														</Col>
-														<Col md={3}>
+														<Col sm={3}>
 															<Form.Control
 																as='select'
 																value={quantity}
@@ -121,12 +121,13 @@ const ProductDetail = ({ match, history }) => {
 												</ListGroup.Item>
 												<ListGroup.Item>
 													<Button
+														id='product-detail-btn'
 														className='btn block'
 														style={{ width: '100%' }}
 														type='button'
 														disabled={product.countInStock < 1}
 														onClick={handleAddToCart}>
-														Add to Cart
+														{`$${product.price} - Add to Cart`}
 													</Button>
 												</ListGroup.Item>
 											</>
@@ -149,7 +150,7 @@ const ProductDetail = ({ match, history }) => {
 										<Message variant='danger'>{reviewError}</Message>
 									)}
 									{product.reviews.length === 0 && (
-										<Message>No Reviews</Message>
+										<ListGroup.Item>No Reviews Yet</ListGroup.Item>
 									)}
 									<ListGroup variant='flush'>
 										{product.reviews.map((review) => (
@@ -193,10 +194,10 @@ const ProductDetail = ({ match, history }) => {
 													</Button>
 												</Form>
 											) : (
-												<Message>
+												<div>
 													Please <Link to='/login'>sign in</Link> to add a
 													product review.
-												</Message>
+												</div>
 											)}
 										</ListGroup.Item>
 									</ListGroup>

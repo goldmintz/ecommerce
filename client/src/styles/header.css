@@ -1,5 +1,9 @@
 /* Header & Nav  */
 
+header {
+	flex-shrink: 0;
+}
+
 .navbar {
 	align-content: center;
 	/* height: 60px; */
