@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap';
+import { Row, Col, ListGroup, Button, Form } from 'react-bootstrap';
 import {
 	listProductDetails,
 	createReview,
@@ -47,6 +47,15 @@ const ProductDetail = ({ match, history }) => {
 	const [rating, setRating] = useState(0);
 	const [comment, setComment] = useState('');
 
+	//Define product image column style
+	const imageColStyle = {
+		maxHeight: '80vh',
+		backgroundImage: `url(${product.image})`,
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'center',
+		backgroundSize: 'cover',
+	};
+
 	//Handlers
 	const handleQuantChange = (e) => {
 		setQuantity(e.target.value);
@@ -73,9 +82,7 @@ const ProductDetail = ({ match, history }) => {
 					<div className='product-page-wrapper'>
 						<div className='product-content-wrapper'>
 							<Row>
-								<Col md={6}>
-									<Image src={product.image} alt={product.name} fluid />
-								</Col>
+								<Col md={6} style={imageColStyle}></Col>
 								<Col md={6}>
 									<ListGroup>
 										<ListGroup.Item id='product-name-price-wrapper'>
@@ -145,7 +152,9 @@ const ProductDetail = ({ match, history }) => {
 										)}
 									</ListGroup>
 									<hr></hr>
-									<h2>Reviews</h2>
+
+									<h3 style={{ padding: '15px' }}>Reviews</h3>
+
 									{reviewError && (
 										<Message variant='danger'>{reviewError}</Message>
 									)}
@@ -195,8 +204,12 @@ const ProductDetail = ({ match, history }) => {
 												</Form>
 											) : (
 												<div>
-													Please <Link to='/login'>sign in</Link> to add a
-													product review.
+													Please{' '}
+													<Link to='/login' style={{ fontWeight: 'bold' }}>
+														{' '}
+														sign in
+													</Link>{' '}
+													to add a product review.
 												</div>
 											)}
 										</ListGroup.Item>
