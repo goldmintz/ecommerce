@@ -1,7 +1,7 @@
 const products = [
 	{
-		name: 'Monstera',
-		image: '/seedImg/monstera.jpg',
+		name: 'Plant 1',
+		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',
@@ -13,7 +13,7 @@ const products = [
 	},
 	{
 		name: 'Plant 2',
-		image: '/seedImg/monstera.jpg',
+		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Small',
@@ -25,7 +25,7 @@ const products = [
 	},
 	{
 		name: 'Plant 3',
-		image: '/seedImg/monstera.jpg',
+		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',
@@ -33,11 +33,11 @@ const products = [
 		price: 50.0,
 		countInStock: 5,
 		rating: 0,
-		numReviews: 12,
+		numReviews: 0,
 	},
 	{
-		name: 'Monstera',
-		image: '/seedImg/monstera.jpg',
+		name: 'Plant 4',
+		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',

@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import placeholderImg from '../../images/monstera.jpg';
 
 const Product = ({ product }) => {
 	return (
 		<Card className='my-2 p-3'>
 			<Link to={`/product/${product._id}`}>
 				<Card.Img
-					src={placeholderImg}
+					src={product.image}
 					variant='top'
 					style={{ objectFit: 'cover' }}
 				/>
