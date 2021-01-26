@@ -56,7 +56,7 @@ const Header = () => {
 						</Nav>
 						<Nav className='ml-auto'>
 							<Nav.Link onClick={handleShow}>
-								<i className='fas fa-search'></i>
+								<i className='fas fa-search' style={{ marginRight: '.5rem' }} />
 								Search
 							</Nav.Link>
 
@@ -95,7 +95,10 @@ const Header = () => {
 							)}
 							<LinkContainer to='/cart'>
 								<Nav.Link>
-									<i className='fas fa-shopping-cart'></i>
+									<i
+										className='fas fa-shopping-cart'
+										style={{ marginRight: '.5rem' }}
+									/>
 									{cartItems.length > 0 && (
 										<span>
 											({cartItems.reduce((acc, item) => acc + item.quantity, 0)}
