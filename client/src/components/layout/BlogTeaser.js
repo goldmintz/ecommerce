@@ -32,20 +32,22 @@ const BlogTeaser = () => {
 				</div>
 			</Container>
 			<hr></hr>
-			<Row className='blog-teaser'>
-				<TeaserContent
-					src={`${imagePath}black_bg.jpg`}
-					heading={'Blog Post A'}
-				/>
-				<TeaserContent
-					src={`${imagePath}black_bg.jpg`}
-					heading={'Blog Post B'}
-				/>
-				<TeaserContent
-					src={`${imagePath}black_bg.jpg`}
-					heading={'Blog Post C'}
-				/>
-			</Row>
+			<Container fluid className='blog-teaser'>
+				<Row>
+					<TeaserContent
+						src={`${imagePath}black_bg.jpg`}
+						heading={'Blog Post A'}
+					/>
+					<TeaserContent
+						src={`${imagePath}black_bg.jpg`}
+						heading={'Blog Post B'}
+					/>
+					<TeaserContent
+						src={`${imagePath}black_bg.jpg`}
+						heading={'Blog Post C'}
+					/>
+				</Row>
+			</Container>
 		</>
 	);
 };
