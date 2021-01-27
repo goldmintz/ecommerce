@@ -2,15 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-	getUserProfile,
-	updateUserByAdmin,
-} from '../../../actions/userActions';
+import { getUserProfile, updateUserByAdmin } from '../../actions/userActions';
 
 //components
-import Message from '../../layout/Message';
-import Loader from '../../layout/Loader';
-import FormContainer from '../../layout/Form';
+import FormContainer from '../layout/Form';
 
 const AdminEditUser = ({ match, history }) => {
 	const userId = match.params.id;

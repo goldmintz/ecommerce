@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { savePaymentMthd } from '../../../actions/cartActions';
+import { savePaymentMthd } from '../../actions/cartActions';
 
-import FormContainer from '../../layout/Form';
-import CheckoutSteps from '../CheckoutProcess/CheckoutSteps';
+import FormContainer from '../layout/Form';
+import CheckoutSteps from './CheckoutSteps';
 
 const PaymentMethod = ({ history }) => {
 	const cart = useSelector((state) => state.cart);

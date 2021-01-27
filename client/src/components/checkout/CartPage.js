@@ -10,6 +10,7 @@ import {
 	Card,
 	Form,
 } from 'react-bootstrap';
+
 import Message from '../layout/Message';
 
 import { addToCart, removeFromCart } from '../../actions/cartActions';

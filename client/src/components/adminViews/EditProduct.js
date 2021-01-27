@@ -5,12 +5,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 	listProductDetails,
 	updateProduct,
-} from '../../../actions/productActions';
-import { PRODUCT_UPDATE_RESET } from '../../../constants/types';
+} from '../../actions/productActions';
+import { PRODUCT_UPDATE_RESET } from '../../constants/types';
 
 //components
-
-import FormContainer from '../../layout/Form';
+import FormContainer from '../layout/Form';
 
 const EditProduct = ({ match, history }) => {
 	const productId = match.params.id;

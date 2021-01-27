@@ -10,10 +10,11 @@ import {
 } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
-import SeasonalProds from '../layout/SeasonalProds';
-import HomepageJumbo from '../layout/JumboTron';
-import Product from '../features/Product';
-import BlogTeaser from '../layout/BlogTeaser';
+import Collections from './Collections';
+import SeasonalProds from './SeasonalProds';
+import HomepageJumbo from './JumboTron';
+import Product from '../product/ProductCard';
+import BlogTeaser from './BlogTeaser';
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
 
@@ -52,6 +53,8 @@ const HomePage = ({ match }) => {
 			) : (
 				<>
 					<HomepageJumbo />
+
+					<Collections />
 					<Container fluid id='home-product-grid'>
 						<Row className='home-productFilter'>
 							<Col>

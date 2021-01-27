@@ -3,12 +3,12 @@ import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getOrderDetails, payOrder } from '../../../actions/orderActions';
-import { ORDER_PAY_RESET } from '../../../constants/types';
+import { getOrderDetails, payOrder } from '../../actions/orderActions';
+import { ORDER_PAY_RESET } from '../../constants/types';
 import axios from 'axios';
 
-import Message from '../../layout/Message';
-import Loader from '../../layout/Loader';
+import Message from '../layout/Message';
+import Loader from '../layout/Loader';
 
 const ViewOrder = ({ match }) => {
 	const orderId = match.params.id;

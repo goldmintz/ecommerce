@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { createOrder } from '../../../actions/orderActions';
+import { createOrder } from '../../actions/orderActions';
 
-import Message from '../../layout/Message';
+import Message from '../layout/Message';
 import CheckoutSteps from './CheckoutSteps';
 
 const Order = ({ history }) => {

@@ -8,16 +8,16 @@ import {
 	deleteProduct,
 	createProduct,
 	updateProduct,
-} from '../../../actions/productActions';
+} from '../../actions/productActions';
 
 import {
 	PRODUCT_CREATE_RESET,
 	PRODUCT_CREATE_SUCCESS,
-} from '../../../constants/types';
+} from '../../constants/types';
 
 //components
-import Message from '../../layout/Message';
-import Loader from '../../layout/Loader';
+import Message from '../layout/Message';
+import Loader from '../layout/Loader';
 
 const ProductList = ({ history, match }) => {
 	const dispatch = useDispatch();

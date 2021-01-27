@@ -9,7 +9,7 @@ import {
 
 import { PRODUCT_CREATEREVIEW_RESET } from '../../constants/types';
 
-import Rating from '../features/Rating';
+import Rating from './Rating';
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
 

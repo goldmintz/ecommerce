@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { listAllOrders } from '../../../actions/orderActions';
+import { listAllOrders } from '../../actions/orderActions';
 
 //components
-import Message from '../../layout/Message';
-import Loader from '../../layout/Loader';
+import Message from '../layout/Message';
+import Loader from '../layout/Loader';
 
 const OrderList = ({ history }) => {
 	const dispatch = useDispatch();
