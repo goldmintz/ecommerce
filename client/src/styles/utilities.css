@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Yusei+Magic&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Yusei+Magic&display=swap'); */
 
 * {
 	box-sizing: border-box;
@@ -12,7 +12,7 @@
 /* Containers - Body, Master, & Footer  */
 html,
 body {
-	font-family: 'Playfair Display', sans-serif;
+	/* font-family: 'Playfair Display', sans-serif; */
 	color: #2d2923;
 	letter-spacing: normal;
 	line-height: 1.6;
@@ -65,7 +65,7 @@ h5,
 h6 {
 	text-transform: capitalize;
 	letter-spacing: 1px;
-	padding: 0px;
+	padding: 0px 15px;
 }
 
 a:hover {
@@ -74,6 +74,10 @@ a:hover {
 
 hr {
 	outline: 1px solid grey;
+}
+
+.heading {
+	margin-bottom: 1rem;
 }
 
 .subheading {
@@ -193,6 +197,7 @@ hr {
 	margin-top: 20px;
 	margin-bottom: 50px;
 	flex-direction: row;
+
 	/* align-content: center; */
 }
 

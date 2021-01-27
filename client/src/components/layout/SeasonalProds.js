@@ -6,8 +6,8 @@ const SeasonalProds = () => {
 
 	return (
 		<Container fluid className='seasonal-prods'>
-			<h2>Seasonal Products</h2>
-			<hr></hr>
+			<h1 className='heading'>Featured</h1>
+
 			<Container fluid>
 				<Row>
 					<Col md={6}>
