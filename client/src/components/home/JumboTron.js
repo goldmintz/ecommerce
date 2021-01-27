@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import '../../styles/jumboTron.css';
+import '../../styles/home/jumboTron.css';
 
 const HomepageJumbo = () => {
 	const imagePath = process.env.PUBLIC_URL + '/images/black_bg.jpg';

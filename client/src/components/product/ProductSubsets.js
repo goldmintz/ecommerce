@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Container, Row, Col } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
+
+import Product from './ProductCard';
 
 const ProductSubsets = ({ match }) => {
 	const subset = match.params.term;
 
 	const dispatch = useDispatch();
-	const productList = useSelector((state) => state.productList);
-
+	const products = useSelector((state) => state.productList.products);
 
 	useEffect(() => {
-		dispatch(listProducts(subset));
-	}, [dispatch, subset]);
+		dispatch(listProducts());
+	}, [dispatch]);
 
 	return (
 		<div>
@@ -24,6 +26,16 @@ const ProductSubsets = ({ match }) => {
 					.join(' ')}
 			</h3>
 			<hr />
+
+			<Container fluid>
+				<Row>
+					{products.map((product) => (
+						<Col key={product._id} xs={6} md={6} lg={4} xl={3}>
+							<Product product={product} />
+						</Col>
+					))}
+				</Row>
+			</Container>
 		</div>
 	);
 };

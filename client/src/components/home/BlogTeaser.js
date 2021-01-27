@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 const BlogTeaser = () => {
 	const imagePath = process.env.PUBLIC_URL + '/images/';
+
 	const TeaserContent = ({ src, heading }) => (
 		<div id='teaser'>
 			<Link to={'/'}>
-				<Image src={src} style={{ alignSelf: 'center' }} />
+				<Image src={src} style={{ alignSelf: 'center' }} fluid />
 				<div className='teaser-content'>
 					<div className='teaser-content-heading'>{heading}</div>
 					<p>
@@ -25,28 +26,32 @@ const BlogTeaser = () => {
 
 	return (
 		<>
-			<Container fluid id='blog-teaser-header'>
-				<h2>From Our Blog</h2>
-				<div className='subheading'>
-					Learn more about plant parenthood and other stuff...
+			<Container className='page-section' fluid>
+				<div className='section-heading'>
+					<h1>From Our Blog</h1>
 				</div>
-			</Container>
-			<hr></hr>
 
-			<Row className='blog-teaser'>
-				<TeaserContent
-					src={`${imagePath}black_bg.jpg`}
-					heading={'Blog Post A'}
-				/>
-				<TeaserContent
-					src={`${imagePath}black_bg.jpg`}
-					heading={'Blog Post B'}
-				/>
-				<TeaserContent
-					src={`${imagePath}black_bg.jpg`}
-					heading={'Blog Post C'}
-				/>
-			</Row>
+				<Row className='px-5'>
+					<Col md={4}>
+						<TeaserContent
+							src={`${imagePath}black_bg.jpg`}
+							heading={'Blog Post A'}
+						/>
+					</Col>
+					<Col md={4} >
+						<TeaserContent
+							src={`${imagePath}black_bg.jpg`}
+							heading={'Blog Post B'}
+						/>
+					</Col>
+					<Col md={4}>
+						<TeaserContent
+							src={`${imagePath}black_bg.jpg`}
+							heading={'Blog Post C'}
+						/>
+					</Col>
+				</Row>
+			</Container>
 		</>
 	);
 };

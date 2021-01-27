@@ -1,13 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	Row,
-	Col,
-	Container,
-	Button,
-	ButtonGroup,
-	ButtonToolbar,
-} from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
 import Collections from './Collections';
@@ -42,110 +35,23 @@ const HomePage = ({ match }) => {
 						Search results for <span id='search-heading-term'>{term}</span>
 					</h2>
 					<hr></hr>
-					<Row>
-						{products.map((product) => (
-							<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
-								<Product product={product} />
-							</Col>
-						))}
-					</Row>
+
+					<Container fluid>
+						<Row>
+							{products.map((product) => (
+								<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
+									<Product product={product} />
+								</Col>
+							))}
+						</Row>
+					</Container>
 				</>
 			) : (
 				<>
 					<HomepageJumbo />
-
 					<Collections />
-					<Container fluid id='home-product-grid'>
-						<Row className='home-productFilter'>
-							<Col>
-								<Button
-									variant='link'
-									className='home-productFilter'
-									onClick={(e) => {
-										e.preventDefault();
-										dispatch(listProducts());
-									}}>
-									Fresh Picks
-								</Button>
-							</Col>
-							<Col>
-								<Button
-									variant='link'
-									className='home-productFilter'
-									onClick={(e) => {
-										e.preventDefault();
-										dispatch(listProducts('best'));
-									}}>
-									Best Sellers
-								</Button>
-							</Col>
-							<Col>
-								<Button
-									variant='link'
-									className='home-productFilter'
-									onClick={(e) => {
-										e.preventDefault();
-										dispatch(listProducts('sale'));
-									}}>
-									On Sale
-								</Button>
-							</Col>
-						</Row>
-						{/*<Row
-							className='justify-content-md-center'
-							style={{ marginBottom: '20px' }}>
-							<Col className='home-filterCol'>
-								<Button
-									variant='link'
-									className='home-productFilter'
-									onClick={(e) => {
-										e.preventDefault();
-										dispatch(listProducts());
-									}}>
-									Fresh Picks
-								</Button>
-							</Col>
-							<Col className='home-filterCol'>
-								<Button
-									variant='link'
-									className='home-productFilter'
-									onClick={(e) => {
-										e.preventDefault();
-										dispatch(listProducts('popular'));
-									}}>
-									Best Sellers
-								</Button>
-							</Col>
-							<Col className='home-filterCol'>
-								<Button
-									variant='link'
-									className='home-productFilter'
-									onClick={() => dispatch(listProducts('sale'))}>
-									On Sale
-								</Button>
-							</Col>
-								</Row> */}
-					</Container>
-					<hr />
-					{loading ? (
-						<Loader />
-					) : error ? (
-						<Message variant='danger'>No Products Found</Message>
-					) : (
-						<>
-							<Container fluid>
-								<Row>
-									{products.map((product) => (
-										<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
-											<Product product={product} />
-										</Col>
-									))}
-								</Row>
-							</Container>
-							<SeasonalProds />
-							<BlogTeaser />
-						</>
-					)}
+					<SeasonalProds />
+					<BlogTeaser />
 				</>
 			)}
 		</>
