@@ -4,11 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 const Footer = () => {
 	return (
 		<footer>
-			<div>
-				<Row>
-					<Col className='text-center py3'>Copyright &copy;Ecommerce</Col>
-				</Row>
-			</div>
+			<div id='footer-content'>Copyright &copy;Ecommerce</div>
 		</footer>
 	);
 };
