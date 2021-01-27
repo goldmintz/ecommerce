@@ -1,11 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import greenPlaceholder from '../../images/green_bg.jpg';
-import blackPlaceholder from '../../images/black_bg.jpg';
-import imagePlaceholder from '../../images/blog_teaser.jpg';
 
 const BlogTeaser = () => {
+	const imagePath = process.env.PUBLIC_URL + '/images/';
 	const TeaserContent = ({ src, heading }) => (
 		<div id='teaser'>
 			<Link to={'/'}>
@@ -35,9 +33,18 @@ const BlogTeaser = () => {
 			</Container>
 			<hr></hr>
 			<Row className='blog-teaser'>
-				<TeaserContent src={greenPlaceholder} heading={'Blog Post A'} />
-				<TeaserContent src={imagePlaceholder} heading={'Blog Post B'} />
-				<TeaserContent src={blackPlaceholder} heading={'Blog Post C'} />
+				<TeaserContent
+					src={`${imagePath}black_bg.jpg`}
+					heading={'Blog Post A'}
+				/>
+				<TeaserContent
+					src={`${imagePath}black_bg.jpg`}
+					heading={'Blog Post B'}
+				/>
+				<TeaserContent
+					src={`${imagePath}black_bg.jpg`}
+					heading={'Blog Post C'}
+				/>
 			</Row>
 		</>
 	);

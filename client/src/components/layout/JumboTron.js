@@ -3,8 +3,10 @@ import { Button } from 'react-bootstrap';
 import '../../styles/jumboTron.css';
 
 const HomepageJumbo = () => {
+	const imagePath = process.env.PUBLIC_URL + '/images/black_bg.jpg';
+
 	return (
-		<section className='jumbotron'>
+		<section className='jumbotron' style={{ background: `url(${imagePath})` }}>
 			<div className='jumbo-content'>
 				<h1>Fluid jumbotron</h1>
 				<p>
