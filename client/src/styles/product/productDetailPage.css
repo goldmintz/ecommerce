@@ -1,0 +1,40 @@
+/* PRODUCT DETAIL PAGE */
+
+#product-name-price-wrapper {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 600;
+	font-size: 30px;
+	height: 100%;
+}
+
+.product-page-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.product-content-wrapper {
+	flex: 1;
+}
+
+.list-group-item {
+	border: none;
+	padding: none;
+}
+
+#product-quant {
+	padding: 0px;
+}
+
+#product-detail-btn {
+	color: white;
+	text-transform: capitalize;
+	background-color: green;
+	border: none;
+	font-size: 1.35rem;
+}
+
+#product-detail-btn:hover {
+	background-color: black;
+}

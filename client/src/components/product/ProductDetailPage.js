@@ -7,6 +7,8 @@ import {
 	createReview,
 } from '../../actions/productActions.js';
 
+import '../../styles/product/productDetailPage.css';
+
 import { PRODUCT_CREATEREVIEW_RESET } from '../../constants/types';
 
 import Rating from './Rating';
