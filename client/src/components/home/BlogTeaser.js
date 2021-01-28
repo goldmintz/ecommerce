@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import '../../styles/home/blogTeaser.css';
 
 const BlogTeaser = () => {
 	const imagePath = process.env.PUBLIC_URL + '/images/';
@@ -11,7 +12,7 @@ const BlogTeaser = () => {
 				<Image src={src} style={{ alignSelf: 'center' }} fluid />
 				<div className='teaser-content'>
 					<div className='teaser-content-heading'>{heading}</div>
-					<p>
+					<p id='teaser-summary'>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
 						ipsum non metus semper placerat. Aenean mattis commodo sapien
 						euismod mattis.
@@ -31,14 +32,14 @@ const BlogTeaser = () => {
 					<h1>From Our Blog</h1>
 				</div>
 
-				<Row className='px-5'>
-					<Col md={4}>
+				<Row className='px-3'>
+					<Col md={4} xs={6}>
 						<TeaserContent
 							src={`${imagePath}black_bg.jpg`}
 							heading={'Blog Post A'}
 						/>
 					</Col>
-					<Col md={4} >
+					<Col md={4} xs={6}>
 						<TeaserContent
 							src={`${imagePath}black_bg.jpg`}
 							heading={'Blog Post B'}

@@ -1,24 +1,33 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../../styles/home/collections.css';
 
 const Collections = () => {
 	const imagePath = process.env.PUBLIC_URL + '/images/black_bg.jpg';
 
+	const collections = ['best sellers', 'gifts', 'seasonal'];
+
 	return (
 		<Container fluid className='collections page-section'>
-			<Row className='px-5'>
-				<Col>
-					<Image src={imagePath} fluid />
-					<h2>Collection 1</h2>
+			<Row className='px-3'>
+				<Col fluid md={4} xs={6}>
+					<Link to='/products/best-sellers'>
+						<Image src={imagePath} fluid />
+						<h2>Best Sellers</h2>
+					</Link>
 				</Col>
-				<Col fluid>
-					<Image src={imagePath} fluid />
-					<h2>Collection 2</h2>
+				<Col fluid md={4} xs={6}>
+					<Link to='/products/gifts'>
+						<Image src={imagePath} fluid />
+						<h2>Gift Ideas</h2>
+					</Link>
 				</Col>
-				<Col fluid>
-					<Image src={imagePath} fluid />
-					<h2>Collection 3</h2>
+				<Col md={4} fluid>
+					<Link to='/products/seasonal'>
+						<Image src={imagePath} fluid />
+						<h2>Seasonal Specials </h2>
+					</Link>
 				</Col>
 			</Row>
 		</Container>

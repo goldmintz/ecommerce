@@ -2,6 +2,10 @@
 	margin-top: 3rem;
 }
 
+.collections span {
+	display: inline-block;
+}
+
 .collections h2 {
 	margin: 1rem 0rem 1rem 0rem !important;
 	padding-left: 0px;

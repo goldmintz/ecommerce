@@ -6,6 +6,7 @@ import './styles/utilities.css';
 //import components
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 // import pages
 import Home from './components/home/HomePage';
@@ -33,6 +34,7 @@ const App = () => {
 			<Header />
 
 			<Container fluid className='master-container'>
+				<ScrollToTop />
 				<Switch>
 					<Route path='/order/:id' component={ViewOrder} />
 					<Route path='/order' component={CreateOrder} />
