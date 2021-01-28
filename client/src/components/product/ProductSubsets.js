@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
 import Product from './ProductCard';
+import '../../styles/product/productCard.css';
 
 const ProductSubsets = ({ match }) => {
 	const subset = match.params.term;
@@ -30,7 +31,13 @@ const ProductSubsets = ({ match }) => {
 			<Container fluid>
 				<Row>
 					{products.map((product) => (
-						<Col key={product._id} xs={6} md={6} lg={4} xl={3}>
+						<Col
+							key={product._id}
+							xs={12}
+							md={6}
+							lg={3}
+							xl={3}
+							className='px-3'>
 							<Product product={product} />
 						</Col>
 					))}

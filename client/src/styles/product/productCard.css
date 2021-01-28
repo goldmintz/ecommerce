@@ -17,12 +17,13 @@
 
 .name.card-text,
 #card-prod-price {
-	font-size: 1.25rem;
+	font-size: 1.25em;
 	font-weight: 400;
 }
 
 #card-description {
 	color: grey;
+	line-height: 1.25;
 }
 
 .name.card-text:hover {

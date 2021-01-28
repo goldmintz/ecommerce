@@ -5,13 +5,9 @@ import '../../styles/product/productCard.css';
 
 const Product = ({ product }) => {
 	return (
-		<Card className='my-2 p-3'>
+		<Card className='py-3'>
 			<Link to={`/product/${product._id}`}>
-				<Card.Img
-					src={product.image}
-					variant='top'
-					style={{ objectFit: 'cover' }}
-				/>
+				<Card.Img src={product.image} />
 			</Link>
 
 			<Card.Body>
@@ -23,9 +19,8 @@ const Product = ({ product }) => {
 					</Link>
 					<div id='card-prod-price'>${product.price}</div>
 				</div>
-				<Row>
-					<Card.Text id='card-description'>{product.description}</Card.Text>
-				</Row>
+
+				<Card.Text id='card-description'>{product.description}</Card.Text>
 			</Card.Body>
 		</Card>
 	);
