@@ -1,4 +1,48 @@
+/* Seasonal Prod Image Grid */
+.seasonal-prods .image {
+	padding: 1em;
+}
+
+.card {
+	padding: 15px 0px 0px 0px !important; /* Remove card padding - gutters will come from column */
+}
+
+.img-fluid {
+	padding: 15px 0px;
+}
+
+.seasonal .card-text {
+	font-size: 16px;
+}
+
+.name-price-wrapper {
+	padding-top: 15px;
+}
+
+/* Toggle off heading on larger screens */
+.sm-scrn {
+	display: none;
+}
+
+/* if using images instead of cards  */
 .top-img {
 	height: 50%;
 	padding-bottom: 25px;
+}
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+
+	.sm-scrn {
+		display: block;
+		padding-left: 15px;
+	}
+
+	.lg-scrn {
+		display: none;
+	}
+
+	.card-name-price-wrapper {
+		flex-direction: column;
+	}
 }

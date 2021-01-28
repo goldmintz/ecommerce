@@ -10,23 +10,21 @@ const BlogTeaser = () => {
 		<div className='teaser-content'>
 			<Image src={src} fluid />
 			<div>
-				<div className='teaser-content-heading'>{heading}</div>
+				<h4 className='teaser-content-heading'>{heading}</h4>
 				<p id='teaser-summary'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
 					ipsum non metus semper placerat.
 				</p>
-				<div className='teaser-content-link' to='/'>
+				<Link className='teaser-content-link' to='/'>
 					Read More
-				</div>
+				</Link>
 			</div>
 		</div>
 	);
 
 	return (
 		<Container fluid className='blog-teaser page-section'>
-			<div className='section-heading'>
-				<h1>From Our Blog</h1>
-			</div>
+			<h1 className='section-heading'>From Our Blog</h1>
 
 			<Row className='px-3'>
 				<Col md={4} xs={6}>
