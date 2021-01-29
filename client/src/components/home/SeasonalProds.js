@@ -8,7 +8,7 @@ const SeasonalProds = () => {
 
 	return (
 		<>
-			<Container fluid className='seasonal-prods page-section'>
+			<Container fluid className='seasonal-prods page-section' className='px-3'>
 				<h1 className='section-heading lg-scrn'>Featured Products</h1>
 
 				<Row>
