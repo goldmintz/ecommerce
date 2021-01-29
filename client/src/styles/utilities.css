@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 	padding: 0px;
 	margin: 0px;
-	outline: 1px solid red;
+	/* outline: 1px solid red; */
 }
 
 /* Containers - Body, Master, & Footer  */
@@ -82,6 +82,7 @@ hr {
 	font-size: 20px;
 	margin-bottom: 20px;
 }
+
 
 @media screen and (min-width: 320px) {
 	html,
