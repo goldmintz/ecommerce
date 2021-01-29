@@ -27,13 +27,13 @@ const BlogTeaser = () => {
 			<h1 className='section-heading'>From Our Blog</h1>
 
 			<Row className='px-3'>
-				<Col md={4} xs={6}>
+				<Col md={4}>
 					<TeaserContent
 						src={`${imagePath}black_bg.jpg`}
 						heading={'Blog Post A'}
 					/>
 				</Col>
-				<Col md={4} xs={6}>
+				<Col md={4}>
 					<TeaserContent
 						src={`${imagePath}black_bg.jpg`}
 						heading={'Blog Post B'}
