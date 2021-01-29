@@ -4,12 +4,18 @@ import Product from '../models/productModel.js';
 const getProducts = asyncHandler(async (req, res) => {
 	const term = req.query.term;
 
+	console.log(term);
+
 	const products = await Product.find().or([
 		{ name: { $regex: term, $options: 'i' } },
 		{ tags: { $regex: term, $options: 'i' } },
 	]);
 
-	res.json(products);
+	if (products) {
+		res.json(products);
+	} else {
+		res.status(404).json({ message: 'no products found' });
+	}
 });
 
 const getProductById = asyncHandler(async (req, res) => {

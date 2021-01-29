@@ -4,20 +4,21 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
 import Product from './ProductCard';
+import Loader from '../layout/Loader';
 import '../../styles/product/productCard.css';
 
 const ProductSubsets = ({ match }) => {
 	const subset = match.params.term;
 
 	const dispatch = useDispatch();
-	const products = useSelector((state) => state.productList.products);
+	const { products, loading } = useSelector((state) => state.productList);
 
 	useEffect(() => {
-		dispatch(listProducts());
-	}, [dispatch]);
+		dispatch(listProducts(subset));
+	}, [dispatch, subset]);
 
 	return (
-		<div>
+		<>
 			<h3>
 				Shop{' '}
 				{subset
@@ -29,21 +30,25 @@ const ProductSubsets = ({ match }) => {
 			<hr />
 
 			<Container fluid>
-				<Row>
-					{products.map((product) => (
-						<Col
-							key={product._id}
-							xs={12}
-							md={6}
-							lg={3}
-							xl={3}
-							className='px-3'>
-							<Product product={product} />
-						</Col>
-					))}
-				</Row>
+				{loading ? (
+					<Loader />
+				) : (
+					<Row>
+						{products.map((product) => (
+							<Col
+								key={product._id}
+								xs={12}
+								md={6}
+								lg={3}
+								xl={3}
+								className='px-3'>
+								<Product product={product} />
+							</Col>
+						))}
+					</Row>
+				)}
 			</Container>
-		</div>
+		</>
 	);
 };
 

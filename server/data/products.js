@@ -10,6 +10,7 @@ const products = [
 		countInStock: 0,
 		rating: 0,
 		numReviews: 0,
+		tags: ['best-sellers', 'gifts'],
 	},
 	{
 		name: 'Plant 2',
@@ -22,6 +23,7 @@ const products = [
 		countInStock: 7,
 		rating: 0,
 		numReviews: 0,
+		tags: ['best-sellers'],
 	},
 	{
 		name: 'Plant 3',
