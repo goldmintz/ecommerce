@@ -12,6 +12,7 @@
 .card-name-price-wrapper {
 	margin: 1em 0em;
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 }
 

@@ -58,15 +58,40 @@ h5,
 h6 {
 	text-transform: capitalize;
 	letter-spacing: 1px;
+	white-space: nowrap;
 }
 
 h2 {
 	font-size: 1.5em;
 }
 
+a,
 a:hover {
-	text-decoration: none;
+	text-decoration: none !important;
 }
+
+/* .link-decor {
+	position: relative;
+}
+
+.link-decor:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	display: block;
+	margin-top: 1px;
+	right: 0;
+	background: black;
+	transition: width 0.2s ease;
+	-webkit-transition: width 0.2s ease;
+}
+
+.link-decor:hover:after {
+	width: 100%;
+	left: 0;
+	background: black;
+} */
 
 hr {
 	outline: 1px solid grey;
@@ -82,7 +107,6 @@ hr {
 	font-size: 20px;
 	margin-bottom: 20px;
 }
-
 
 @media screen and (min-width: 320px) {
 	html,

@@ -41,7 +41,7 @@ const ProductSubsets = ({ match }) => {
 								md={6}
 								lg={3}
 								xl={3}
-								className='px-3'>
+								className='px-3 py-2'>
 								<Product product={product} />
 							</Col>
 						))}

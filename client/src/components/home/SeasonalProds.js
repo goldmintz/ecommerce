@@ -8,9 +8,9 @@ const SeasonalProds = () => {
 
 	return (
 		<>
-			<Container fluid className='seasonal-prods page-section' className='px-3'>
-				<h1 className='section-heading lg-scrn'>Featured Products</h1>
+			<h1 className='section-heading lg-scrn'>Featured Products</h1>
 
+			<Container fluid className='seasonal-prods page-section px-3'>
 				<Row>
 					<Col md={6} xs={12}>
 						<Image

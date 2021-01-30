@@ -45,13 +45,15 @@ const Header = () => {
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav>
 							<LinkContainer to='/products/best-sellers'>
-								<Nav.Link activeClassName='active'>Best Sellers</Nav.Link>
+								<Nav.Link className='link-decor' activeClassName='active'>
+									Best Sellers
+								</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/products/gifts'>
-								<Nav.Link>Gift Ideas</Nav.Link>
+								<Nav.Link className='link-decor'>Gift Ideas</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/products/tbd'>
-								<Nav.Link>Other Link</Nav.Link>
+								<Nav.Link className='link-decor'>Other Link</Nav.Link>
 							</LinkContainer>
 						</Nav>
 						<Nav className='ml-auto'>
