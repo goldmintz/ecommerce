@@ -10,6 +10,7 @@ const products = [
 		countInStock: 0,
 		rating: 0,
 		numReviews: 0,
+		tagline: 'Product tagline',
 		tags: ['best-sellers', 'gifts'],
 	},
 	{
@@ -23,6 +24,7 @@ const products = [
 		countInStock: 7,
 		rating: 0,
 		numReviews: 0,
+		tagline: 'Product tagline',
 		tags: ['best-sellers'],
 	},
 	{
@@ -35,6 +37,7 @@ const products = [
 		price: 50.0,
 		countInStock: 5,
 		rating: 0,
+		tagline: 'Product tagline',
 		numReviews: 0,
 	},
 	{
@@ -48,6 +51,7 @@ const products = [
 		countInStock: 11,
 		rating: 0,
 		numReviews: 0,
+		tagline: 'Product tagline',
 	},
 ];
 

@@ -4,8 +4,6 @@ import Product from '../models/productModel.js';
 const getProducts = asyncHandler(async (req, res) => {
 	const term = req.query.term;
 
-	console.log(term);
-
 	const products = await Product.find().or([
 		{ name: { $regex: term, $options: 'i' } },
 		{ tags: { $regex: term, $options: 'i' } },
@@ -88,6 +86,7 @@ const createProduct = asyncHandler(async (req, res) => {
 		size: 'Sample size',
 		category: 'Sample category',
 		description: 'Sample description',
+		tagline: 'Sample tagline',
 		numReviews: 0,
 		countInStock: 0,
 	});

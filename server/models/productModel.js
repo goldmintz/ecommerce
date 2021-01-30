@@ -44,6 +44,7 @@ const productSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		tagline: String,
 		tags: [
 			{
 				type: String,

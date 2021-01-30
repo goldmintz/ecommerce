@@ -20,7 +20,7 @@ const Product = ({ product }) => {
 					<div id='card-prod-price'>${product.price}</div>
 				</div>
 
-				<Card.Text id='card-description'>{product.description}</Card.Text>
+				<Card.Text id='card-description'>{product.tagline}</Card.Text>
 			</Card.Body>
 		</Card>
 	);
