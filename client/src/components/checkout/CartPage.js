@@ -56,8 +56,8 @@ const Cart = ({ match, location, history }) => {
 										</Col>
 
 										<Col md={9} className='cart-product-detail py-3 px-3'>
-											<div id='item-price'>${item.price}</div>
 											<Link to={`product/${item.product}`}>{item.name}</Link>
+											<div id='item-price'>${item.price}</div>
 											<div id='item-desc'>{item.description}</div>
 
 											<div className='quant-controls'>

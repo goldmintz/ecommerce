@@ -12,10 +12,6 @@
 	border-bottom: 1px solid black;
 }
 
-.img-thumbnail {
-	border: none;
-}
-
 #item-price {
 	font-weight: bold;
 }
@@ -57,5 +53,9 @@
 	}
 	.cart-row-wrapper {
 		margin: none;
+	}
+
+	#item-desc {
+		display: none;
 	}
 }
