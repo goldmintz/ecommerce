@@ -61,7 +61,8 @@ const Order = ({ history }) => {
 						<ListGroup.Item>
 							<h2>Shipping</h2>
 							<p>
-								<strong>Address: </strong>
+								Address:
+								<br></br>
 								{cart.shippingAdd.address} {'  '}
 								{cart.shippingAdd.city}
 								{', '}

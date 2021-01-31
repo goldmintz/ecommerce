@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 	padding: 0px;
 	margin: 0px;
-	/* outline: 1px solid red; */
+	outline: 1px solid red;
 }
 
 /* Containers - Body, Master, & Footer  */
@@ -47,6 +47,10 @@ footer {
 	width: 100%;
 	text-align: center;
 	padding: 1rem;
+}
+
+.btn-100 {
+	width: 100%;
 }
 
 /* Text, Headers, Links, & Fonts */
