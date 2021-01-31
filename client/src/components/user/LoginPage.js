@@ -16,6 +16,7 @@ const Login = ({ location, history }) => {
 
 	const dispatch = useDispatch();
 
+	//Determine from where user arrived - to redirect on path or add custom messaging
 	const redirect = location.search ? location.search.split('=')[1] : '/';
 
 	const userLogin = useSelector((state) => state.userLogin);
@@ -38,6 +39,9 @@ const Login = ({ location, history }) => {
 		<FormContainer>
 			<h1>Sign In</h1>
 			{/*{error && <Message variant='danger'>{error}</Message>} */}
+			{redirect === 'shipping' && (
+				<h5>You must sign in to complete your order.</h5>
+			)}
 			{loading && <Loader />}
 			<Form onSubmit={handleSubmit}>
 				<Form.Group controlId='email'>

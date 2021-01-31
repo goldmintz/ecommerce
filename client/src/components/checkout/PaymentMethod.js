@@ -28,7 +28,7 @@ const PaymentMethod = ({ history }) => {
 
 	return (
 		<>
-			<CheckoutSteps step1 step2 step3 />
+			<CheckoutSteps step1 step2 />
 			<FormContainer>
 				<h1>Payment Method</h1>
 				<Form onSubmit={handleSubmit}>
