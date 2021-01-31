@@ -1,14 +1,18 @@
 /* Seasonal Prod Image Grid */
+
+/* Images */
+
 .seasonal-prods .image {
 	padding: 1em;
 }
 
-.card {
-	padding: 15px 0px 0px 0px !important; /* Remove card padding - gutters will come from column */
-}
-
 .img-fluid {
 	padding: 15px 0px;
+}
+
+/* Cards (Grid of 4 Products) */
+.card {
+	padding: 15px 0px 0px 0px !important; /* Remove card padding - gutters will come from column */
 }
 
 .seasonal .card-text {
