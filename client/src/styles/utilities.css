@@ -49,6 +49,10 @@ footer {
 	padding: 1rem;
 }
 
+.btn-100 {
+	width: 100%;
+}
+
 /* Text, Headers, Links, & Fonts */
 h1,
 h2,
@@ -70,29 +74,6 @@ a:hover {
 	text-decoration: none !important;
 }
 
-/* .link-decor {
-	position: relative;
-}
-
-.link-decor:after {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 2px;
-	display: block;
-	margin-top: 1px;
-	right: 0;
-	background: black;
-	transition: width 0.2s ease;
-	-webkit-transition: width 0.2s ease;
-}
-
-.link-decor:hover:after {
-	width: 100%;
-	left: 0;
-	background: black;
-} */
-
 hr {
 	outline: 1px solid grey;
 }
@@ -106,6 +87,10 @@ hr {
 	font-style: italic;
 	font-size: 20px;
 	margin-bottom: 20px;
+}
+
+.img-thumbnail {
+	border: none;
 }
 
 @media screen and (min-width: 320px) {

@@ -1,0 +1,23 @@
+.checkout-steps {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+
+	.checkout-steps {
+		padding: 0px;
+		white-space: nowrap;
+	}
+	.checkout-steps .nav-item {
+		margin: 0;
+	}
+	.checkout-steps .nav-link {
+		font-size: 14px;
+		padding: 6px;
+	}
+}

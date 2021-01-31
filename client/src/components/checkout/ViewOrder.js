@@ -99,7 +99,7 @@ const ViewOrder = ({ match }) => {
 							{order.orderItems.length === 0 ? (
 								<Message>Awww...no items in your order!</Message>
 							) : (
-								<ListGroup variant='flush'>
+								<ListGroup>
 									{order.orderItems.map((item, i) => (
 										<ListGroup.Item key={i}>
 											<Row>
@@ -108,7 +108,7 @@ const ViewOrder = ({ match }) => {
 														src={item.image}
 														alt={item.name}
 														fluid
-														rounded
+														thumbnail
 													/>
 												</Col>
 												<Col>

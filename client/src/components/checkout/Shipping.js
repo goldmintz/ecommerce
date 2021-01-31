@@ -27,52 +27,54 @@ const Shipping = ({ history }) => {
 	};
 
 	return (
-		<FormContainer>
-			<CheckoutSteps step1 step2 />
-			<h1>Shipping</h1>
-			<Form onSubmit={handleSubmit}>
-				<Form.Group controlId='address'>
-					<Form.Label>Address</Form.Label>
-					<Form.Control
-						required
-						type='address'
-						placeholder='Enter address'
-						value={address}
-						onChange={(e) => setAddress(e.target.value)}></Form.Control>
-				</Form.Group>
-				<Form.Group controlId='city'>
-					<Form.Label>City</Form.Label>
-					<Form.Control
-						required
-						type='city'
-						placeholder='Enter city'
-						value={city}
-						onChange={(e) => setCity(e.target.value)}></Form.Control>
-				</Form.Group>
-				<Form.Group controlId='state'>
-					<Form.Label>State</Form.Label>
-					<Form.Control
-						required
-						type='state'
-						placeholder='Enter state'
-						value={state}
-						onChange={(e) => setState(e.target.value)}></Form.Control>
-				</Form.Group>
-				<Form.Group controlId='state'>
-					<Form.Label>Zip</Form.Label>
-					<Form.Control
-						required
-						type='zip'
-						maxLength='6'
-						placeholder='Enter zip'
-						value={zip}
-						onChange={(e) => setZip(e.target.value)}></Form.Control>
-				</Form.Group>
-				<Button type='submit' variant='primary'>
-					Next
-				</Button>
-			</Form>
-		</FormContainer>
+		<>
+			<CheckoutSteps step1 />
+			<FormContainer>
+				<h1>Shipping</h1>
+				<Form onSubmit={handleSubmit}>
+					<Form.Group controlId='address'>
+						<Form.Label>Address</Form.Label>
+						<Form.Control
+							required
+							type='address'
+							placeholder='Enter address'
+							value={address}
+							onChange={(e) => setAddress(e.target.value)}></Form.Control>
+					</Form.Group>
+					<Form.Group controlId='city'>
+						<Form.Label>City</Form.Label>
+						<Form.Control
+							required
+							type='city'
+							placeholder='Enter city'
+							value={city}
+							onChange={(e) => setCity(e.target.value)}></Form.Control>
+					</Form.Group>
+					<Form.Group controlId='state'>
+						<Form.Label>State</Form.Label>
+						<Form.Control
+							required
+							type='state'
+							placeholder='Enter state'
+							value={state}
+							onChange={(e) => setState(e.target.value)}></Form.Control>
+					</Form.Group>
+					<Form.Group controlId='zip'>
+						<Form.Label>Zip</Form.Label>
+						<Form.Control
+							required
+							type='zip'
+							maxLength='6'
+							placeholder='Enter zip'
+							value={zip}
+							onChange={(e) => setZip(e.target.value)}></Form.Control>
+					</Form.Group>
+					<Button type='submit' variant='primary' className='btn-100'>
+						Next
+					</Button>
+				</Form>
+			</FormContainer>
+		</>
 	);
 };
 

@@ -3,7 +3,6 @@ import { Form, Modal } from 'react-bootstrap';
 
 const SearchModal = ({ history, show, handleClose }) => {
 	const [term, setTerm] = useState('');
-	console.log(term);
 
 	const handleSearchSubmit = (e) => {
 		e.preventDefault();
