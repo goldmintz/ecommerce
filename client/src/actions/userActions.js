@@ -60,7 +60,13 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 export const logout = () => (dispatch) => {
+	//clear local storage data when user logs out
 	localStorage.removeItem('userDetails');
+	localStorage.removeItem('cartItems');
+	localStorage.removeItem('__paypal_storage__');
+	localStorage.removeItem('paymentMthd');
+	localStorage.removeItem('shippingAdd');
+
 	dispatch({
 		type: USER_LOGOUT,
 	});
@@ -70,6 +76,8 @@ export const logout = () => (dispatch) => {
 	dispatch({
 		type: ORDER_USERLIST_RESET,
 	});
+	//send em back to login
+	document.location.href = '/login';
 };
 
 export const register = (name, email, password) => async (dispatch) => {
