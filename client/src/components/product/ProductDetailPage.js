@@ -117,7 +117,7 @@ const ProductDetail = ({ match, history }) => {
 											<ListGroup.Item>
 												<Row>
 													<Col md={3}>Quantity</Col>
-													<Col md={9}>
+													<Col md={3}>
 														<Form.Control
 															as='select'
 															value={quantity}

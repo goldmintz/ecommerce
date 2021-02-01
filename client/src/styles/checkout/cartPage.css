@@ -32,9 +32,8 @@
 	display: flex;
 }
 
-.quant-controls .form-control,
 .quant-controls .form-control {
-	width: 30%;
+	width: 25%;
 }
 
 .subtotal-row {
