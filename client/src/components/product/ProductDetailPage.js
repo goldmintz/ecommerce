@@ -102,7 +102,11 @@ const ProductDetail = ({ match, history }) => {
 									<ListGroup.Item>
 										<Rating
 											value={product.rating}
-											text={`${product.numReviews} reviews`}
+											text={
+												product.numReviews === 1
+													? `${product.numReviews} review`
+													: `${product.numReviews} reviews`
+											}
 										/>
 									</ListGroup.Item>
 									<ListGroup.Item>
@@ -158,7 +162,7 @@ const ProductDetail = ({ match, history }) => {
 								</ListGroup>
 								<hr></hr>
 
-								<div style={{ padding: '15px', fontSize: '26px' }}>Reviews</div>
+								<h2 className='product-section-heading'>Reviews</h2>
 
 								{reviewError && (
 									<Message variant='danger'>{reviewError}</Message>
@@ -166,17 +170,19 @@ const ProductDetail = ({ match, history }) => {
 								{product.reviews.length === 0 && (
 									<ListGroup.Item>No Reviews Yet</ListGroup.Item>
 								)}
-								<ListGroup variant='flush'>
+								<ListGroup>
 									{product.reviews.map((review) => (
 										<ListGroup.Item key={review._id}>
-											{review.name}
-											<Rating value={review.rating} />
-											<p>{review.createdAt.substring(0, 10)}</p>
-											<p>{review.comment}</p>
+											<span>
+												{review.createdAt.substring(0, 10)} by {review.name}
+											</span>
+											<Rating value={review.rating} text={review.comment} />
 										</ListGroup.Item>
 									))}
-									<h2>Add a Review</h2>
+
 									<hr></hr>
+									<h2 className='product-section-heading'>Add a Review</h2>
+
 									<ListGroup.Item>
 										{userDetails ? (
 											<Form onSubmit={handleReviewSubmit}>

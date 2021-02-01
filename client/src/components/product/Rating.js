@@ -3,9 +3,8 @@ import { Row, Col } from 'react-bootstrap';
 
 const Rating = ({ value, text, color }) => {
 	return (
-		<Row>
-			<Col md={3}>{text && text}</Col>
-			<Col md={9}>
+		<Row >
+			<Col md={3}>
 				<div className='rating'>
 					<span>
 						<i
@@ -64,6 +63,7 @@ const Rating = ({ value, text, color }) => {
 					</span>
 				</div>
 			</Col>
+			<Col md={9}>{text && text}</Col>
 		</Row>
 	);
 };

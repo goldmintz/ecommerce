@@ -53,7 +53,7 @@ export const listProductDetails = (id) => async (dispatch) => {
 	} catch (err) {
 		dispatch({
 			type: PRODUCT_DETAILS_FAIL,
-			payload: err.response,
+			payload: err.response.data.message,
 		});
 	}
 };
@@ -177,7 +177,7 @@ export const createReview = (id, review) => async (dispatch, getState) => {
 	} catch (err) {
 		dispatch({
 			type: PRODUCT_CREATEREVIEW_FAIL,
-			payload: err.message,
+			payload: err.response.data.message,
 		});
 	}
 };
