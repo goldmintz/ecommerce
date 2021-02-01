@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { listAllOrders } from '../../actions/orderActions';
@@ -12,7 +11,9 @@ const OrderList = ({ history }) => {
 	const dispatch = useDispatch();
 
 	const adminOrderList = useSelector((state) => state.adminOrderList);
-	const { error, loading, orders, success } = adminOrderList;
+	const { error, success, loading, orders } = adminOrderList;
+
+	console.log('component:', orders);
 
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userDetails } = userLogin;
@@ -45,18 +46,16 @@ const OrderList = ({ history }) => {
 						</tr>
 					</thead>
 					<tbody>
-						{orders.map(
-							({ _id, user, totalPrice, isPaid, isDelivered, orderItems }) => (
-								<tr key={_id}>
-									<td>{_id} </td>
-									<td>{user}</td>
-									<td>{orderItems.length}</td>
-									<td>${totalPrice}</td>
-									<td>{isPaid ? '✅' : '❌'}</td>
-									<td>{isDelivered ? '✅' : '❌'}</td>
-								</tr>
-							),
-						)}
+						{orders.map((order) => (
+							<tr key={order._id}>
+								<td>{order._id} </td>
+								<td>{order.user.name}</td>
+								<td>{order.orderItems.length}</td>
+								<td>${order.totalPrice}</td>
+								<td>{order.isPaid ? '✅' : '❌'}</td>
+								<td>{order.isDelivered ? '✅' : '❌'}</td>
+							</tr>
+						))}
 					</tbody>
 				</Table>
 			)}{' '}

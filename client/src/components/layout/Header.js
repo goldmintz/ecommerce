@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { logout } from '../../actions/userActions';
 import SearchModal from './SearchModal';
 
@@ -45,15 +45,13 @@ const Header = () => {
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav>
 							<LinkContainer to='/products/best-sellers'>
-								<Nav.Link className='link-decor' activeClassName='active'>
-									Best Sellers
-								</Nav.Link>
+								<Nav.Link>Best Sellers</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/products/gifts'>
-								<Nav.Link className='link-decor'>Gift Ideas</Nav.Link>
+								<Nav.Link>Gift Ideas</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/products/tbd'>
-								<Nav.Link className='link-decor'>Other Link</Nav.Link>
+								<Nav.Link>Other Link</Nav.Link>
 							</LinkContainer>
 						</Nav>
 						<Nav className='ml-auto'>
@@ -63,13 +61,7 @@ const Header = () => {
 							</Nav.Link>
 
 							{userDetails ? (
-								<NavDropdown
-									title={
-										<a>
-											{/*<i className='far fa-user'></i> */} {userDetails.name}
-										</a>
-									}
-									id='username'>
+								<NavDropdown title={userDetails.name} id='username'>
 									<LinkContainer to='/profile'>
 										<NavDropdown.Item>Account</NavDropdown.Item>
 									</LinkContainer>
