@@ -169,7 +169,6 @@ export const listAllOrders = () => async (dispatch, getState) => {
 			type: ORDER_ADMINLIST_SUCCESS,
 			payload: data,
 		});
-		console.log(data);
 	} catch (err) {
 		dispatch({
 			type: ORDER_ADMINLIST_FAIL,

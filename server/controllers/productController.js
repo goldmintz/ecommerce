@@ -9,7 +9,11 @@ const getProducts = asyncHandler(async (req, res) => {
 		{ tags: { $regex: term, $options: 'i' } },
 	]);
 
-	res.json(products);
+	if (products) {
+		res.json(products);
+	} else {
+		res.status(404).json({ message: 'no products found' });
+	}
 });
 
 const getProductById = asyncHandler(async (req, res) => {
@@ -82,6 +86,7 @@ const createProduct = asyncHandler(async (req, res) => {
 		size: 'Sample size',
 		category: 'Sample category',
 		description: 'Sample description',
+		tagline: 'Sample tagline',
 		numReviews: 0,
 		countInStock: 0,
 	});

@@ -1,0 +1,32 @@
+/* HOMEPAGE : PRODUCT CARDS */
+.card {
+	padding: 0px 2em;
+	border: none;
+}
+
+.card-body,
+.card-body {
+	padding: 0em;
+}
+
+.card-name-price-wrapper {
+	margin: 1em 0em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.name.card-text,
+#card-prod-price {
+	font-size: 1.25em;
+	font-weight: 400;
+}
+
+#card-description {
+	color: grey;
+	line-height: 1.25;
+}
+
+.name.card-text:hover {
+	color: green;
+}

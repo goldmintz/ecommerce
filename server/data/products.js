@@ -1,6 +1,6 @@
 const products = [
 	{
-		name: 'Monstera',
+		name: 'Plant 1',
 		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
@@ -10,6 +10,8 @@ const products = [
 		countInStock: 0,
 		rating: 0,
 		numReviews: 0,
+		tagline: 'Product tagline',
+		tags: ['best-sellers', 'gifts'],
 	},
 	{
 		name: 'Plant 2',
@@ -22,6 +24,8 @@ const products = [
 		countInStock: 7,
 		rating: 0,
 		numReviews: 0,
+		tagline: 'Product tagline',
+		tags: ['best-sellers'],
 	},
 	{
 		name: 'Plant 3',
@@ -33,10 +37,11 @@ const products = [
 		price: 50.0,
 		countInStock: 5,
 		rating: 0,
-		numReviews: 12,
+		tagline: 'Product tagline',
+		numReviews: 0,
 	},
 	{
-		name: 'Monstera',
+		name: 'Plant 4',
 		image: '/images/monstera.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
@@ -46,30 +51,7 @@ const products = [
 		countInStock: 11,
 		rating: 0,
 		numReviews: 0,
-	},
-	{
-		name: 'Other Plant',
-		image: '/images/monstera.jpg',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
-		size: 'Small',
-		category: 'Tropicals',
-		price: 49.99,
-		countInStock: 7,
-		rating: 0,
-		numReviews: 0,
-	},
-	{
-		name: 'Placeholder',
-		image: '/images/monstera.jpg',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
-		size: 'Medium',
-		category: 'Tropicals',
-		price: 29.99,
-		countInStock: 0,
-		rating: 0,
-		numReviews: 0,
+		tagline: 'Product tagline',
 	},
 ];
 

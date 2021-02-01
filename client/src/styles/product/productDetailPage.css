@@ -1,0 +1,28 @@
+/* PRODUCT DETAIL PAGE */
+
+#product-name-price-wrapper {
+	display: flex;
+	justify-content: space-between;
+	font-size: 26px;
+}
+
+.list-group-item {
+	border: none;
+	padding: 15px;
+}
+
+#product-detail-btn {
+	color: white;
+	text-transform: capitalize;
+	background-color: green;
+	border: none;
+	font-size: 1rem;
+}
+
+#product-detail-btn:hover {
+	background-color: black;
+}
+
+#product-img {
+	padding: 15px;
+}

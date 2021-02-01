@@ -242,7 +242,6 @@ export const deleteUser = (id) => async (dispatch, getState) => {
 };
 
 export const updateUserByAdmin = (user) => async (dispatch, getState) => {
-	console.log(user);
 	try {
 		dispatch({
 			type: USER_UPDATE_ADMIN_REQ,
@@ -261,7 +260,6 @@ export const updateUserByAdmin = (user) => async (dispatch, getState) => {
 
 		const { data } = await axios.put(`/api/users/${user._id}`, user, config);
 
-		console.log(data);
 		dispatch({
 			type: USER_UPDATE_ADMIN_SUCCESS,
 		});

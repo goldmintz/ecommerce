@@ -26,6 +26,7 @@ export const listProducts = (term = '') => async (dispatch) => {
 		dispatch({
 			type: PRODUCT_LIST_REQ,
 		});
+
 		const { data } = await axios.get(`/api/products?term=${term}`);
 		dispatch({
 			type: PRODUCT_LIST_SUCCESS,

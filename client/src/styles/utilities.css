@@ -1,0 +1,121 @@
+/* #4bab84 - green  */
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	/* outline: 1px solid red; */
+}
+
+/* Containers - Body, Master, & Footer  */
+html,
+body {
+	/* font-family: 'Playfair Display', sans-serif; */
+	color: #2d2923;
+	letter-spacing: normal;
+	line-height: 1.6;
+	font-size: 16px;
+	letter-spacing: 0.5;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+}
+
+.master-container {
+	margin-top: 3rem;
+	padding: 1.5rem;
+	min-height: 100vh;
+	flex-direction: column;
+	position: relative;
+}
+
+.page-section {
+	margin-top: 30px;
+	padding: 0px;
+	margin-bottom: 50px;
+}
+
+footer {
+	display: flex;
+	background-color: black;
+	color: whitesmoke;
+	width: 100%;
+	height: 4rem;
+	align-items: center;
+	justify-content: center;
+}
+
+#footer-content {
+	width: 100%;
+	text-align: center;
+	padding: 1rem;
+}
+
+.btn-100 {
+	width: 100%;
+}
+
+/* Text, Headers, Links, & Fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	white-space: nowrap;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+a,
+a:hover {
+	text-decoration: none !important;
+}
+
+hr {
+	outline: 1px solid grey;
+}
+
+.section-heading {
+	padding-left: 20px;
+	margin-bottom: 1rem;
+}
+
+.subheading {
+	font-style: italic;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.img-thumbnail {
+	border: none;
+}
+
+@media screen and (min-width: 320px) {
+	html,
+	h2 {
+		font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+	}
+}
+@media screen and (min-width: 1000px) {
+	html {
+		font-size: 22px;
+	}
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+
+	.section-heading {
+		padding-left: 0px;
+	}
+	.master-container {
+		margin-top: 3rem;
+		padding: 30px;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+}
