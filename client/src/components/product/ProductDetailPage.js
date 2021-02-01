@@ -205,12 +205,16 @@ const ProductDetail = ({ match, history }) => {
 															setComment(e.target.value)
 														}></Form.Control>
 												</Form.Group>
-												<Button
-													type='submit'
-													variant='outline'
-													style={{ width: '100%' }}>
-													Submit Rating
-												</Button>
+
+												{rating !== 0 ? (
+													<Button type='submit' className='btn-100'>
+														Submit Rating
+													</Button>
+												) : (
+													<Button type='submit' className='btn-100' disabled>
+														Select Rating
+													</Button>
+												)}
 											</Form>
 										) : (
 											<div>

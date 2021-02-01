@@ -30,27 +30,31 @@ const createReview = asyncHandler(async (req, res) => {
 	const { rating, comment } = req.body;
 
 	const product = await Product.findById(req.params.id);
-	console.log(product);
 
 	if (product) {
+		// Check for existing reviews by user id
 		const prevReview = product.reviews.find(
-			(r) => r.user.toString() === userId.toString(),
+			(r) => r.author.toString() === req.user._id.toString(),
 		);
 
 		if (prevReview) {
 			res.status(400);
-			throw new Error('Product already reviewed');
+			throw new Error('Product already reviewed by this user.');
 		}
 
+		//if no other reviews created by this user, create new Review object
 		const newReview = {
 			name: req.user.name,
 			rating: Number(rating),
 			comment,
-			user: req.user._id,
+			author: req.user._id,
 		};
 
 		product.reviews.push(newReview);
+
 		product.numReviews = product.reviews.length;
+
+		//Calculate product rating value
 		product.rating =
 			product.reviews.reduce((acc, el) => el.rating + acc, 0) /
 			product.reviews.length;
