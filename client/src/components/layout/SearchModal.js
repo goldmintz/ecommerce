@@ -26,7 +26,7 @@ const SearchModal = ({ history, show, handleClose }) => {
 			<Modal.Body>
 				<Form onSubmit={handleSearchSubmit} className='search-input'>
 					<Form.Control
-						style={{ fontSize: '26px', color: 'green' }}
+						style={{ fontSize: '26px', color: '#4bab84' }}
 						type='text'
 						name='term'
 						placeholder='Search our products'

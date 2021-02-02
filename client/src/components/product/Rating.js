@@ -1,14 +1,15 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-const Rating = ({ value, text, color }) => {
+const Rating = ({ value, text }) => {
+	const iconColor = { color: '#4bab84' };
 	return (
-		<Row >
+		<Row>
 			<Col md={3}>
 				<div className='rating'>
 					<span>
 						<i
-							style={{ color }}
+							style={iconColor}
 							className={
 								value >= 1
 									? 'fas fa-star'
@@ -19,7 +20,7 @@ const Rating = ({ value, text, color }) => {
 					</span>
 					<span>
 						<i
-							style={{ color }}
+							style={iconColor}
 							className={
 								value >= 2
 									? 'fas fa-star'
@@ -30,7 +31,7 @@ const Rating = ({ value, text, color }) => {
 					</span>
 					<span>
 						<i
-							style={{ color }}
+							style={iconColor}
 							className={
 								value >= 3
 									? 'fas fa-star'
@@ -41,7 +42,7 @@ const Rating = ({ value, text, color }) => {
 					</span>
 					<span>
 						<i
-							style={{ color }}
+							style={iconColor}
 							className={
 								value >= 4
 									? 'fas fa-star'
@@ -52,7 +53,7 @@ const Rating = ({ value, text, color }) => {
 					</span>
 					<span>
 						<i
-							style={{ color }}
+							style={iconColor}
 							className={
 								value >= 5
 									? 'fas fa-star'
@@ -66,10 +67,6 @@ const Rating = ({ value, text, color }) => {
 			<Col md={9}>{text && text}</Col>
 		</Row>
 	);
-};
-
-Rating.defaultProps = {
-	color: '#033012',
 };
 
 export default Rating;

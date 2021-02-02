@@ -1,4 +1,7 @@
-/* #4bab84 - green  */
+:root {
+	--green: #4bab84;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0px;
@@ -75,36 +78,8 @@ a:hover {
 	position: relative;
 }
 
-/* Nav Link Styling  */
-a.nav-link::after {
-	content: '';
-	position: absolute;
-	width: 0px;
-	height: 2px;
-	left: 10px;
-	margin-top: 25px;
-	background-color: black;
-	transition: all 0.3s ease-in-out;
-	visibility: hidden;
-}
-
-a.nav-link:hover:after {
-	visibility: visible;
-	width: 100%;
-}
-
-a.active.nav-link:before {
-	content: '' !important;
-	position: absolute !important;
-	width: 100% !important;
-	height: 2px !important;
-	left: 10px !important;
-	margin-top: 25px !important;
-	background-color: black !important;
-}
-
 hr {
-	outline: 1px solid grey;
+	outline: 1px solid black;
 }
 
 .section-heading {

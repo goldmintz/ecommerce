@@ -36,6 +36,34 @@ header {
 	margin-right: auto;
 }
 
+/* Hover and active styling */
+a.nav-link::after {
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 2px;
+	left: 10px;
+	margin-top: 25px;
+	background-color: black;
+	transition: all 0.3s ease-in-out;
+	visibility: hidden;
+}
+
+a.nav-link:hover:after {
+	visibility: visible;
+	width: 100%;
+}
+
+a.active.nav-link:before {
+	content: '' !important;
+	position: absolute !important;
+	width: 100% !important;
+	height: 2px !important;
+	left: 10px !important;
+	margin-top: 25px !important;
+	background-color: #4bab84 !important;
+}
+
 /* Search Modal */
 .search-modal {
 	width: 100%;
@@ -67,5 +95,5 @@ header {
 }
 
 #search-heading-term {
-	color: green;
+	color: #4bab84;
 }
