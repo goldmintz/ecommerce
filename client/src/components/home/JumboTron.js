@@ -9,7 +9,6 @@ const HomepageJumbo = () => {
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
-		backgroundPosition: '0px -80px',
 	};
 
 	return (
