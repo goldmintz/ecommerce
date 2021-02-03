@@ -20,6 +20,7 @@ import Shipping from './components/checkout/Shipping';
 import PaymentMethod from './components/checkout/PaymentMethod';
 import CreateOrder from './components/checkout/CreateOrder';
 import ViewOrder from './components/checkout/ViewOrder';
+import Quiz from './components/quiz/QuizPage';
 
 //Admin Only Views
 import UserList from './components/adminViews/UserList';
@@ -53,6 +54,7 @@ const App = () => {
 				<Route path='/admin/user/:id/edit' component={AdminEditUser} />
 				<Route path='/search/:term' component={Home} />
 				<Route path='/products/:term' component={ProductSubsets} />
+				<Route path='/quiz' component={Quiz} />
 				<Route exact path='/' component={Home} />
 			</Container>
 

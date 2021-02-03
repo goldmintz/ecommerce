@@ -76,8 +76,6 @@ const EditProduct = ({ match, history }) => {
 		history.push('/admin/products');
 	};
 
-	console.log(tags);
-
 	return (
 		// TODO: Add dropdowns for presets, like size and category
 		// TODO: Add dollar sign for price input
