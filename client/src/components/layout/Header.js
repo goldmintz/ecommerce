@@ -50,8 +50,8 @@ const Header = () => {
 							<LinkContainer to='/products/gifts'>
 								<Nav.Link>Gift Ideas</Nav.Link>
 							</LinkContainer>
-							<LinkContainer to='/products/tbd'>
-								<Nav.Link>Other Link</Nav.Link>
+							<LinkContainer to='/quiz'>
+								<Nav.Link>Plant Finder</Nav.Link>
 							</LinkContainer>
 						</Nav>
 						<Nav className='ml-auto'>

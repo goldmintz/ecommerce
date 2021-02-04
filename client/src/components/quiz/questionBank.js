@@ -3,35 +3,44 @@ const questionBank = [
 		prompt: 'Is this your first plant?',
 		additionalText: "It's ok to be new",
 		responses: [
-			"Yes, I'm a verdant virgin",
-			"I'm a proud plant parent",
-			'I have some plants, but I need help!',
+			{ text: "Yes, I'm a verdant virgin", points: 1 },
+			{ text: "I'm a proud plant parent", points: 2 },
 		],
 	},
 	{
 		prompt: 'How much light will the plant get?',
 		additionalText: 'Be honest',
 		responses: [
-			'Bright, direct sun from a window',
-			"A workday's worth of overhead lighting",
-			'Almost the dark side of the moon',
+			{ text: 'Bright, direct sun from a window', points: 1 },
+			{ text: 'Almost the dark side of the moon', points: 2 },
 		],
 	},
 	{
 		prompt: 'Where will the plant be placed?',
 		additionalText: "Here's more dummy text",
-		responses: ['On my desk', 'On a bookshelf', 'In a sunny window'],
+		responses: [
+			{ text: 'On my desk', points: 0 },
+			{ text: 'On a bookshelf', points: 1 },
+			{ text: 'In a sunny window', points: 2 },
+		],
 	},
 	{
 		prompt: 'What is your aesthetic?',
 		additionalText: 'I like big buds and I cannot lie',
-		responses: ['Long and flowing', 'Tall and statuesque', "Short 'n thicc"],
+		responses: [
+			{ text: 'Long and flowing', points: 1 },
+			{ text: 'Tall and statuesque', points: 2 },
+			{ text: "Short 'n thicc", points: 2 },
+		],
 	},
 
 	{
 		prompt: 'Do you have pets?',
 		additionalText: 'Some plants are poisonous',
-		responses: ["It's just me and the plants", 'I have a fur baby or two'],
+		responses: [
+			{ text: "It's just me and the plants", points: 1 },
+			{ text: 'I have a fur baby or two', points: 2 },
+		],
 	},
 ];
 

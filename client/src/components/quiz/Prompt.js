@@ -6,8 +6,11 @@ const Prompt = ({ prompt, responses, nextPrompt }) => {
 			<div id='prompt-question'>{prompt}</div>
 			<div>
 				{responses.map((r, i) => (
-					<div key={i} className='prompt-res' onClick={nextPrompt}>
-						{r}
+					<div
+						key={i}
+						className='prompt-res'
+						onClick={() => nextPrompt(r.points)}>
+						{r.text}
 					</div>
 				))}
 			</div>

@@ -8,7 +8,7 @@
 	margin-top: -35px;
 	margin-left: -35px;
 	margin-right: -35px;
-	color: black;
+	color: #224229;
 }
 
 .jumbo-content {
@@ -19,16 +19,18 @@
 
 .jumbo-content h1 {
 	padding: 0px;
+	color: #224229;
 }
 
 .jumbo-content p {
 	font-size: 22px;
+	color: #224229;
 }
 
 .jumbo-content .btn {
 	font-size: 1rem;
 	text-transform: capitalize;
-	background-color: #4bab84;
+	background-color: #224229;
 }
 
 .jumbo-content .btn:hover {
