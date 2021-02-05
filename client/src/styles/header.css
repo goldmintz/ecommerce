@@ -42,7 +42,7 @@ header {
 }
 
 /* Hover and active styling */
-a.nav-link::after {
+a.nav-link.underline-link::after {
 	content: '';
 	position: absolute;
 	width: 0px;
@@ -54,19 +54,9 @@ a.nav-link::after {
 	visibility: hidden;
 }
 
-a.nav-link:hover:after {
+a.nav-link.underline-link:hover:after {
 	visibility: visible;
 	width: 100%;
-}
-
-a.active.nav-link:before {
-	content: '' !important;
-	position: absolute !important;
-	width: 100% !important;
-	height: 2px !important;
-	left: 10px !important;
-	margin-top: 25px !important;
-	background-color: #224229 !important;
 }
 
 /* Search Modal */
