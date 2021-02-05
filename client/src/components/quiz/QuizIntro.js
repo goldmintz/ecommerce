@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 const QuizIntro = ({ start }) => {
 	return (
-		<div>
+		<div className='intro-container'>
 			<p>I'm just an intro. No big deal.</p>
 			<Button onClick={start}>Start Quiz</Button>
 		</div>

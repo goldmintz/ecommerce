@@ -1,35 +1,13 @@
 .quiz-container {
-	display: flex;
-	justify-content: center;
+	display: block;
+	background-color: pink;
+	border: 4px solid black;
+	height: 600px;
+}
+
+.intro-container {
 	align-items: center;
 	text-align: center;
-}
-
-.prompt-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-#prompt-question {
-	font-weight: bold;
-	font-size: 3em;
-	margin-bottom: 2rem;
-	line-height: 1;
-}
-
-.prompt-res {
-	margin-bottom: 2rem;
-	background-color: #224229;
-	padding: 1rem;
-	color: white;
-	width: 300px;
-}
-
-.prompt-res:hover {
-	transform: scale(1.1);
-	background-color: black;
 }
 
 .results-wrapper {
@@ -38,4 +16,9 @@
 .results-text {
 	flex: 1;
 	text-align: left;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
 }

@@ -57,6 +57,15 @@ footer {
 	width: 100%;
 }
 
+.grow {
+	transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
 /* Text, Headers, Links, & Fonts */
 h1,
 h2,

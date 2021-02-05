@@ -59,6 +59,16 @@ a.nav-link.underline-link:hover:after {
 	width: 100%;
 }
 
+a.active.nav-link.underline-link:before {
+	content: '' !important;
+	position: absolute !important;
+	width: 100% !important;
+	height: 2px !important;
+	left: 10px !important;
+	margin-top: 25px !important;
+	background-color: #224229 !important;
+}
+
 /* Search Modal */
 .search-modal {
 	width: 100%;

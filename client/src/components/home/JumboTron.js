@@ -23,7 +23,9 @@ const HomepageJumbo = () => {
 			<div className='jumbo-content'>
 				<h1>Fluid jumbotron</h1>
 				<p>Find something to dig this year.</p>
-				<Button onClick={visitQuiz}>Take Our Quiz</Button>
+				<Button className='grow' onClick={visitQuiz}>
+					Take Our Quiz
+				</Button>
 			</div>
 		</section>
 	);

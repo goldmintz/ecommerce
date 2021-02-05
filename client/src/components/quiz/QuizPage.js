@@ -1,48 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import Prompt from './Prompt';
 import Results from './Results';
-import ShowIntro from './QuizIntro';
-import '../../styles/quiz/quiz.css';
-import questionBank from './questionBank';
 import QuizIntro from './QuizIntro';
+
+import questionBank from './questionBank';
+
+import '../../styles/quiz/quiz.css';
 
 const Quiz = () => {
 	const [currentPrompt, setCurrentPrompt] = useState(0);
 	const [showResults, setShowResults] = useState(false);
 	const [pointsTotal, setPointsTotal] = useState(null);
+	// const [results, setResults] = useState(null);
 	const [showIntro, setShowIntro] = useState(true);
 
+	// Handlers to start and advance through quiz
 	const startQuiz = () => {
 		setShowIntro(false);
 	};
 
+
+
+	const resetQuiz = () => {
+		//Reset all state props to original
+		setShowIntro(true);
+		setPointsTotal(null);
+		setCurrentPrompt(0);
+		setShowResults(false);
+
+		// Remove local storage quiz points
+		localStorage.setItem('quizPoints', null);
+	};
+
 	const nextPrompt = (points) => {
 		let nextPrompt = currentPrompt + 1;
+		let savePoints = () => {
+			setPointsTotal(pointsTotal + points);
+			localStorage.setItem('quizPoints', pointsTotal + points);
+		};
 		if (nextPrompt < questionBank.length) {
 			setCurrentPrompt(nextPrompt);
-			setPointsTotal(pointsTotal + points);
-		} else {
+			savePoints();
+		} else if (nextPrompt === questionBank.length) {
+			savePoints();
 			setShowResults(true);
 		}
 	};
+	const imagePath =
+		process.env.PUBLIC_URL + `/images/quiz/quiz-${currentPrompt}.jpg`;
 
+	const backgroundImgStyle = {
+		backgroundImage: `url(${imagePath}) `,
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'center',
+		backgroundSize: 'cover',
+	};
+
+	console.log(localStorage.getItem('quizPoints'));
 	return (
 		<>
-			<div className='quiz-container'>
-				<div className='prompt-container'>
-					{showIntro ? (
-						<QuizIntro start={startQuiz} />
-					) : showResults ? (
-						<Results points={pointsTotal} />
-					) : (
-						<Prompt
-							prompt={questionBank[currentPrompt].prompt}
-							responses={questionBank[currentPrompt].responses}
-							nextPrompt={nextPrompt}
-						/>
-					)}
-				</div>
-			</div>
+			{showIntro ? (
+				<QuizIntro start={startQuiz} />
+			) : showResults ? (
+				<Results points={pointsTotal} reset={resetQuiz} />
+			) : (
+				<Prompt
+					background={backgroundImgStyle}
+					prompt={questionBank[currentPrompt].prompt}
+					responses={questionBank[currentPrompt].responses}
+					nextPrompt={nextPrompt}
+				/>
+			)}
 		</>
 	);
 };

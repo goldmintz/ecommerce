@@ -1,0 +1,51 @@
+.prompt-container {
+	text-align: center;
+}
+
+.prompt-col {
+	flex: 1 1;
+	height: inherit;
+	align-items: center;
+}
+
+.image-col {
+	flex: 1 1;
+	height: 100vh;
+	margin-top: -40px !important;
+	margin-bottom: 0px !important;
+}
+
+#prompt-question {
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 2rem;
+	line-height: 1;
+}
+
+/* Style response divs */
+.prompt-res {
+	margin: 0 2rem 2rem 2rem;
+	border: 3px solid #224229;
+	padding: 1rem;
+	color: #224229;
+	font-size: 22px;
+	max-height: 200px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+
+	.image-col {
+		display: none;
+	}
+
+	#prompt-question {
+		font-size: 28px;
+	}
+	.prompt-res {
+		margin: 0 0 2rem 0;
+		padding: 0.5rem;
+		font-size: 18px;
+	}
+}

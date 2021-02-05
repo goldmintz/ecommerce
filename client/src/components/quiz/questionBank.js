@@ -19,9 +19,9 @@ const questionBank = [
 		prompt: 'Where will the plant be placed?',
 		additionalText: "Here's more dummy text",
 		responses: [
-			{ text: 'On my desk', points: 0 },
-			{ text: 'On a bookshelf', points: 1 },
-			{ text: 'In a sunny window', points: 2 },
+			{ text: 'On my desk', points: 1 },
+			{ text: 'On a bookshelf', points: 2 },
+			{ text: 'In a sunny window', points: 3 },
 		],
 	},
 	{
@@ -30,7 +30,7 @@ const questionBank = [
 		responses: [
 			{ text: 'Long and flowing', points: 1 },
 			{ text: 'Tall and statuesque', points: 2 },
-			{ text: "Short 'n thicc", points: 2 },
+			{ text: "Short 'n thicc", points: 3 },
 		],
 	},
 

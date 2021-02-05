@@ -30,9 +30,10 @@
 .jumbo-content .btn {
 	font-size: 1rem;
 	text-transform: capitalize;
-	background-color: #224229;
+	background-color: #cedf44;
+	color: #224229;
 }
 
 .jumbo-content .btn:hover {
-	background-color: black;
+	background-color: #c0ce5c;
 }
