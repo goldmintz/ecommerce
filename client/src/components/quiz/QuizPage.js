@@ -20,8 +20,6 @@ const Quiz = () => {
 		setShowIntro(false);
 	};
 
-
-
 	const resetQuiz = () => {
 		//Reset all state props to original
 		setShowIntro(true);
@@ -31,6 +29,7 @@ const Quiz = () => {
 
 		// Remove local storage quiz points
 		localStorage.setItem('quizPoints', null);
+		localStorage.setItem('quizComplete', JSON.stringify('false'));
 	};
 
 	const nextPrompt = (points) => {
@@ -45,8 +44,11 @@ const Quiz = () => {
 		} else if (nextPrompt === questionBank.length) {
 			savePoints();
 			setShowResults(true);
+			localStorage.setItem('quizComplete', JSON.stringify('true'));
 		}
 	};
+
+	//Provide image based on prompt index
 	const imagePath =
 		process.env.PUBLIC_URL + `/images/quiz/quiz-${currentPrompt}.jpg`;
 
@@ -57,13 +59,12 @@ const Quiz = () => {
 		backgroundSize: 'cover',
 	};
 
-	console.log(localStorage.getItem('quizPoints'));
 	return (
 		<>
-			{showIntro ? (
-				<QuizIntro start={startQuiz} />
-			) : showResults ? (
+			{showResults ? (
 				<Results points={pointsTotal} reset={resetQuiz} />
+			) : showIntro ? (
+				<QuizIntro start={startQuiz} />
 			) : (
 				<Prompt
 					background={backgroundImgStyle}
