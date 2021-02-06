@@ -4,16 +4,39 @@ import Prompt from './Prompt';
 import Results from './Results';
 import QuizIntro from './QuizIntro';
 
+//import quiz questions from stored object
 import questionBank from './questionBank';
 
 import '../../styles/quiz/quiz.css';
 
 const Quiz = () => {
+	//custom hook to manage localstorage values when user 'navigates away' from quiz component
+	const useStickyQuizState = (defaultValue, key) => {
+		const [value, setValue] = useState(() => {
+			const stickyValue = window.localStorage.getItem(key);
+			return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+		});
+
+		useEffect(() => {
+			window.localStorage.setItem(key, JSON.stringify(value));
+		}, [key, value]);
+		return [value, setValue];
+	};
+
+	//local state management
 	const [currentPrompt, setCurrentPrompt] = useState(0);
 	const [showResults, setShowResults] = useState(false);
 	const [pointsTotal, setPointsTotal] = useState(null);
-	// const [results, setResults] = useState(null);
 	const [showIntro, setShowIntro] = useState(true);
+	// const [results, setResults] = useState(null);
+
+	//state managed with custom hook
+	const [quizComplete, setQuizComplete] = useStickyQuizState(
+		'false',
+		'quizComplete',
+	);
+
+	console.log(quizComplete);
 
 	// Handlers to start and advance through quiz
 	const startQuiz = () => {
@@ -27,9 +50,9 @@ const Quiz = () => {
 		setCurrentPrompt(0);
 		setShowResults(false);
 
-		// Remove local storage quiz points
+		// Remove local storage quiz points and clear complete value
 		localStorage.setItem('quizPoints', null);
-		localStorage.setItem('quizComplete', JSON.stringify('false'));
+		setQuizComplete(false);
 	};
 
 	const nextPrompt = (points) => {
@@ -44,7 +67,7 @@ const Quiz = () => {
 		} else if (nextPrompt === questionBank.length) {
 			savePoints();
 			setShowResults(true);
-			localStorage.setItem('quizComplete', JSON.stringify('true'));
+			setQuizComplete(true);
 		}
 	};
 
@@ -61,7 +84,7 @@ const Quiz = () => {
 
 	return (
 		<>
-			{showResults ? (
+			{showResults || quizComplete ? (
 				<Results points={pointsTotal} reset={resetQuiz} />
 			) : showIntro ? (
 				<QuizIntro start={startQuiz} />

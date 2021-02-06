@@ -36,7 +36,7 @@ const HomePage = ({ match }) => {
 					</h2>
 					<hr></hr>
 
-					<Container fluid>
+					<Container fluid={true}>
 						<Row>
 							{products.map((product) => (
 								<Col key={product._id} xs={12} md={6} lg={4} xl={3}>

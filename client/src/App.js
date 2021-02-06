@@ -34,7 +34,7 @@ const App = () => {
 		<Router>
 			<Header />
 
-			<Container fluid className='master-container'>
+			<Container fluid={true} className='master-container'>
 				<ScrollToTop />
 				<Switch>
 					<Route path='/order/:id' component={ViewOrder} />
