@@ -21,7 +21,7 @@ const questionBank = [
 		responses: [
 			{ text: 'On my desk', points: 1 },
 			{ text: 'On a bookshelf', points: 2 },
-			{ text: 'In a sunny window', points: 3 },
+			{ text: 'In a corner', points: 3 },
 		],
 	},
 	{
