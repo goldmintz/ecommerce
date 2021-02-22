@@ -69,6 +69,10 @@ a.active.nav-link.underline-link:before {
 	background-color: #224229 !important;
 }
 
+/* Remove default border around collapsed nav (hamburger)  */
+.navbar-toggler {
+	border: none;
+}
 /* Search Modal */
 .search-modal {
 	width: 100%;
