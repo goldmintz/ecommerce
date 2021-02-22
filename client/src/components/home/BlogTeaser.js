@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import '../../styles/home/blogTeaser.css';
 
 const BlogTeaser = () => {
-	const imagePath = process.env.PUBLIC_URL + '/images/';
-
 	const TeaserContent = ({ src, heading }) => (
 		<div className='teaser-content'>
 			<Image src={src} fluid={true} />
@@ -28,22 +26,13 @@ const BlogTeaser = () => {
 
 			<Row className='px-3'>
 				<Col md={4}>
-					<TeaserContent
-						src={`${imagePath}black_bg.jpg`}
-						heading={'Blog Post A'}
-					/>
+					<TeaserContent src='/images/green_bg.jpg' heading={'Blog Post A'} />
 				</Col>
 				<Col md={4}>
-					<TeaserContent
-						src={`${imagePath}black_bg.jpg`}
-						heading={'Blog Post B'}
-					/>
+					<TeaserContent src='/images/green_bg.jpg' heading={'Blog Post B'} />
 				</Col>
 				<Col md={4}>
-					<TeaserContent
-						src={`${imagePath}black_bg.jpg`}
-						heading={'Blog Post C'}
-					/>
+					<TeaserContent src='/images/green_bg.jpg' heading={'Blog Post C'} />
 				</Col>
 			</Row>
 		</Container>

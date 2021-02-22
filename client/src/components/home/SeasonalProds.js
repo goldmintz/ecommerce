@@ -4,19 +4,14 @@ import { Link } from 'react-router-dom';
 import '../../styles/home/seasonalProds.css';
 
 const SeasonalProds = () => {
-	const imagePath = process.env.PUBLIC_URL + '/images/';
-
 	return (
 		<>
 			<h1 className='section-heading lg-scrn'>Featured Products</h1>
 
 			<Container fluid={true} className='seasonal-prods page-section px-3'>
 				<Row>
-					<Col md={6} xs={12}>
-						<Image
-							src={`${imagePath}black_bg.jpg`}
-							fluid={true}
-							id='seasonal-focus-col'></Image>
+					<Col md={6} xs={12} id='seasonal-focus-col'>
+						<Image src='/images/green_bg.jpg' />
 					</Col>
 
 					{/*This header appears under the focus image only on small screens */}
@@ -26,7 +21,7 @@ const SeasonalProds = () => {
 						<Card>
 							<Link to={`/`}>
 								<Card.Img
-									src={`${imagePath}black_bg.jpg`}
+									src='/images/green_bg.jpg'
 									fluid={true}
 									variant='top'
 								/>
@@ -44,7 +39,7 @@ const SeasonalProds = () => {
 						<Card>
 							<Link to={`/`}>
 								<Card.Img
-									src={`${imagePath}black_bg.jpg`}
+									src='/images/green_bg.jpg'
 									fluid={true}
 									variant='top'
 								/>
@@ -63,7 +58,7 @@ const SeasonalProds = () => {
 						<Card>
 							<Link to={`/`}>
 								<Card.Img
-									src={`${imagePath}black_bg.jpg`}
+									src='/images/green_bg.jpg'
 									fluid={true}
 									variant='top'
 								/>
@@ -80,7 +75,7 @@ const SeasonalProds = () => {
 						<Card>
 							<Link to={`/`}>
 								<Card.Img
-									src={`${imagePath}black_bg.jpg`}
+									src='/images/green_bg.jpg'
 									fluid={true}
 									variant='top'
 								/>

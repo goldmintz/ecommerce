@@ -52,7 +52,7 @@ const Header = () => {
 							</LinkContainer>
 							<LinkContainer to='/quiz'>
 								<Nav.Link className='underline-link' id='quiz-link'>
-									Plant Finder
+									Plant Finder Quiz
 								</Nav.Link>
 							</LinkContainer>
 						</Nav>

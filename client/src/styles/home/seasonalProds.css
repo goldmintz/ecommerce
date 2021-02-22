@@ -3,7 +3,18 @@
 /* Images */
 
 .seasonal-prods .image {
-	padding: 1em;
+	padding: 1rem;
+}
+
+#seasonal-focus-col {
+	padding: 0px;
+	align-items: center;
+	background-color: blueviolet;
+}
+
+#seasonal-focus-col img {
+	width: 100%;
+	height: 100%;
 }
 
 .img-fluid {
