@@ -19,7 +19,7 @@ import {
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
 
-const ProductList = ({ history, match }) => {
+const ProductList = ({ history }) => {
 	const dispatch = useDispatch();
 
 	const productList = useSelector((state) => state.productList);
@@ -38,9 +38,9 @@ const ProductList = ({ history, match }) => {
 	const { success: updateSuccess } = updateState;
 
 	useEffect(() => {
-		dispatch({
-			type: PRODUCT_CREATE_RESET,
-		});
+		// dispatch({
+		// 	type: PRODUCT_CREATE_RESET,
+		// });
 		if (!userDetails.isAdmin) {
 			history.push('/login');
 		}

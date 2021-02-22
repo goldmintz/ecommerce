@@ -6,7 +6,7 @@ import '../../styles/home/blogTeaser.css';
 const BlogTeaser = () => {
 	const TeaserContent = ({ src, heading }) => (
 		<div className='teaser-content'>
-			<Image src={src} fluid={true} />
+			<Image src={src} fluid='true' />
 			<div>
 				<h4 className='teaser-content-heading'>{heading}</h4>
 				<p id='teaser-summary'>
@@ -21,7 +21,7 @@ const BlogTeaser = () => {
 	);
 
 	return (
-		<Container fluid={true} className='blog-teaser page-section'>
+		<Container fluid='true' className='blog-teaser page-section'>
 			<h1 className='section-heading'>From Our Blog</h1>
 
 			<Row className='px-3'>

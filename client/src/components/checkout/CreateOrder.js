@@ -90,7 +90,7 @@ const Order = ({ history }) => {
 													<Image
 														src={item.image}
 														alt={item.name}
-														fluid={true}
+														fluid='true'
 														rounded
 													/>
 												</Col>

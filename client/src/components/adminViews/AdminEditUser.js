@@ -6,6 +6,8 @@ import { getUserProfile, updateUserByAdmin } from '../../actions/userActions';
 
 //components
 import FormContainer from '../layout/Form';
+import Loader from '../layout/Loader';
+import Message from '../layout/Message';
 
 const AdminEditUser = ({ match, history }) => {
 	const userId = match.params.id;
@@ -49,45 +51,46 @@ const AdminEditUser = ({ match, history }) => {
 				Go Back
 			</Link>
 			<FormContainer>
-				{/*{loading ? (
+				{loading ? (
 					<Loader />
 				) : error ? (
 					<Message variant='danger'>{error}</Message>
-				) : ( */}
-				<Form onSubmit={handleSubmit}>
-					<Form.Group controlId='name'>
-						<Form.Label>Name</Form.Label>
-						<Form.Control
-							type='name'
-							placeholder='Enter name'
-							value={name}
-							onChange={(e) => setName(e.target.value)}></Form.Control>
-					</Form.Group>
+				) : (
+					<Form onSubmit={handleSubmit}>
+						<Form.Group controlId='name'>
+							<Form.Label>Name</Form.Label>
+							<Form.Control
+								type='name'
+								placeholder='Enter name'
+								value={name}
+								onChange={(e) => setName(e.target.value)}></Form.Control>
+						</Form.Group>
 
-					<Form.Group controlId='email'>
-						<Form.Label>Email Address</Form.Label>
-						<Form.Control
-							type='email'
-							placeholder='Enter email'
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}></Form.Control>
-					</Form.Group>
+						<Form.Group controlId='email'>
+							<Form.Label>Email Address</Form.Label>
+							<Form.Control
+								type='email'
+								placeholder='Enter email'
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}></Form.Control>
+						</Form.Group>
 
-					<Form.Group controlId='isadmin'>
-						<Form.Check
-							type='checkbox'
-							label='Admin Rights'
-							checked={isAdmin}
-							onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
-					</Form.Group>
+						<Form.Group controlId='isadmin'>
+							<Form.Check
+								type='checkbox'
+								label='Admin Rights'
+								checked={isAdmin}
+								onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
+						</Form.Group>
 
-					<Button
-						type='submit'
-						variant='primary'
-						onClick={(e) => handleSubmit(e)}>
-						Update
-					</Button>
-				</Form>
+						<Button
+							type='submit'
+							variant='primary'
+							onClick={(e) => handleSubmit(e)}>
+							Update
+						</Button>
+					</Form>
+				)}
 			</FormContainer>
 		</>
 	);

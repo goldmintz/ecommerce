@@ -87,10 +87,13 @@ const ProductDetail = ({ match, history }) => {
 				<Message variant='danger'>{error}</Message>
 			) : (
 				<>
-					<Container fluid={true} className='product-page-wrapper'>
+					<Container fluid='true' className='product-page-wrapper'>
 						<Row>
 							<Col md={6} sm={12}>
-								<Image fluid={true} src={product.image} className='px-3'></Image>
+								<Image
+									fluid='true'
+									src={product.image}
+									className='px-3'></Image>
 							</Col>
 							<Col md={6}>
 								<ListGroup>

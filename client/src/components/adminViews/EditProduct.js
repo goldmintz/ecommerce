@@ -71,7 +71,6 @@ const EditProduct = ({ match, history }) => {
 			tags,
 		};
 		e.preventDefault();
-		console.log(updatedProduct);
 		dispatch(updateProduct(updatedProduct));
 		history.push('/admin/products');
 	};

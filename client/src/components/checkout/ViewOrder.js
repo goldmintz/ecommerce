@@ -107,7 +107,7 @@ const ViewOrder = ({ match }) => {
 													<Image
 														src={item.image}
 														alt={item.name}
-														fluid={true}
+														fluid='true'
 														thumbnail
 													/>
 												</Col>

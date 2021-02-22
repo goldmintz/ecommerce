@@ -8,7 +8,7 @@ const SeasonalProds = () => {
 		<>
 			<h1 className='section-heading lg-scrn'>Featured Products</h1>
 
-			<Container fluid={true} className='seasonal-prods page-section px-3'>
+			<Container fluid='true' className='seasonal-prods page-section px-3'>
 				<Row>
 					<Col md={6} xs={12} id='seasonal-focus-col'>
 						<Image src='/images/green_bg.jpg' />
@@ -22,7 +22,7 @@ const SeasonalProds = () => {
 							<Link to={`/`}>
 								<Card.Img
 									src='/images/green_bg.jpg'
-									fluid={true}
+									fluid='true'
 									variant='top'
 								/>
 							</Link>
@@ -40,7 +40,7 @@ const SeasonalProds = () => {
 							<Link to={`/`}>
 								<Card.Img
 									src='/images/green_bg.jpg'
-									fluid={true}
+									fluid='true'
 									variant='top'
 								/>
 							</Link>
@@ -59,7 +59,7 @@ const SeasonalProds = () => {
 							<Link to={`/`}>
 								<Card.Img
 									src='/images/green_bg.jpg'
-									fluid={true}
+									fluid='true'
 									variant='top'
 								/>
 							</Link>
@@ -76,7 +76,7 @@ const SeasonalProds = () => {
 							<Link to={`/`}>
 								<Card.Img
 									src='/images/green_bg.jpg'
-									fluid={true}
+									fluid='true'
 									variant='top'
 								/>
 							</Link>
