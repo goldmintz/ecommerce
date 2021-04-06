@@ -22,10 +22,13 @@ const Order = ({ history }) => {
 
 	cart.taxPrice = formatDecimals((0.2 * cart.itemsPrice).toFixed(2));
 
-	cart.totalPrice =
+	cart.totalPrice = (
 		Number(cart.itemsPrice) +
 		Number(cart.shippingPrice) +
-		Number(cart.taxPrice);
+		Number(cart.taxPrice)
+	).toFixed(2);
+
+	console.log(cart.totalPrice);
 
 	const orderCreate = useSelector((state) => state.orderCreate);
 	const { order, success, error } = orderCreate;

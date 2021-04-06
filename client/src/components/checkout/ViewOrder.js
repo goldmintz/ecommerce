@@ -52,7 +52,6 @@ const ViewOrder = ({ match }) => {
 	}, [dispatch, orderId, order, successPayment]);
 
 	const handlePaymentSuccess = (paymentResult) => {
-		console.log(paymentResult);
 		dispatch(payOrder(orderId, paymentResult));
 	};
 

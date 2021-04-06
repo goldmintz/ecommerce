@@ -36,15 +36,19 @@ const HomePage = ({ match }) => {
 					</h2>
 					<hr></hr>
 
-					<Container fluid='true'>
-						<Row>
-							{products.map((product) => (
-								<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
-									<Product product={product} />
-								</Col>
-							))}
-						</Row>
-					</Container>
+					{products.length !== 0 ? (
+						<Container fluid='true'>
+							<Row>
+								{products.map((product) => (
+									<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
+										<Product product={product} />
+									</Col>
+								))}
+							</Row>
+						</Container>
+					) : (
+						<h3>Sorry! No products found.</h3>
+					)}
 				</>
 			) : (
 				<>
