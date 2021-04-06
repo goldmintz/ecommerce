@@ -1,5 +1,5 @@
 {
-	"homepage": "https://github.com/adgoldmintz/ecommerce",
+	"homepage": "https://goldmintz.github.io/ecommerce/",
 	"name": "client",
 	"proxy": "http://127.0.0.1:5000",
 	"version": "0.1.0",

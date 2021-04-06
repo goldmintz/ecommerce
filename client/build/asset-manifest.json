@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/adgoldmintz/ecommerce/static/css/main.279adbaa.chunk.css",
-    "main.js": "/adgoldmintz/ecommerce/static/js/main.cf968c3c.chunk.js",
-    "main.js.map": "/adgoldmintz/ecommerce/static/js/main.cf968c3c.chunk.js.map",
-    "runtime-main.js": "/adgoldmintz/ecommerce/static/js/runtime-main.6c46aa36.js",
-    "runtime-main.js.map": "/adgoldmintz/ecommerce/static/js/runtime-main.6c46aa36.js.map",
-    "static/js/2.1b4fa6c4.chunk.js": "/adgoldmintz/ecommerce/static/js/2.1b4fa6c4.chunk.js",
-    "static/js/2.1b4fa6c4.chunk.js.map": "/adgoldmintz/ecommerce/static/js/2.1b4fa6c4.chunk.js.map",
-    "index.html": "/adgoldmintz/ecommerce/index.html",
-    "static/css/main.279adbaa.chunk.css.map": "/adgoldmintz/ecommerce/static/css/main.279adbaa.chunk.css.map",
-    "static/js/2.1b4fa6c4.chunk.js.LICENSE.txt": "/adgoldmintz/ecommerce/static/js/2.1b4fa6c4.chunk.js.LICENSE.txt"
+    "main.css": "/ecommerce/static/css/main.279adbaa.chunk.css",
+    "main.js": "/ecommerce/static/js/main.ba5c64b3.chunk.js",
+    "main.js.map": "/ecommerce/static/js/main.ba5c64b3.chunk.js.map",
+    "runtime-main.js": "/ecommerce/static/js/runtime-main.68e871e3.js",
+    "runtime-main.js.map": "/ecommerce/static/js/runtime-main.68e871e3.js.map",
+    "static/js/2.1b4fa6c4.chunk.js": "/ecommerce/static/js/2.1b4fa6c4.chunk.js",
+    "static/js/2.1b4fa6c4.chunk.js.map": "/ecommerce/static/js/2.1b4fa6c4.chunk.js.map",
+    "index.html": "/ecommerce/index.html",
+    "static/css/main.279adbaa.chunk.css.map": "/ecommerce/static/css/main.279adbaa.chunk.css.map",
+    "static/js/2.1b4fa6c4.chunk.js.LICENSE.txt": "/ecommerce/static/js/2.1b4fa6c4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6c46aa36.js",
+    "static/js/runtime-main.68e871e3.js",
     "static/js/2.1b4fa6c4.chunk.js",
     "static/css/main.279adbaa.chunk.css",
-    "static/js/main.cf968c3c.chunk.js"
+    "static/js/main.ba5c64b3.chunk.js"
   ]
 }
