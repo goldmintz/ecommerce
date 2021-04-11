@@ -19,6 +19,7 @@ import '../../styles/product/productDetailPage.css';
 
 import { PRODUCT_CREATEREVIEW_RESET } from '../../constants/types';
 
+import PageTitleMeta from '../layout/PageTitle-Meta';
 import Rating from './Rating';
 import Message from '../layout/Message';
 import Loader from '../layout/Loader';
@@ -81,6 +82,7 @@ const ProductDetail = ({ match, history }) => {
 	//Begin render
 	return (
 		<>
+			<PageTitleMeta title={`Sprouts | ${product.name}`} />
 			{loading ? (
 				<Loader />
 			) : error ? (

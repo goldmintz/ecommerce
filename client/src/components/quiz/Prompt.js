@@ -5,6 +5,7 @@ import '../../styles/quiz/prompt.css';
 const Prompt = ({ prompt, responses, nextPrompt, background }) => {
 	return (
 		<>
+			
 			<Row className='prompt-container'>
 				<Col className=' prompt-col mx-3 my-5'>
 					<div id='prompt-question'>{prompt}</div>

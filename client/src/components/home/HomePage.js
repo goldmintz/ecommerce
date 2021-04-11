@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Container } from 'react-bootstrap';
 import { listProducts } from '../../actions/productActions.js';
 
+import PageTitleMeta from '../layout/PageTitle-Meta';
 import Collections from './Collections';
 import SeasonalProds from './SeasonalProds';
 import HomepageJumbo from './JumboTron';
@@ -27,6 +28,7 @@ const HomePage = ({ match }) => {
 
 	return (
 		<>
+			<PageTitleMeta />
 			{/* no term, show everything, otherwise, show just search header (with term) and search results
 			 */}
 			{term !== undefined ? (
