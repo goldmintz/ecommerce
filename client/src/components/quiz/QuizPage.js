@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import PageTitleMeta from '../layout/PageTitle-Meta';
 import Prompt from './Prompt';
 import Results from './Results';
 import QuizIntro from './QuizIntro';
@@ -84,6 +84,7 @@ const Quiz = () => {
 
 	return (
 		<>
+			<PageTitleMeta title={'Sprouts | Plant Finder Quiz'} />
 			{showResults || quizComplete ? (
 				<Results points={pointsTotal} reset={resetQuiz} />
 			) : showIntro ? (
