@@ -28,6 +28,9 @@ app.get('/api/config/paypal', (req, res) =>
 	res.send(process.env.PAYPAL_CLIENT_ID),
 );
 
+const favicon = require('serve-favicon');
+app.use(favicon(path.join(dirname, 'build', 'favicon.ico')));
+
 //Use for production => point to the static build folder
 const __dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
