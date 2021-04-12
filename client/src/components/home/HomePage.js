@@ -9,15 +9,13 @@ import SeasonalProds from './SeasonalProds';
 import HomepageJumbo from './JumboTron';
 import Product from '../product/ProductCard';
 import BlogTeaser from './BlogTeaser';
-import Message from '../layout/Message';
-import Loader from '../layout/Loader';
 
 const HomePage = ({ match }) => {
 	// using hooks instead of connect!
 	const dispatch = useDispatch();
 	const productList = useSelector((state) => state.productList);
 
-	const { products, loading, error } = productList;
+	const { products } = productList;
 
 	const term = match.params.term;
 
@@ -40,7 +38,7 @@ const HomePage = ({ match }) => {
 
 					{products.length !== 0 ? (
 						<Container fluid='true'>
-							<Row >
+							<Row>
 								{products.map((product) => (
 									<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
 										<Product product={product} />

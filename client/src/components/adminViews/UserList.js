@@ -18,11 +18,7 @@ const UserList = ({ history }) => {
 	const { userDetails } = userLogin;
 
 	const userDelete = useSelector((state) => state.userDelete);
-	const {
-		loading: deleteLoading,
-		error: deleteError,
-		success: deleteSuccess,
-	} = userDelete;
+	const { success: deleteSuccess } = userDelete;
 
 	const userUpdate = useSelector((state) => state.userUpdatebyAdmin);
 	const { success: updateSuccess } = userUpdate;

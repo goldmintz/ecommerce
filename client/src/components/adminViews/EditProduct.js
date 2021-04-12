@@ -26,14 +26,9 @@ const EditProduct = ({ match, history }) => {
 	const dispatch = useDispatch();
 
 	const productDetails = useSelector((state) => state.productDetail);
-	const productUpdate = useSelector((state) => state.productUpdate);
 
-	const { loading, error, product } = productDetails;
-	const {
-		loading: updateLoading,
-		error: updateError,
-		success: updateSuccess,
-	} = productDetails;
+	const { product } = productDetails;
+	const { success: updateSuccess } = productDetails;
 
 	useEffect(() => {
 		if (updateSuccess) {

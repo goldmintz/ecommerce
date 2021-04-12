@@ -1,16 +1,7 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {
-	Row,
-	Col,
-	ListGroup,
-	Image,
-	Button,
-	Card,
-	Form,
-} from 'react-bootstrap';
+import { Row, Col, ListGroup, Image, Button, Form } from 'react-bootstrap';
 import '../../styles/checkout/cartPage.css';
 
 import Message from '../layout/Message';

@@ -11,7 +11,7 @@ const OrderList = ({ history }) => {
 	const dispatch = useDispatch();
 
 	const adminOrderList = useSelector((state) => state.adminOrderList);
-	const { error, success, loading, orders } = adminOrderList;
+	const { error, loading, orders } = adminOrderList;
 
 	console.log('component:', orders);
 

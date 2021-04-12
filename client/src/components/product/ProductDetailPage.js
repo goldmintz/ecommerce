@@ -31,11 +31,7 @@ const ProductDetail = ({ match, history }) => {
 	const { product, loading, error } = productDetail;
 
 	const productCreateReview = useSelector((state) => state.productCreateReview);
-	const {
-		loading: reviewLoading,
-		error: reviewError,
-		success: reviewSuccess,
-	} = productCreateReview;
+	const { error: reviewError, success: reviewSuccess } = productCreateReview;
 
 	const userLogin = useSelector((state) => state.userLogin);
 	const { userDetails } = userLogin;
@@ -56,14 +52,14 @@ const ProductDetail = ({ match, history }) => {
 	const [rating, setRating] = useState(0);
 	const [comment, setComment] = useState('');
 
-	//Define product image column style
-	const imageColStyle = {
-		// maxHeight: '80vh',
-		backgroundImage: `url(${product.image})`,
-		backgroundRepeat: 'no-repeat',
-		backgroundPosition: 'center',
-		backgroundSize: 'cover',
-	};
+	// //Define product image column style
+	// const imageColStyle = {
+	// 	// maxHeight: '80vh',
+	// 	backgroundImage: `url(${product.image})`,
+	// 	backgroundRepeat: 'no-repeat',
+	// 	backgroundPosition: 'center',
+	// 	backgroundSize: 'cover',
+	// };
 
 	//Handlers
 	const handleQuantChange = (e) => {

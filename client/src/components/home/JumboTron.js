@@ -21,8 +21,7 @@ const HomepageJumbo = () => {
 	return (
 		<section className='jumbotron' style={backgroundImgStyle}>
 			<div className='jumbo-content'>
-				<h1>Fluid jumbotron</h1>
-				<p>Find something to dig this year.</p>
+				<h1>Branch out with us.</h1>
 				<Button className='grow' onClick={visitQuiz}>
 					Take Our Quiz
 				</Button>

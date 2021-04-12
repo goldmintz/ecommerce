@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../actions/userActions';
 
 //components
-import Message from '../layout/Message';
 import Loader from '../layout/Loader';
 import FormContainer from '../layout/Form';
 
@@ -21,7 +20,7 @@ const Login = ({ location, history }) => {
 
 	const userLogin = useSelector((state) => state.userLogin);
 
-	const { loading, error, userDetails } = userLogin;
+	const { loading, userDetails } = userLogin;
 
 	//If user is logged in, redirect
 	useEffect(() => {

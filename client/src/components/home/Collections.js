@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 import '../../styles/home/collections.css';
 
 const Collections = () => {
-	// const imagePath = process.env.PUBLIC_URL + '/images/green_bg.jpg';
-	// const rightArrow = process.env.PUBLIC_URL + '/images/arrow-right.png';
-
-	const collections = ['best sellers', 'gifts', 'seasonal'];
-
 	return (
 		<Container fluid='true' className='collections page-section'>
 			<Row className='px-3'>

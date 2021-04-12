@@ -48,7 +48,7 @@ const Results = ({ points, resetQuiz }) => {
 				{possiblePlants
 					.filter((plant) => plant.link === resultsPlant)
 					.map((plant) => (
-						<img src={plant.imageLink}></img>
+						<img src={plant.imageLink} alt={plant.name}></img>
 					))}
 			</div>
 		</section>

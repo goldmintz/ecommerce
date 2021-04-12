@@ -72,7 +72,6 @@ const initialState = {
 	},
 	userLogin: { userDetails: userDetailsfromLcStorage },
 };
-const middleware = [thunk];
 
 const store = createStore(
 	reducer,

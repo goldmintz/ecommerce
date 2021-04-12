@@ -7,13 +7,7 @@ import {
 	listProducts,
 	deleteProduct,
 	createProduct,
-	updateProduct,
 } from '../../actions/productActions';
-
-import {
-	PRODUCT_CREATE_RESET,
-	PRODUCT_CREATE_SUCCESS,
-} from '../../constants/types';
 
 //components
 import Message from '../layout/Message';
