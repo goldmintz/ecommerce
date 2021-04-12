@@ -1,7 +1,7 @@
 const products = [
 	{
 		name: 'Plant 1',
-		image: '/images/monstera.jpg',
+		image: '/images/plant2.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',
@@ -15,7 +15,7 @@ const products = [
 	},
 	{
 		name: 'Plant 2',
-		image: '/images/monstera.jpg',
+		image: '/images/plant4.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Small',
@@ -29,7 +29,7 @@ const products = [
 	},
 	{
 		name: 'Plant 3',
-		image: '/images/monstera.jpg',
+		image: '/images/plant2.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',
@@ -42,7 +42,7 @@ const products = [
 	},
 	{
 		name: 'Plant 4',
-		image: '/images/monstera.jpg',
+		image: '/images/plant4.jpg',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ligula tortor. Proin eu sem magna. Sed mattis, libero sit.',
 		size: 'Medium',

@@ -40,7 +40,7 @@ const HomePage = ({ match }) => {
 
 					{products.length !== 0 ? (
 						<Container fluid='true'>
-							<Row>
+							<Row >
 								{products.map((product) => (
 									<Col key={product._id} xs={12} md={6} lg={4} xl={3}>
 										<Product product={product} />
