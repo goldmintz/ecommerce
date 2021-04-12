@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import '../../styles/quiz/quiz.css';
 
 const QuizIntro = ({ start }) => {
 	return (
-		<div className='intro-container'>
+		<section className='intro-container'>
 			<p>I'm just an intro. No big deal.</p>
-			<Button onClick={start}>Start Quiz</Button>
-		</div>
+			<button onClick={start} className='quiz-btn grow start-quiz-btn'>
+				Start Quiz
+			</button>
+		</section>
 	);
 };
 

@@ -36,14 +36,13 @@ const Quiz = () => {
 		'quizComplete',
 	);
 
-	console.log(quizComplete);
-
 	// Handlers to start and advance through quiz
 	const startQuiz = () => {
 		setShowIntro(false);
 	};
 
-	const resetQuiz = () => {
+	const resetQuiz = (e) => {
+		e.preventDefault();
 		//Reset all state props to original
 		setShowIntro(true);
 		setPointsTotal(null);
@@ -83,10 +82,10 @@ const Quiz = () => {
 	};
 
 	return (
-		<>
+		<div className='quiz-container'>
 			<PageTitleMeta title={'Sprouts | Plant Finder Quiz'} />
 			{showResults || quizComplete ? (
-				<Results points={pointsTotal} reset={resetQuiz} />
+				<Results points={pointsTotal} resetQuiz={resetQuiz} />
 			) : showIntro ? (
 				<QuizIntro start={startQuiz} />
 			) : (
@@ -97,7 +96,7 @@ const Quiz = () => {
 					nextPrompt={nextPrompt}
 				/>
 			)}
-		</>
+		</div>
 	);
 };
 

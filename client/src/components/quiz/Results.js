@@ -1,22 +1,24 @@
 import React from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
 
-import '../../styles/quiz/results.css';
-import '../../styles/quiz/prompt.css';
+import '../../styles/quiz/quiz.css';
 
-const Results = ({ points, reset }) => {
+const Results = ({ points, resetQuiz }) => {
 	return (
-		<>
-			<Row className='prompt-container '>
-				<Col className=' prompt-col mx-3 my-5'>
-					<div>Congrats! You finished the quiz with {points} total points.</div>
-					<Button className='grow' onClick={reset}>
-						Retake
-					</Button>
-				</Col>
-				<Col className='image-col mx-3 my-3'></Col>
-			</Row>
-		</>
+		<section className='results-wrapper'>
+			<div className='results-text results-col'>
+				<p>
+					Congrats, future plant parent! <br></br>You finished the quiz with{' '}
+					<span className='bold'>{points} </span>
+					total points.
+				</p>
+
+				<p>Product detail and link will go here</p>
+				<button className='grow retake-btn quiz-btn' onClick={resetQuiz}>
+					Retake Quiz
+				</button>
+			</div>
+			<div className='results-col'>image here</div>
+		</section>
 	);
 };
 
