@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import path from 'path';
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -26,6 +27,19 @@ app.use('/api/orders', orderRoutes);
 app.get('/api/config/paypal', (req, res) =>
 	res.send(process.env.PAYPAL_CLIENT_ID),
 );
+
+//Use for production => point to the static build folder
+const __dirname = path.resolve();
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, '/client/build')));
+	app.get('*', (req, res) =>
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')),
+	);
+} else {
+	app.get('/', (req, res) => {
+		res.send('API running...');
+	});
+}
 
 // Error middleware
 app.use(routeNotFound);
