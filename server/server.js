@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+import favicon from 'serve-favicon';
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -28,8 +29,7 @@ app.get('/api/config/paypal', (req, res) =>
 	res.send(process.env.PAYPAL_CLIENT_ID),
 );
 
-const favicon = require('serve-favicon');
-app.use(favicon(path.join(dirname, 'build', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 
 //Use for production => point to the static build folder
 const __dirname = path.resolve();
