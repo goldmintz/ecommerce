@@ -31,8 +31,6 @@ app.get('/api/config/paypal', (req, res) =>
 	res.send(process.env.PAYPAL_CLIENT_ID),
 );
 
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
-
 //Use for production => point to the static build folder
 
 if (process.env.NODE_ENV === 'production') {
@@ -45,6 +43,8 @@ if (process.env.NODE_ENV === 'production') {
 		res.send('API running...');
 	});
 }
+
+app.use(favicon(path.join(__dirname, 'client', 'build', 'favicon.ico')));
 
 // Error middleware
 app.use(routeNotFound);
