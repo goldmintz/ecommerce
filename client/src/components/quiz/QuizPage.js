@@ -17,6 +17,8 @@ const Quiz = () => {
 			return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
 		});
 
+		console.log(value);
+
 		useEffect(() => {
 			window.localStorage.setItem(key, JSON.stringify(value));
 		}, [key, value]);
@@ -26,23 +28,22 @@ const Quiz = () => {
 	//local state management
 	const [currentPrompt, setCurrentPrompt] = useState(0);
 	const [showResults, setShowResults] = useState(false);
-	const [pointsTotal, setPointsTotal] = useState(null);
 	const [showIntro, setShowIntro] = useState(true);
-	// const [results, setResults] = useState(null);
 
-	//state managed with custom hook
+	//quiz complete and total points state managed with custom hook (see above)
 	const [quizComplete, setQuizComplete] = useStickyQuizState(
 		'false',
 		'quizComplete',
 	);
+
+	const [pointsTotal, setPointsTotal] = useStickyQuizState(null, 'quizPoints');
 
 	// Handlers to start and advance through quiz
 	const startQuiz = () => {
 		setShowIntro(false);
 	};
 
-	const resetQuiz = (e) => {
-		e.preventDefault();
+	const resetQuiz = () => {
 		//Reset all state props to original
 		setShowIntro(true);
 		setPointsTotal(null);
@@ -70,16 +71,16 @@ const Quiz = () => {
 		}
 	};
 
-	//Provide image based on prompt index
-	const imagePath =
-		process.env.PUBLIC_URL + `/images/quiz/quiz-${currentPrompt}.jpg`;
+	// //Provide image based on prompt index
+	// const imagePath =
+	// 	process.env.PUBLIC_URL + `/images/quiz/quiz-${currentPrompt}.jpg`;
 
-	const backgroundImgStyle = {
-		backgroundImage: `url(${imagePath}) `,
-		backgroundRepeat: 'no-repeat',
-		backgroundPosition: 'center',
-		backgroundSize: 'cover',
-	};
+	// const backgroundImgStyle = {
+	// 	backgroundImage: `url(${imagePath}) `,
+	// 	backgroundRepeat: 'no-repeat',
+	// 	backgroundPosition: 'center',
+	// 	backgroundSize: 'cover',
+	// };
 
 	return (
 		<div className='quiz-container'>
@@ -90,7 +91,7 @@ const Quiz = () => {
 				<QuizIntro start={startQuiz} />
 			) : (
 				<Prompt
-					background={backgroundImgStyle}
+					/* background={backgroundImgStyle} */
 					prompt={questionBank[currentPrompt].prompt}
 					responses={questionBank[currentPrompt].responses}
 					nextPrompt={nextPrompt}
