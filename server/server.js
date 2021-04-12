@@ -16,6 +16,8 @@ connectDB();
 const app = express();
 app.use(express.json());
 
+const __dirname = path.resolve();
+
 //Products Routes
 app.use('/api/products', productRoutes);
 
@@ -32,7 +34,7 @@ app.get('/api/config/paypal', (req, res) =>
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 
 //Use for production => point to the static build folder
-const __dirname = path.resolve();
+
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.join(__dirname, '/client/build')));
 	app.get('*', (req, res) =>
