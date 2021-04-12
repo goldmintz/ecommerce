@@ -18,6 +18,8 @@ app.use(express.json());
 
 const __dirname = path.resolve();
 
+app.use(favicon(__dirname + '/client/build/favicon.ico'));
+
 //Products Routes
 app.use('/api/products', productRoutes);
 
@@ -43,8 +45,6 @@ if (process.env.NODE_ENV === 'production') {
 		res.send('API running...');
 	});
 }
-
-app.use(favicon(path.join(__dirname, 'client', 'build', 'favicon.ico')));
 
 // Error middleware
 app.use(routeNotFound);
