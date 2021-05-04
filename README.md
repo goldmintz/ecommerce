@@ -4,7 +4,7 @@
 Sprouts is a full-stack, responsive MERN e-commerce application. 
 
 ### Screenshots
-*coming soon*
+![](sprouts.gif)
 
 
 ## Features & Functionality
